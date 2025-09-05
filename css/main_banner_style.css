@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+#mainVisual{position:relative}
+#mainVisual .main_bnr{position:relative;margin:auto;width:100%;height:100vh;background:#111}
+#mainVisual .main_bnr:after{position:absolute;z-index:10;content:'';top:0;left:0;width:100%;height:100vh;background:rgba(0,0,0,.5)}
+#mainVisual .main_bnr .bg01{background-image:url(../images/hero-business.jpg)}
+#mainVisual .main_bnr .bg02{background-image:url(../images/hero-05.png)}
+#mainVisual .main_bnr .bg03{background-image:url(../images/hero-06.png)}
+#mainVisual .main_bnr .bg{width:100%;height:100vh;transform:skewX(3deg);transition:all 1.2s cubic-bezier(0.165, 0.840, 0.440, 1);background-size:cover}
+#mainVisual .main_bnr li.on .bg{opacity:1;transform:skewX(0)}
+
+#mainVisual .txt{position:absolute;z-index:10;bottom:17%;left:0;right:0;color:#fff}
+#mainVisual .txt h2{font-size:65px;font-weight:700;line-height:1;white-space:pre-line;font-family:var(--e-font)}
+#mainVisual .txt h2 .text-gradient{background:linear-gradient(45deg, #009DAE, #33B8B8, #66CCCC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#mainVisual .txt p{margin-top:30px;font-size:20px;font-weight:700}
+#mainVisual .inner{position:relative}
+#mainVisual .pager{margin-top:50px}
+#mainVisual .pager span{opacity:.3;position:relative;width:40px;height:40px;margin:0 5px;background-color:transparent;transition:all .3s}
+#mainVisual .pager span.on{opacity:1}
+#mainVisual .pager span:before{opacity:0;display:block;content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:45px;height:45px;border:1px solid rgba(255,255,255,.3);border-radius:50%;transition:all .3s}
+#mainVisual .pager span.on:before{opacity:1;width:100%;height:100%}
+#mainVisual .pager span:after{display:block;content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:7px;height:7px;border-radius:50%;background:#fff}
+
+#mainVisual .mouse{position:absolute;bottom:0;right:0;display:flex;align-items:center;gap:10px}
+#mainVisual .mouse .icon{position:relative;width:22px;height:36px;border:2px solid #fff;border-radius:19px}
+#mainVisual .mouse .icon:after{content:"";position:absolute;top:10%;left:50%;transform:translateX(-50%);width:2px;height:6px;border-radius:3px;background-color:#fff;animation:mouse_scroll 1.5s infinite linear}
+@keyframes mouse_scroll{0% {top:10%}99% {top:50%}100% {top:10%}}
+#mainVisual .mouse span{font-size:13px;font-weight:700;text-transform:uppercase;font-family:var(--e-font)}
