@@ -6,34 +6,10 @@
 body{background:#fff;font-size:0.81em;font-family:'pretendard'}
 h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'}
 #device_change{width:50%;border:1px solid #666;font-size:3.5em;box-shadow:none} 
-:root{--primary:#009DAE;--main-size:1560px;--k-font:'Pretendard';--e-font:'play'}
+:root{--primary:#f47320;--main-size:1560px;--k-font:'Pretendard';--e-font:'play'}
 
 /* =========================== HEADER */
 #sh_hd{position:absolute;z-index:50;width:100%;min-width:var(--main-size);font-family:var(--k-font)}
-
-/* 로고 텍스트 스타일링 */
-.sh_logo .logo-text{
-    font-size:28px;
-    font-weight:700;
-    color:#fff;
-    font-family:var(--e-font);
-    text-transform:uppercase;
-    letter-spacing:1px;
-    transition:all .3s;
-}
-#shGnb.on .sh_logo .logo-text{
-    color:var(--primary);
-}
-
-/* 푸터 로고 스타일링 */
-.footer-logo{
-    font-size:24px;
-    font-weight:700;
-    color:#fff;
-    font-family:var(--e-font);
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
 
 /* =========================== MAIN  */
 #sh_section{position:relative;line-height:1.5;font-family:var(--e-font),var(--k-font)}

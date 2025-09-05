@@ -61,11 +61,11 @@ $(function(){
         hide_menu = true;
     });
 
-    $('#gnb_1dul>li').on('mouseleave',function(){
+    $('#gnb_1dul>li').bind('mouseleave',function(){
         submenu_hide();
     });
 
-    $(document).on('click focusin',function(){
+    $(document).bind('click focusin',function(){
         if(hide_menu) {
             submenu_hide();
         }
@@ -89,7 +89,7 @@ function menu_rearrange(el)
         $gnb_1dli = $(".gnb_1dli:eq("+i+")");
         w1 = $gnb_1dli.outerWidth();
 
-        if($gnb_1dli.find(".gnb_2dul").length)
+        if($gnb_1dli.find(".gnb_2dul").size())
             w2 = $gnb_1dli.find(".gnb_2dli > a").outerWidth(true);
         else
             w2 = w1;

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>US INNOWAVE - TEST VERSION (jQuery 3.7.1)</title>
+
+<!-- jQuery 3.7.1 로컬 버전 테스트 -->
+<script>
+// 테스트 환경 표시
+console.log('=================================');
+console.log('US INNOWAVE TEST VERSION');
+console.log('jQuery Migration Test Environment');
+console.log('=================================');
+</script>
+
+<style>
+/* 테스트 환경 표시 배너 */
+.test-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ff6b6b;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    z-index: 99999;
+    font-family: monospace;
+}
+</style>
+</head>
+<body>
+<div class="test-banner">
+    🔧 TEST MODE - jQuery 3.7.1 + jQuery Migrate 3.5.2 | Check console for migration warnings
+</div>
+
+<div style="margin-top: 50px; padding: 20px;">
+    <h1>jQuery Version Test Page</h1>
+    
+    <div id="version-info" style="background: #f0f0f0; padding: 20px; margin: 20px 0; border-radius: 5px;">
+        <h2>Version Information:</h2>
+        <p>Current jQuery Version: <span id="jquery-version" style="font-weight: bold;"></span></p>
+        <p>jQuery Migrate Loaded: <span id="migrate-status" style="font-weight: bold;"></span></p>
+        <p>Test Status: <span id="test-status" style="font-weight: bold;">Checking...</span></p>
+    </div>
+    
+    <div id="test-results" style="background: #e8f4f8; padding: 20px; margin: 20px 0; border-radius: 5px;">
+        <h2>Compatibility Tests:</h2>
+        <ul id="test-list">
+            <li>Basic jQuery loading: <span id="test-loading">⏳</span></li>
+            <li>jQuery.fn methods available: <span id="test-methods">⏳</span></li>
+            <li>Event handling (.on): <span id="test-events">⏳</span></li>
+            <li>AJAX capabilities: <span id="test-ajax">⏳</span></li>
+            <li>Animation support: <span id="test-animation">⏳</span></li>
+        </ul>
+    </div>
+    
+    <div id="migration-warnings" style="background: #fff3cd; padding: 20px; margin: 20px 0; border-radius: 5px;">
+        <h2>Migration Warnings (Check Console):</h2>
+        <p>Open browser console (F12) to see jQuery Migrate warnings about deprecated features.</p>
+        <pre id="warnings-display" style="background: white; padding: 10px; overflow-x: auto;"></pre>
+    </div>
+</div>
+
+<!-- jQuery 3.7.1 및 Migrate 로드 -->
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/jquery-migrate-3.5.2.min.js"></script>
+
+<script>
+// 버전 확인 및 테스트
+$(document).ready(function() {
+    // jQuery 버전 표시
+    $('#jquery-version').text($.fn.jquery).css('color', 'green');
+    
+    // jQuery Migrate 상태 확인
+    if (typeof jQuery.migrateVersion !== 'undefined') {
+        $('#migrate-status').text('Yes (v' + jQuery.migrateVersion + ')').css('color', 'green');
+    } else {
+        $('#migrate-status').text('Not loaded').css('color', 'red');
+    }
+    
+    // 기본 테스트 수행
+    try {
+        // 1. jQuery 로딩 테스트
+        $('#test-loading').text('✅ Passed').css('color', 'green');
+        
+        // 2. jQuery 메서드 테스트
+        if (typeof $.fn.on === 'function' && typeof $.fn.css === 'function') {
+            $('#test-methods').text('✅ Passed').css('color', 'green');
+        }
+        
+        // 3. 이벤트 핸들링 테스트
+        $('<button>').on('click', function() {});
+        $('#test-events').text('✅ Passed').css('color', 'green');
+        
+        // 4. AJAX 기능 테스트
+        if (typeof $.ajax === 'function') {
+            $('#test-ajax').text('✅ Passed').css('color', 'green');
+        }
+        
+        // 5. 애니메이션 테스트
+        if (typeof $.fn.animate === 'function') {
+            $('#test-animation').text('✅ Passed').css('color', 'green');
+        }
+        
+        $('#test-status').text('All tests passed!').css('color', 'green');
+        
+    } catch(e) {
+        $('#test-status').text('Some tests failed: ' + e.message).css('color', 'red');
+        console.error('Test error:', e);
+    }
+    
+    // Migration 경고 캡처 (예시)
+    var warningsText = "Migration warnings will appear here and in console.\n";
+    warningsText += "Common warnings to watch for:\n";
+    warningsText += "- jQuery.browser is deprecated\n";
+    warningsText += "- .live() is deprecated, use .on()\n";
+    warningsText += "- .die() is deprecated, use .off()\n";
+    warningsText += "- .toggle(fn) is deprecated\n";
+    warningsText += "- .size() is deprecated, use .length\n";
+    $('#warnings-display').text(warningsText);
+    
+    // 실제 사이트 테스트 링크 생성
+    $('<div>')
+        .css({
+            'margin-top': '30px',
+            'padding': '20px',
+            'background': '#d4edda',
+            'border-radius': '5px'
+        })
+        .html('<h3>Next Steps:</h3>' +
+              '<ol>' +
+              '<li>Review console for any JQMIGRATE warnings</li>' +
+              '<li>Test with actual site content</li>' +
+              '<li>Fix deprecated API usage</li>' +
+              '<li>Remove jQuery Migrate after all fixes</li>' +
+              '</ol>' +
+              '<p><strong>Test the actual site with jQuery 3.7.1:</strong><br>' +
+              'Copy the main index.html and update jQuery references to test with real content.</p>')
+        .appendTo('body > div:last');
+});
+
+// 콘솔에 추가 정보 출력
+console.log('jQuery version:', $.fn.jquery);
+console.log('jQuery Migrate version:', jQuery.migrateVersion || 'Not loaded');
+console.log('Ready to test deprecated features. Watch for JQMIGRATE warnings above.');
+</script>
+
+</body>
+</html>

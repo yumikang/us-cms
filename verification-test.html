@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 3.7.1 업그레이드 검증</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .result {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery 3.7.1 업그레이드 검증 결과</h1>
+    
+    <div id="loading">검증 중...</div>
+    
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-migrate-3.5.2.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    
+    <script>
+    // 검증 시작
+    $(document).ready(function() {
+        let html = '';
+        let allPassed = true;
+        
+        // 1. jQuery 버전 확인
+        const jqVersion = $.fn.jquery;
+        if (jqVersion === '3.7.1') {
+            html += '<div class="result success">✅ jQuery 버전: ' + jqVersion + ' (정상)</div>';
+        } else {
+            html += '<div class="result error">❌ jQuery 버전: ' + jqVersion + ' (예상: 3.7.1)</div>';
+            allPassed = false;
+        }
+        
+        // 2. jQuery Migrate 확인
+        if (typeof jQuery.migrateVersion !== 'undefined') {
+            html += '<div class="result success">✅ jQuery Migrate: v' + jQuery.migrateVersion + ' 로드됨</div>';
+        } else {
+            html += '<div class="result error">❌ jQuery Migrate가 로드되지 않음</div>';
+            allPassed = false;
+        }
+        
+        // 3. jQuery UI 확인
+        if (typeof $.ui !== 'undefined') {
+            html += '<div class="result success">✅ jQuery UI: v' + $.ui.version + ' 로드됨</div>';
+        } else {
+            html += '<div class="result warning">⚠️ jQuery UI가 로드되지 않음</div>';
+        }
+        
+        // 4. 주요 jQuery 메서드 테스트
+        const methods = ['ajax', 'get', 'post', 'animate', 'fadeIn', 'fadeOut', 'on', 'off'];
+        let methodsOk = true;
+        methods.forEach(function(method) {
+            if (typeof $[method] !== 'function' && typeof $.fn[method] !== 'function') {
+                methodsOk = false;
+            }
+        });
+        
+        if (methodsOk) {
+            html += '<div class="result success">✅ 주요 jQuery 메서드 확인: 모두 정상</div>';
+        } else {
+            html += '<div class="result error">❌ 일부 jQuery 메서드가 없음</div>';
+            allPassed = false;
+        }
+        
+        // 5. Deprecated API 경고 체크
+        html += '<div class="result warning">⚠️ 콘솔에서 JQMIGRATE 경고를 확인하세요</div>';
+        
+        // 6. 성능 측정
+        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+        html += '<div class="result success">⏱️ 페이지 로드 시간: ' + loadTime + 'ms</div>';
+        
+        // 최종 결과
+        html += '<h2>검증 결과 요약</h2>';
+        if (allPassed) {
+            html += '<div class="result success"><strong>✅ jQuery 3.7.1 업그레이드 성공!</strong></div>';
+        } else {
+            html += '<div class="result error"><strong>❌ 일부 문제가 발견되었습니다. 위 항목을 확인하세요.</strong></div>';
+        }
+        
+        // Migration 경고 수집
+        html += '<h2>Migration 경고 (콘솔 확인)</h2>';
+        html += '<pre>개발자 도구(F12) → Console 탭에서 JQMIGRATE 경고 확인\n\n';
+        html += '주의할 경고:\n';
+        html += '- JQMIGRATE: jQuery.browser is deprecated\n';
+        html += '- JQMIGRATE: jQuery.fn.live() is deprecated\n';
+        html += '- JQMIGRATE: jQuery.fn.die() is deprecated\n';
+        html += '- JQMIGRATE: jQuery.fn.toggle(function) is deprecated\n';
+        html += '- JQMIGRATE: jQuery.fn.size() is deprecated, use .length</pre>';
+        
+        // 다음 단계
+        html += '<h2>다음 단계</h2>';
+        html += '<ol>';
+        html += '<li>콘솔에서 JQMIGRATE 경고 확인</li>';
+        html += '<li>deprecated API를 최신 API로 교체</li>';
+        html += '<li>모든 기능이 정상 작동하는지 테스트</li>';
+        html += '<li>문제가 없으면 jQuery Migrate 제거 고려</li>';
+        html += '</ol>';
+        
+        $('#loading').html(html);
+        
+        // 콘솔에 추가 정보 출력
+        console.log('jQuery 3.7.1 업그레이드 검증 완료');
+        console.log('jQuery:', $.fn.jquery);
+        console.log('jQuery Migrate:', jQuery.migrateVersion || 'Not loaded');
+        console.log('jQuery UI:', $.ui ? $.ui.version : 'Not loaded');
+    });
+    </script>
+</body>
+</html>
