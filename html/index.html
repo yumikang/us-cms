@@ -431,14 +431,24 @@ $(function() {
 var incSwiper = new Swiper("#inc01 .all_slider", {
     loop:true,
     speed:1000,
-    slidesPerView:"5", // Changed back to 5 slides for full service coverage
-    spaceBetween :50,
+    slidesPerView: 1, // Start with 1 slide for mobile
+    spaceBetween: 30,
     slideActiveClass:'on',
     centeredSlides:true,
     autoplay:{
         delay:2500,
         disableOnInteraction:false,
     },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+        }
+    }
     });
 
     gsap.registerPlugin(ScrollTrigger);
