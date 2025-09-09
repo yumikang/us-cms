@@ -325,11 +325,27 @@ $(function() {
     <div class="txt">
         <div class="inner">
             <div class="l_cont" data-aos="fade-up">
-                <h2>당신의 글로벌 비즈니스,<br>
-                    <span class="text-gradient">유에스이노웨이브</span>가<br>
-                    현실로 만듭니다</h2>
-                <p>정책자금부터 미국 진출까지, 기업의 성장을 위한<br>
-                원스톱 솔루션을 제공합니다</p>
+                <div class="slide-text active" data-slide="0">
+                    <h2>당신의 글로벌 비즈니스,<br>
+                        <span class="text-gradient">유에스이노웨이브</span>가<br>
+                        현실로 만듭니다</h2>
+                    <p>정책자금부터 미국 진출까지, 기업의 성장을 위한<br>
+                    원스톱 솔루션을 제공합니다</p>
+                </div>
+                <div class="slide-text" data-slide="1">
+                    <h2>정책자금 확보의 성공,<br>
+                        <span class="text-gradient">전문가와 함께</span><br>
+                        시작하세요</h2>
+                    <p>체계적인 컨설팅으로 정부지원사업 선정률을<br>
+                    극대화하는 검증된 노하우를 제공합니다</p>
+                </div>
+                <div class="slide-text" data-slide="2">
+                    <h2>미국 시장 진출의 꿈,<br>
+                        <span class="text-gradient">현실이 됩니다</span><br>
+                        지금 바로</h2>
+                    <p>FDA 인증부터 공급망 진입까지,<br>
+                    성공적인 해외진출을 위한 토탈 서비스를 경험하세요</p>
+                </div>
                 <div class="pager">
                     <span></span>
                 </div>
@@ -342,25 +358,8 @@ $(function() {
     </div>
 </div>
 
-<script>
-    var incSwiper = new Swiper("#mainVisual .main_bnr", {
-    loop: true,
-    speed:1000,
-    effect:'fade',
-    slidesPerView: "1",
-    slideActiveClass: 'on',
-    spaceBetween : 0,
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction:false,
-    },
-    pagination: {
-        el: '#mainVisual .pager',
-        bulletActiveClass: 'on',
-        clickable: true
-    }
-    });
-</script>
+<!-- Hero Slider Script -->
+<script src="../js/hero-slider.js"></script>
 
 <section id="sh_section">
 	
