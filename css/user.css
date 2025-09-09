@@ -6,105 +6,149 @@
 body{background:var(--white);font-size:0.81em;font-family:var(--k-font)}
 h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font)}
 #device_change{width:50%;border:1px solid var(--gray-600);font-size:3.5em;box-shadow:none} 
+/* ========================================
+   🎨 DESIGN TOKENS SYSTEM
+   ======================================== 
+   US INNOWAVE 디자인 시스템의 핵심 토큰들
+   모든 컴포넌트는 이 토큰들을 기반으로 작동합니다.
+   
+   사용 예시: 
+   color: var(--primary);
+   padding: var(--space-lg);
+   font-size: var(--font-size-xl);
+   ======================================== */
+
 :root{
-  /* Color System */
-  --primary:#f47320;
-  --primary-light:#ff8a47;
-  --primary-dark:#d35f0c;
-  --primary-alpha:rgba(244, 115, 32, 0.1);
+  /* ==========================================
+     COLOR SYSTEM
+     ========================================== */
   
-  --secondary:#007cf0;
-  --accent:#ee0979;
-  --success:#28a745;
-  --warning:#ffc107;
-  --error:#dc3545;
+  /* Brand Colors - 브랜드 메인 컬러 */
+  --primary:#f47320;        /* 메인 오렌지 - 버튼, 강조 */
+  --primary-light:#ff8a47;  /* 밝은 오렌지 - 호버 효과 */
+  --primary-dark:#d35f0c;   /* 어두운 오렌지 - 액티브 상태 */
+  --primary-alpha:rgba(244, 115, 32, 0.1); /* 투명 오렌지 - 배경 */
   
-  --gray-900:#181818;
-  --gray-800:#292929;
-  --gray-700:#555;
-  --gray-600:#666;
-  --gray-500:#777;
-  --gray-400:#999;
-  --gray-300:#ccc;
-  --gray-200:#e1e1e1;
-  --gray-100:#f5f5f5;
-  --gray-50:#fafafa;
+  /* Semantic Colors - 의미론적 컬러 */
+  --secondary:#007cf0;       /* 보조 파란색 - 링크, 정보 */
+  --accent:#ee0979;          /* 강조 핑크 - 특별 강조 */
+  --success:#28a745;         /* 성공 초록 - 완료, 성공 메시지 */
+  --warning:#ffc107;         /* 경고 노란색 - 주의 메시지 */
+  --error:#dc3545;           /* 에러 빨간색 - 오류, 필수 필드 */
   
-  --white:#fff;
-  --black:#111;
+  /* Gray Scale - 회색 단계 (어두운색 → 밝은색) */
+  --gray-900:#181818;        /* 가장 어두운 - 푸터 배경 */
+  --gray-800:#292929;        /* 매우 어두운 - 다크 섹션 */
+  --gray-700:#555;           /* 어두운 - 진한 텍스트 */
+  --gray-600:#666;           /* 중간 어두운 - 보더 */
+  --gray-500:#777;           /* 중간 - 서브 텍스트 */
+  --gray-400:#999;           /* 중간 밝은 - 비활성 텍스트 */
+  --gray-300:#ccc;           /* 밝은 - 구분선 */
+  --gray-200:#e1e1e1;        /* 매우 밝은 - 연한 보더 */
+  --gray-100:#f5f5f5;        /* 배경색 - 카드 배경 */
+  --gray-50:#fafafa;         /* 가장 밝은 - 섹션 배경 */
   
-  /* Typography */
-  --k-font:'Pretendard';
-  --e-font:'Play';
-  --font-size-xs:11px;
-  --font-size-sm:14px;
-  --font-size-base:16px;
-  --font-size-lg:18px;
-  --font-size-xl:20px;
-  --font-size-2xl:25px;
-  --font-size-3xl:32px;
-  --font-size-4xl:45px;
-  --font-size-5xl:80px;
+  /* Base Colors - 기본 색상 */
+  --white:#fff;              /* 흰색 - 기본 배경 */
+  --black:#111;              /* 검은색 - 기본 텍스트 */
   
-  --font-weight-normal:400;
-  --font-weight-medium:500;
-  --font-weight-semibold:600;
-  --font-weight-bold:700;
+  /* ==========================================
+     TYPOGRAPHY SYSTEM
+     ========================================== */
   
-  --line-height-tight:1.2;
-  --line-height-normal:1.5;
-  --line-height-relaxed:1.65;
-  --line-height-loose:1.8;
+  /* Font Families - 폰트 패밀리 */
+  --k-font:'Pretendard';     /* 한글 메인 폰트 */
+  --e-font:'Play';           /* 영문 강조 폰트 */
   
-  /* Spacing */
-  --space-xs:4px;
-  --space-sm:8px;
-  --space-md:10px;
-  --space-lg:15px;
-  --space-xl:20px;
-  --space-2xl:25px;
-  --space-3xl:30px;
-  --space-4xl:40px;
-  --space-5xl:50px;
-  --space-6xl:60px;
-  --space-7xl:70px;
-  --space-8xl:100px;
-  --space-9xl:120px;
-  --space-10xl:140px;
+  /* Font Sizes - 폰트 크기 (작은 → 큰) */
+  --font-size-xs:11px;       /* 매우 작은 - 캡션, 라벨 */
+  --font-size-sm:14px;       /* 작은 - 보조 텍스트 */
+  --font-size-base:16px;     /* 기본 - 본문 텍스트 */
+  --font-size-lg:18px;       /* 큰 - 강조 본문 */
+  --font-size-xl:20px;       /* 매우 큰 - 소제목 */
+  --font-size-2xl:25px;      /* 2배 큰 - 섹션 제목 */
+  --font-size-3xl:32px;      /* 3배 큰 - 페이지 부제목 */
+  --font-size-4xl:45px;      /* 4배 큰 - 페이지 제목 */
+  --font-size-5xl:80px;      /* 5배 큰 - 히어로 제목 */
   
-  /* Layout */
-  --main-size:1560px;
-  --content-max-width:1200px;
-  --container-padding:6%;
+  /* Font Weights - 폰트 굵기 */
+  --font-weight-normal:400;  /* 일반 - 본문 */
+  --font-weight-medium:500;  /* 중간 - 약간 강조 */
+  --font-weight-semibold:600;/* 준굵은 - 부제목 */
+  --font-weight-bold:700;    /* 굵은 - 제목 */
   
-  --header-height:100px;
-  --footer-min-height:400px;
+  /* Line Heights - 줄 높이 */
+  --line-height-tight:1.2;   /* 좁은 - 제목용 */
+  --line-height-normal:1.5;  /* 일반 - 본문용 */
+  --line-height-relaxed:1.65;/* 여유 - 긴 본문용 */
+  --line-height-loose:1.8;   /* 넓은 - 리스트용 */
   
-  /* Border Radius */
-  --radius-sm:5px;
-  --radius-md:13px;
-  --radius-lg:30px;
-  --radius-full:50px;
+  /* ==========================================
+     SPACING SYSTEM
+     ========================================== */
   
-  /* Shadows */
-  --shadow-sm:0px 0px 10px 5px rgba(0,0,0,.1);
-  --shadow-md:0px 4px 6px rgba(0,0,0,.1);
-  --shadow-lg:0px 10px 25px rgba(0,0,0,.15);
+  /* Spacing Scale - 여백 체계 (작은 → 큰) */
+  --space-xs:4px;            /* 매우 작은 - 아이콘 간격 */
+  --space-sm:8px;            /* 작은 - 컴포넌트 내부 */
+  --space-md:10px;           /* 중간 - 요소 간격 */
+  --space-lg:15px;           /* 큰 - 그룹 간격 */
+  --space-xl:20px;           /* 매우 큰 - 섹션 내부 */
+  --space-2xl:25px;          /* 2배 큰 - 카드 패딩 */
+  --space-3xl:30px;          /* 3배 큰 - 컴포넌트 간격 */
+  --space-4xl:40px;          /* 4배 큰 - 섹션 패딩 */
+  --space-5xl:50px;          /* 5배 큰 - 큰 섹션 간격 */
+  --space-6xl:60px;          /* 6배 큰 - 컨테이너 패딩 */
+  --space-7xl:70px;          /* 7배 큰 - 페이지 패딩 */
+  --space-8xl:100px;         /* 8배 큰 - 섹션 상단 */
+  --space-9xl:120px;         /* 9배 큰 - 섹션 중간 */
+  --space-10xl:140px;        /* 10배 큰 - 섹션 하단 */
   
-  /* Transitions */
-  --transition-fast:all .2s;
-  --transition-normal:all .3s;
-  --transition-slow:all .5s;
+  /* ==========================================
+     LAYOUT SYSTEM
+     ========================================== */
   
-  /* Z-index */
-  --z-dropdown:10;
-  --z-sticky:20;
-  --z-fixed:30;
-  --z-modal-backdrop:40;
-  --z-modal:50;
-  --z-popover:60;
-  --z-tooltip:70;
-  --z-toast:80;
+  /* Container Sizes - 컨테이너 크기 */
+  --main-size:1560px;        /* 메인 컨테이너 최대 너비 */
+  --content-max-width:1200px;/* 콘텐츠 영역 최대 너비 */
+  --container-padding:6%;    /* 컨테이너 좌우 패딩 */
+  
+  /* Component Heights - 컴포넌트 높이 */
+  --header-height:100px;     /* 헤더 고정 높이 */
+  --footer-min-height:400px; /* 푸터 최소 높이 */
+  
+  /* ==========================================
+     VISUAL EFFECTS
+     ========================================== */
+  
+  /* Border Radius - 모서리 둥글기 */
+  --radius-sm:5px;           /* 작은 - 버튼, 입력창 */
+  --radius-md:13px;          /* 중간 - 카드, 패널 */
+  --radius-lg:30px;          /* 큰 - 섹션, 배너 */
+  --radius-full:50px;        /* 완전 - 원형 버튼 */
+  
+  /* Box Shadows - 그림자 효과 */
+  --shadow-sm:0px 0px 10px 5px rgba(0,0,0,.1);  /* 작은 - 카드 */
+  --shadow-md:0px 4px 6px rgba(0,0,0,.1);       /* 중간 - 드롭다운 */
+  --shadow-lg:0px 10px 25px rgba(0,0,0,.15);    /* 큰 - 모달 */
+  
+  /* Transitions - 전환 효과 */
+  --transition-fast:all .2s;   /* 빠른 - 호버 효과 */
+  --transition-normal:all .3s; /* 일반 - 대부분 애니메이션 */
+  --transition-slow:all .5s;   /* 느린 - 페이드 효과 */
+  
+  /* ==========================================
+     Z-INDEX LAYERS
+     ========================================== */
+  
+  /* Z-index Scale - 레이어 순서 (낮은 → 높은) */
+  --z-dropdown:10;           /* 드롭다운 메뉴 */
+  --z-sticky:20;             /* 고정 요소 */
+  --z-fixed:30;              /* 고정 헤더/푸터 */
+  --z-modal-backdrop:40;     /* 모달 배경 */
+  --z-modal:50;              /* 모달 본체 */
+  --z-popover:60;            /* 팝오버 */
+  --z-tooltip:70;            /* 툴팁 */
+  --z-toast:80;              /* 토스트 알림 */
 }
 
 /* =========================== HEADER */
@@ -403,3 +447,247 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 .mt-xl { margin-top:var(--space-xl); }
 .mt-2xl { margin-top:var(--space-2xl); }
 .mt-3xl { margin-top:var(--space-3xl); }
+
+/* ==========================================
+   📱 RESPONSIVE SYSTEM
+   ========================================== 
+   모바일 우선 접근법 (Mobile First)
+   브레이크포인트는 min-width 기준
+   ========================================== */
+
+/* Breakpoint Variables (CSS 변수로는 미디어쿼리 사용 불가, 참고용) */
+/* 
+  --breakpoint-sm: 576px;   // 모바일 가로
+  --breakpoint-md: 768px;   // 태블릿
+  --breakpoint-lg: 992px;   // 데스크톱
+  --breakpoint-xl: 1200px;  // 큰 데스크톱
+  --breakpoint-xxl: 1560px; // 와이드 스크린
+*/
+
+/* ==========================================
+   MOBILE STYLES (기본)
+   ========================================== */
+@media screen and (max-width: 767px) {
+  /* Layout Adjustments */
+  #sh_container .inner,
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  /* Typography Scale Down */
+  :root {
+    --font-size-4xl: 32px;  /* 45px → 32px */
+    --font-size-5xl: 48px;  /* 80px → 48px */
+  }
+  
+  /* Grid System */
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .stats-grid {
+    width: 100%;
+  }
+  
+  .stats-grid > * {
+    width: 100%;
+  }
+  
+  .stats-grid > *:nth-child(even) {
+    margin-top: 0;
+  }
+  
+  /* Components */
+  .card-service {
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+  }
+  
+  .section {
+    padding: var(--space-5xl) 0 var(--space-6xl);
+  }
+  
+  /* Navigation */
+  #sh_hd {
+    min-width: 100%;
+  }
+  
+  #sh_ft {
+    padding: var(--space-5xl) 20px var(--space-6xl);
+    min-width: 100%;
+  }
+  
+  #sh_ft .ft_mn {
+    flex-direction: column;
+  }
+  
+  #sh_ft .ft_mn > li+li {
+    margin-left: 0;
+    margin-top: var(--space-3xl);
+  }
+  
+  /* Hide desktop-only elements */
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* ==========================================
+   TABLET STYLES (768px+)
+   ========================================== */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* Layout Adjustments */
+  #sh_container .inner,
+  .container {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+  
+  /* Grid System */
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-grid {
+    width: 80%;
+  }
+  
+  /* Components */
+  .card-service {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  /* Typography */
+  :root {
+    --font-size-4xl: 38px;  /* 45px → 38px */
+    --font-size-5xl: 60px;  /* 80px → 60px */
+  }
+  
+  /* Hide tablet-hidden elements */
+  .tablet-hidden {
+    display: none !important;
+  }
+}
+
+/* ==========================================
+   DESKTOP STYLES (992px+)
+   ========================================== */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  /* Layout Adjustments */
+  #sh_container .inner,
+  .container {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  /* Grid maintains original structure */
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Components slightly smaller */
+  .stats-grid {
+    width: 65%;
+  }
+}
+
+/* ==========================================
+   LARGE DESKTOP STYLES (1200px+)
+   ========================================== */
+@media screen and (min-width: 1200px) and (max-width: 1559px) {
+  /* Layout Adjustments */
+  #sh_container .inner,
+  .container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+  
+  /* Components at near-full size */
+  .stats-grid {
+    width: 60%;
+  }
+}
+
+/* ==========================================
+   WIDE SCREEN STYLES (1560px+)
+   ========================================== */
+@media screen and (min-width: 1560px) {
+  /* Full design system active */
+  /* All default styles apply */
+}
+
+/* ==========================================
+   RESPONSIVE UTILITIES
+   ========================================== */
+
+/* Visibility Classes */
+@media (max-width: 575px) {
+  .hidden-xs { display: none !important; }
+  .visible-xs { display: block !important; }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .hidden-sm { display: none !important; }
+  .visible-sm { display: block !important; }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-md { display: none !important; }
+  .visible-md { display: block !important; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-lg { display: none !important; }
+  .visible-lg { display: block !important; }
+}
+
+@media (min-width: 1200px) {
+  .hidden-xl { display: none !important; }
+  .visible-xl { display: block !important; }
+}
+
+/* Text Alignment Responsive */
+@media (max-width: 767px) {
+  .text-center-mobile { text-align: center !important; }
+  .text-left-mobile { text-align: left !important; }
+  .text-right-mobile { text-align: right !important; }
+}
+
+@media (min-width: 768px) {
+  .text-center-desktop { text-align: center !important; }
+  .text-left-desktop { text-align: left !important; }
+  .text-right-desktop { text-align: right !important; }
+}
+
+/* Flex Direction Responsive */
+@media (max-width: 767px) {
+  .flex-column-mobile {
+    flex-direction: column !important;
+  }
+  
+  .flex-column-reverse-mobile {
+    flex-direction: column-reverse !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .flex-row-desktop {
+    flex-direction: row !important;
+  }
+  
+  .flex-row-reverse-desktop {
+    flex-direction: row-reverse !important;
+  }
+}
