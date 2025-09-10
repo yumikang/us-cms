@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/service-cards.css">
 <link rel="stylesheet" href="../css/image-gallery.css">
 <link rel="stylesheet" href="../css/cta-banner.css">
+<link rel="stylesheet" href="../css/cta-section.css">
 <link rel="stylesheet" href="../css/user.css">
 <style>
 /* Pretendard 폰트 - 모던한 한글/영문 폰트 */
@@ -326,10 +327,8 @@ $(function() {
                         <span class="cir"><i data-feather="check-circle"></i> </span>
                     </a>
                 </li>
-                <!-- HIDDEN: 4th and 5th slides for US INNOWAVE customization -->
-                <!--
                 <li class="swiper-slide bg04">
-                    <a href="/us-market.html">
+                    <a href="us-market.html">
                         <h3>미국 공급망 & 조달시장</h3>
                         <div>미국 정부조달시장 진입을 위한 체계적인 지원과 공급망 참여 전략을 제공합니다.
                         SAM 등록부터 조달 입찰까지 복잡한 절차를 간소화하고,
@@ -338,15 +337,23 @@ $(function() {
                     </a>
                 </li>
                 <li class="swiper-slide bg05">
-                    <a href="/contact.html">
-                        <h3>무료 상담 신청</h3>
-                        <div>전문 컨설턴트와의 1:1 맞춤 상담을 통해 귀사에 최적화된 솔루션을 찾아드립니다.
-                        정책자금부터 미국 진출까지, 기업의 성장 전략을 함께 설계하고
-                        성공적인 비즈니스 성과를 위한 체계적인 지원방안을 제시합니다.</div>
-                        <span class="cir"><i data-feather="phone"></i> </span>
+                    <a href="contact.html">
+                        <h3>현지법인 설립</h3>
+                        <div>미국 현지법인 설립부터 운영까지 모든 과정을 체계적으로 지원합니다.
+                        법인 형태 선택, 설립 절차, 세무 및 회계 시스템 구축까지,
+                        성공적인 미국 비즈니스 운영을 위한 원스톱 서비스를 제공합니다.</div>
+                        <span class="cir"><i data-feather="briefcase"></i> </span>
                     </a>
                 </li>
-                -->
+                <li class="swiper-slide bg06">
+                    <a href="contact.html">
+                        <h3>마케팅 & 영업</h3>
+                        <div>미국 시장 맞춤형 마케팅 전략과 영업 네트워크 구축을 지원합니다.
+                        디지털 마케팅, 전시회 참가, 바이어 발굴까지,
+                        효과적인 시장 진입과 매출 성장을 위한 통합 마케팅 솔루션을 제공합니다.</div>
+                        <span class="cir"><i data-feather="trending-up"></i> </span>
+                    </a>
+                </li>
             </ul>
 		</div>
 	</div>
@@ -552,7 +559,25 @@ var incSwiper = new Swiper("#inc01 .all_slider", {
     imgs[index].classList.add("on");
     texts[index].classList.add("on");
     }
-</script>    
+</script>
+
+<!-- CTA Section Template -->
+<article id="ctaBanner" class="cta-section">
+    <div class="inner">
+        <div class="cta-content" data-aos="fade-up">
+            <h2 class="cta-title">지금 바로 시작하세요</h2>
+            <p class="cta-subtitle">기업 현황 진단부터 실행 로드맵 수립까지, 
+            전문가와 함께 성공적인 글로벌 비즈니스를 시작하세요</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">무료 상담 신청 <i data-feather="chevron-right"></i></a>
+                <a href="company-intro.html" class="btn-secondary">회사 소개 <i data-feather="arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- REMOVED: News Section - No longer needed -->
+<!--
 <article id="inc04">
     <div class="inner">
         <div class="flex" data-aos="fade-up">
@@ -690,7 +715,10 @@ var incSwiper = new Swiper("#inc01 .all_slider", {
         </div>
     </div>
 </article>
+-->
 
+<!-- Script for news section removed -->
+<!--
 <script>
     $(function() { 
 	$(".late_cont").hide(); $(".late_cont:first").show();
@@ -698,7 +726,8 @@ var incSwiper = new Swiper("#inc01 .all_slider", {
 	$(this).addClass("on"); $(".late_cont").hide() 
         var activeTab = $(this).attr("rel"); $("#"+activeTab).show()
     }); });
-</script></section>
+</script>
+--></section>
 
        
     	</div><!-- sh_container_wrapper --> 
