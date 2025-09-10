@@ -10,7 +10,7 @@
 #inc02 .icon:hover{background:var(--primary)}
 #inc02 .icon:hover p{color:#fff}
 #inc02 .icon p{font-size:35px;font-weight:700;color:var(--primary);transition:all .3s}
-#inc02 .icon img{display:block;margin-left:auto}
+#inc02 .icon img{display:block;margin:0 auto}
 #inc02 dl{margin-top:20px}
 #inc02 dt{font-size:25px;font-weight:700;color:#111}
 #inc02 dd{font-size:20px;font-weight:500;color:#777}
