@@ -127,10 +127,13 @@ body {
 }
 
 .sub_hero_wrap {
-    background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 86, 179, 0.8)), url('/images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: 
+        url('../images/sub-hero-pattern.svg'),
+        linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 86, 179, 0.85)),
+        url('../images/sub-hero.png');
+    background-size: cover, cover, cover;
+    background-position: center, center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
     color: white;
     padding: 160px 0 140px;
     position: relative;
