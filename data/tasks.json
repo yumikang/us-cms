@@ -98,14 +98,14 @@
       "name": "성능 개선 효과 측정 및 문서 업데이트",
       "description": "jQuery 1.8.3 제거로 인한 성능 개선 효과를 측정하고 관련 문서를 업데이트합니다. 번들 크기 감소와 네트워크 요청 최적화 효과를 기록합니다.",
       "notes": "약 92KB 용량 절약 예상. 문서 업데이트는 선택사항",
-      "status": "pending",
+      "status": "in_progress",
       "dependencies": [
         {
           "taskId": "cf794a3a-6d9c-4f58-b134-984caac85788"
         }
       ],
       "createdAt": "2025-09-10T01:17:08.795Z",
-      "updatedAt": "2025-09-10T01:17:08.795Z",
+      "updatedAt": "2025-09-10T01:30:52.512Z",
       "relatedFiles": [
         {
           "path": "README.md",
