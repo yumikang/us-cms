@@ -1,87 +1,90 @@
-<!-- 서브 히어로 배너 컴포넌트 템플릿 -->
-<!-- US INNOWAVE 웹사이트 서브페이지 히어로 배너 템플릿 -->
-<!-- 사용법: 상세페이지에서 브레드크럼과 페이지 타이틀을 제공 -->
+<!-- 서브 히어로 배너 템플릿 -->
+<!-- US INNOWAVE 웹사이트 서브페이지용 히어로 배너 -->
+<!-- 사용법: 페이지 제목을 변수로 교체하여 사용 -->
 
-<div id="sh_sub_wrap">
-    <!-- 브레드크럼 영역 -->
-    <div id="shSub">
-        <div class="txt_area">
-            <p></p>
-            <div>
-                <a href="/">Home</a>
-                <i data-feather="chevron-right"></i>
-                <span class="current-page">[페이지명]</span>
-                <i data-feather="chevron-right"></i>
-            </div>
+<section class="sub_hero_wrap">
+    <div class="sub_hero_container">
+        <div class="sub_hero_text">
+            <h1>{{PAGE_TITLE}}</h1>
         </div>
     </div>
-    
-    <!-- 사이드 네비게이션 (필요시 활용) -->
-    <ul id="shSnb">
-        <!-- 서브 메뉴가 필요한 경우 여기에 추가 -->
-    </ul>
-</div>
+</section>
 
-<!-- 메인 콘텐츠 시작 -->
-<div id="sh_content">
-    <div id="pageCm" class="page-content">
-        <!-- 페이지 타이틀 영역 -->
-        <div class="tit_area t_center">
-            <span class="pg_color">[페이지 제목]</span>
-            <p>
-                [페이지 설명문]<i>!</i><br />
-                <p class="c_black">[상세 설명] <strong class="pg_color">[강조 텍스트]</strong> [추가 설명]</p>
-            </p>
-        </div>
-        
-        <!-- 콘텐츠 영역 시작 -->
-        <!-- 여기에 각 페이지별 고유 콘텐츠가 들어갑니다 -->
-        
-    </div>
-</div>
+<!-- 서브 히어로 배너 전용 CSS -->
+<style>
+/* 서브페이지 전용 스타일 */
+.sub_container {
+    margin-top: 100px;
+}
 
-<!-- 서브 히어로 배너 JavaScript -->
-<script>
-$(document).ready(function() {
-    // Feather Icons 초기화
-    if (typeof feather !== 'undefined') {
-        feather.replace();
+.sub_hero_wrap {
+    background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 86, 179, 0.8)), url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 180px 0 160px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sub_hero_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.sub_hero_text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .sub_hero_wrap {
+        padding: 140px 0 120px;
     }
     
-    // 브레드크럼 현재 페이지 스타일링
-    $('.current-page').addClass('active');
-    
-    // 사이드 네비게이션 아코디언 기능 (필요시)
-    $('#shSnb li').click(function() {
-        $(this).toggleClass('active').siblings().removeClass('active');
-    });
-});
-</script>
+    .sub_hero_text h1 {
+        font-size: 2rem;
+    }
+}
 
-<!-- 서브 히어로 배너 사용을 위한 필수 CSS 및 JS -->
+@media (max-width: 480px) {
+    .sub_hero_wrap {
+        padding: 120px 0 100px;
+    }
+    
+    .sub_hero_text h1 {
+        font-size: 1.75rem;
+    }
+}
+</style>
+
+<!-- 서브 히어로 배너 사용법 -->
 <!-- 
-필수 의존성:
-- CSS: sub_main_banner/style.css, user.css, page_style.css
-- JS: jQuery (3.7.1+), Feather Icons 라이브러리
+변수 치환 방법:
+1. {{PAGE_TITLE}} - 페이지 제목으로 교체
 
 사용 예시:
-1. 새 상세페이지에서 이 템플릿을 복사하여 사용
-2. [페이지명], [페이지 제목], [페이지 설명문] 등을 실제 내용으로 교체
-3. 필요에 따라 사이드 네비게이션(shSnb) 영역에 서브메뉴 추가
-4. 페이지별 고유 콘텐츠는 콘텐츠 영역에 추가
+- 회사소개 페이지: {{PAGE_TITLE}} → "회사소개"
+- 서비스 페이지: {{PAGE_TITLE}} → "수출 지원"
+- 정책자금 페이지: {{PAGE_TITLE}} → "정책자금 컨설팅"
+- 미국 진출 페이지: {{PAGE_TITLE}} → "미국 공급망 & 조달시장"
+- 인증 서비스 페이지: {{PAGE_TITLE}} → "ISO & 기업인증"
 
-변수화 가능한 부분:
-- [페이지명]: 브레드크럼에 표시될 현재 페이지 이름
-- [페이지 제목]: 메인 타이틀 (예: "mobile web")
-- [페이지 설명문]: 페이지 소개 문구
-- [상세 설명]: 부가 설명
-- [강조 텍스트]: 하이라이트할 키워드
-- [추가 설명]: 추가 설명 문구
+배경 이미지 설정:
+- 경로: /images/hero-bg.jpg
+- 권장 크기: 최소 1920x600px
+- 형식: JPG, PNG, WebP
 
-페이지별 클래스 예시:
-- 회사소개: class="p01"
-- 정책자금: class="p02" 
-- 인증서비스: class="p03"
-- 미국진출: class="p04"
-- 수출지원: class="p05"
+CSS 커스터마이징:
+- 배경색상 오버레이 조정: rgba(0, 123, 255, 0.8) 값 변경
+- 패딩 조정: padding 값으로 높이 조절 (기본: 180px 0 160px)
+- 텍스트 색상: color 속성으로 조정
 -->

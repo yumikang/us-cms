@@ -35,17 +35,13 @@
             <!-- 로고 -->
             <div class="sh_logo">
                 <a href="/">
-                    <img src="/images/logo.png" alt="US INNOWAVE" class="logo-img">
-                    <span class="logo-text">US INNOWAVE</span>
+                    <img src="/images/us-innowave-logo.svg" alt="US INNOWAVE" class="logo-svg">
                 </a>
             </div>
 
             <!-- 상단메뉴 -->
             <nav class="sh_nav">
                 <ul>
-                    <li>
-                        <a href="/">HOME</a>
-                    </li>
                     <li>
                         <a href="/company-intro">회사소개</a>
                     </li>
@@ -66,49 +62,25 @@
                     </li>
                 </ul>
             </nav>
-            
-            <!-- 모바일 메뉴 버튼 -->
-            <div id="pfBtn">
-                <span></span>
-            </div>    
-            
-            <!-- 모바일 메뉴 -->
-            <div id="pfWrap">
-                <div class="bg_wrap"><div class="bg"></div></div>
-                <div class="pf_cate_wrap">
-                    <div class="pf_cate">
-                        <ul>
-                            <li>
-                                <a href="/">HOME</a>
-                            </li>
-                            <li>
-                                <a href="/company-intro">회사소개</a>
-                            </li>
-                            <li>
-                                <a href="/policy-fund">정책자금 컨설팅</a>
-                            </li>
-                            <li>
-                                <a href="/services">수출 지원</a>
-                            </li>
-                            <li>
-                                <a href="/us-market">미국 공급망 & 조달시장</a>
-                            </li>
-                            <li>
-                                <a href="/certification">ISO & 기업인증</a>
-                            </li>
-                            <li>
-                                <a href="/contact">문의하기</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>	
     </div>
 </header>
 
 <!-- 헤더 필수 CSS -->
 <link rel="stylesheet" href="../css/top_menu_style.css">
+
+<style>
+/* 로고 SVG 스타일 */
+.logo-svg {
+    height: 40px;
+    width: auto;
+    color: white;
+}
+
+#shGnb.on .logo-svg {
+    color: #222;
+}
+</style>
 
 <!-- 헤더 필수 JS -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

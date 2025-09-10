@@ -1,0 +1,87 @@
+<!-- 서브 히어로 배너 컴포넌트 템플릿 -->
+<!-- US INNOWAVE 웹사이트 서브페이지 히어로 배너 템플릿 -->
+<!-- 사용법: 상세페이지에서 브레드크럼과 페이지 타이틀을 제공 -->
+
+<div id="sh_sub_wrap">
+    <!-- 브레드크럼 영역 -->
+    <div id="shSub">
+        <div class="txt_area">
+            <p></p>
+            <div>
+                <a href="/">Home</a>
+                <i data-feather="chevron-right"></i>
+                <span class="current-page">[페이지명]</span>
+                <i data-feather="chevron-right"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 사이드 네비게이션 (필요시 활용) -->
+    <ul id="shSnb">
+        <!-- 서브 메뉴가 필요한 경우 여기에 추가 -->
+    </ul>
+</div>
+
+<!-- 메인 콘텐츠 시작 -->
+<div id="sh_content">
+    <div id="pageCm" class="page-content">
+        <!-- 페이지 타이틀 영역 -->
+        <div class="tit_area t_center">
+            <span class="pg_color">[페이지 제목]</span>
+            <p>
+                [페이지 설명문]<i>!</i><br />
+                <p class="c_black">[상세 설명] <strong class="pg_color">[강조 텍스트]</strong> [추가 설명]</p>
+            </p>
+        </div>
+        
+        <!-- 콘텐츠 영역 시작 -->
+        <!-- 여기에 각 페이지별 고유 콘텐츠가 들어갑니다 -->
+        
+    </div>
+</div>
+
+<!-- 서브 히어로 배너 JavaScript -->
+<script>
+$(document).ready(function() {
+    // Feather Icons 초기화
+    if (typeof feather !== 'undefined') {
+        feather.replace();
+    }
+    
+    // 브레드크럼 현재 페이지 스타일링
+    $('.current-page').addClass('active');
+    
+    // 사이드 네비게이션 아코디언 기능 (필요시)
+    $('#shSnb li').click(function() {
+        $(this).toggleClass('active').siblings().removeClass('active');
+    });
+});
+</script>
+
+<!-- 서브 히어로 배너 사용을 위한 필수 CSS 및 JS -->
+<!-- 
+필수 의존성:
+- CSS: sub_main_banner/style.css, user.css, page_style.css
+- JS: jQuery (3.7.1+), Feather Icons 라이브러리
+
+사용 예시:
+1. 새 상세페이지에서 이 템플릿을 복사하여 사용
+2. [페이지명], [페이지 제목], [페이지 설명문] 등을 실제 내용으로 교체
+3. 필요에 따라 사이드 네비게이션(shSnb) 영역에 서브메뉴 추가
+4. 페이지별 고유 콘텐츠는 콘텐츠 영역에 추가
+
+변수화 가능한 부분:
+- [페이지명]: 브레드크럼에 표시될 현재 페이지 이름
+- [페이지 제목]: 메인 타이틀 (예: "mobile web")
+- [페이지 설명문]: 페이지 소개 문구
+- [상세 설명]: 부가 설명
+- [강조 텍스트]: 하이라이트할 키워드
+- [추가 설명]: 추가 설명 문구
+
+페이지별 클래스 예시:
+- 회사소개: class="p01"
+- 정책자금: class="p02" 
+- 인증서비스: class="p03"
+- 미국진출: class="p04"
+- 수출지원: class="p05"
+-->
