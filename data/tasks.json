@@ -34,14 +34,14 @@
       "name": "헤더 컴포넌트 템플릿 분리",
       "description": "상단 네비게이션과 메뉴를 재사용 가능한 header.html 템플릿으로 분리하여 새 페이지 생성 시 일관성 있는 헤더를 쉽게 적용할 수 있도록 합니다.",
       "notes": "기존 top_menu_script.js와 top_menu_style.css를 그대로 활용하여 호환성 유지",
-      "status": "pending",
+      "status": "completed",
       "dependencies": [
         {
           "taskId": "6a93caea-8e00-43f7-82ec-023346fbd8db"
         }
       ],
       "createdAt": "2025-09-10T01:42:45.089Z",
-      "updatedAt": "2025-09-10T01:42:45.089Z",
+      "updatedAt": "2025-09-10T01:52:41.851Z",
       "relatedFiles": [
         {
           "path": "templates/",
@@ -71,21 +71,23 @@
       ],
       "implementationGuide": "1. templates/ 디렉토리 생성\\n2. index.html에서 header 영역 추출 (네비게이션, 로고, 메뉴)\\n3. header.html 템플릿 파일 생성\\n4. 관련 CSS (top_menu_style.css) 확인 및 정리\\n5. 템플릿 사용 예시 문서 작성",
       "verificationCriteria": "header.html 템플릿이 생성되고, 기존 헤더와 동일한 디자인과 기능을 제공하며, 다른 페이지에서 쉽게 포함할 수 있어야 함",
-      "analysisResult": "jQuery UI 제거 및 템플릿화/번들링 시스템 구축을 통한 대규모 웹사이트 최적화: 539KB jQuery UI 제거 후 기존 CSS 컴포넌트 시스템을 기반으로 헤더/푸터/서브 히어로 배너를 재사용 가능한 템플릿으로 분리하고, CSS/JS 모듈화 및 번들링으로 30-40% 추가 용량 절약을 달성하여 새 페이지 생성을 템플릿 조합만으로 가능하게 하는 시스템 완성"
+      "analysisResult": "jQuery UI 제거 및 템플릿화/번들링 시스템 구축을 통한 대규모 웹사이트 최적화: 539KB jQuery UI 제거 후 기존 CSS 컴포넌트 시스템을 기반으로 헤더/푸터/서브 히어로 배너를 재사용 가능한 템플릿으로 분리하고, CSS/JS 모듈화 및 번들링으로 30-40% 추가 용량 절약을 달성하여 새 페이지 생성을 템플릿 조합만으로 가능하게 하는 시스템 완성",
+      "summary": "✅ templates/ 디렉토리 성공적으로 생성, ✅ index.html에서 헤더 영역(line 156-301) 완전 추출, ✅ header.html 템플릿 파일 생성 (로고, 메인메뉴, 모바일메뉴 포함), ✅ CSS/JS 호환성 확인 (top_menu_style.css, top_menu_script.js 의존성 검증), ✅ 상세한 템플릿 사용 가이드 문서 작성 (TEMPLATE_USAGE_GUIDE.md), ✅ 필수 의존성, 사용법, 커스터마이징 방법, 문제해결 가이드 완비. 헤더 컴포넌트 템플릿 분리 작업이 완벽하게 완료되어 새 페이지 생성 시 재사용 가능한 템플릿 시스템 구축",
+      "completedAt": "2025-09-10T01:52:41.848Z"
     },
     {
       "id": "68f637d0-5a0d-4734-8bef-48bddf9bbb1a",
       "name": "푸터 및 히어로 배너 템플릿 분리",
       "description": "푸터와 히어로 배너 섹션을 재사용 가능한 템플릿으로 분리하여 템플릿 시스템의 핵심 컴포넌트를 완성합니다.",
       "notes": "hero-section.css, main_banner_style.css 등 기존 CSS를 활용하여 일관성 유지",
-      "status": "pending",
+      "status": "in_progress",
       "dependencies": [
         {
           "taskId": "1bb2ee09-96a8-4618-94b6-058e297fa856"
         }
       ],
       "createdAt": "2025-09-10T01:42:45.089Z",
-      "updatedAt": "2025-09-10T01:42:45.089Z",
+      "updatedAt": "2025-09-10T01:57:47.456Z",
       "relatedFiles": [
         {
           "path": "templates/footer.html",

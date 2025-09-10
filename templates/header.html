@@ -1,0 +1,169 @@
+<!-- 헤더 컴포넌트 템플릿 -->
+<!-- US INNOWAVE 웹사이트 헤더 템플릿 -->
+<!-- 사용법: 새 페이지에서 이 템플릿을 include하여 일관된 헤더 제공 -->
+
+<header id="sh_hd">	
+    <div class="sh_lnb_bg"></div>
+    <div id="skip_to_container"><a href="#sh_container">본문 바로가기</a></div>
+    
+    <!-- 팝업레이어 시작 { -->
+    <div id="hd_pop">
+        <h2>팝업레이어 알림</h2>
+        <span class="sound_only">팝업레이어 알림이 없습니다.</span>
+    </div>
+
+    <script>
+    $(function() {
+        $(".hd_pops_reject").click(function() {
+            var id = $(this).attr('class').split(' ');
+            var ck_name = id[1];
+            var exp_time = parseInt(id[2]);
+            $("#"+id[1]).css("display", "none");
+            set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+        });
+        $('.hd_pops_close').click(function() {
+            var idb = $(this).attr('class').split(' ');
+            $('#'+idb[1]).css('display','none');
+        });
+        $("#hd").css("z-index", 1000);
+    });
+    </script>
+    <!-- } 팝업레이어 끝 -->
+    
+    <div id="sh_hd_wrapper">
+        <div id="shGnb">	
+            <!-- 로고 -->
+            <div class="sh_logo">
+                <a href="/"><span class="logo-text">US INNOWAVE</span></a>
+            </div>
+
+            <!-- 상단메뉴 -->
+            <nav class="sh_nav">
+                <ul>
+                    <li>
+                        <a href="/">HOME</a>
+                    </li>
+                    <li>
+                        <a href="/company-intro.html">회사소개</a>
+                        <ul class="sh_lnb_s">
+                            <li><a href="/company-intro.html">회사개요</a></li>
+                            <li><a href="/company-history.html">회사연혁</a></li>
+                            <li><a href="/organization.html">조직도</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/policy-fund.html">정책자금 컨설팅</a>
+                        <ul class="sh_lnb_s">
+                            <li><a href="/policy-fund.html">정책자금 개요</a></li>
+                            <li><a href="/fund-types.html">자금 유형</a></li>
+                            <li><a href="/application-process.html">신청 절차</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/certification.html">ISO & 기업인증</a>
+                        <ul class="sh_lnb_s">
+                            <li><a href="/iso-certification.html">ISO 인증</a></li>
+                            <li><a href="/company-certification.html">기업 인증</a></li>
+                            <li><a href="/certification-process.html">인증 절차</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/us-market.html">미국 공급망 & 조달시장</a>
+                        <ul class="sh_lnb_s">
+                            <li><a href="/supply-chain.html">공급망 진입</a></li>
+                            <li><a href="/procurement.html">조달시장</a></li>
+                            <li><a href="/market-entry.html">시장 진출 전략</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/services.html">수출 지원</a>
+                        <ul class="sh_lnb_s">
+                            <li><a href="/export-consulting.html">수출 컨설팅</a></li>
+                            <li><a href="/trade-support.html">무역 지원</a></li>
+                            <li><a href="/fda-support.html">FDA 지원</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="form_link" href="/contact.html">문의하기 <i data-feather="arrow-up-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- 모바일 메뉴 버튼 -->
+            <div id="pfBtn">
+                <span></span>
+            </div>    
+            
+            <!-- 모바일 메뉴 -->
+            <div id="pfWrap">
+                <div class="bg_wrap"><div class="bg"></div></div>
+                <div class="pf_cate_wrap">
+                    <div class="pf_cate">
+                        <ul>
+                            <li>
+                                <a href="/">HOME</a>
+                            </li>
+                            <li>
+                                <a href="/company-intro.html">회사소개</a>
+                                <ul>
+                                    <li><a href="/company-intro.html">회사개요</a></li>
+                                    <li><a href="/company-history.html">회사연혁</a></li>
+                                    <li><a href="/organization.html">조직도</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/policy-fund.html">정책자금 컨설팅</a>
+                                <ul>
+                                    <li><a href="/policy-fund.html">정책자금 개요</a></li>
+                                    <li><a href="/fund-types.html">자금 유형</a></li>
+                                    <li><a href="/application-process.html">신청 절차</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/certification.html">ISO & 기업인증</a>
+                                <ul>
+                                    <li><a href="/iso-certification.html">ISO 인증</a></li>
+                                    <li><a href="/company-certification.html">기업 인증</a></li>
+                                    <li><a href="/certification-process.html">인증 절차</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/us-market.html">미국 공급망 & 조달시장</a>
+                                <ul>
+                                    <li><a href="/supply-chain.html">공급망 진입</a></li>
+                                    <li><a href="/procurement.html">조달시장</a></li>
+                                    <li><a href="/market-entry.html">시장 진출 전략</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/services.html">수출 지원</a>
+                                <ul>
+                                    <li><a href="/export-consulting.html">수출 컨설팅</a></li>
+                                    <li><a href="/trade-support.html">무역 지원</a></li>
+                                    <li><a href="/fda-support.html">FDA 지원</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/contact.html">문의하기</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>	
+    </div>
+</header>
+
+<!-- 헤더 사용을 위한 필수 CSS 및 JS -->
+<!-- 
+필수 의존성:
+- CSS: css/top_menu_style.css
+- JS: js/top_menu_script.js 
+- 아이콘: feather icons 라이브러리
+
+사용 예시:
+1. 새 HTML 페이지에서 이 템플릿을 복사하여 사용
+2. 필수 CSS/JS 파일들이 로드되어 있는지 확인
+3. 메뉴 항목은 필요에 따라 수정 가능
+4. 로고 텍스트 "US INNOWAVE"는 브랜딩에 맞게 수정 가능
+-->
