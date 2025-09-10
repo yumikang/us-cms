@@ -1,123 +1,214 @@
 {
   "tasks": [
     {
-      "id": "fabaa487-98bb-4899-a26e-55f31b7a402e",
-      "name": "프로젝트 현재 상태 백업 및 안전 확인",
-      "description": "작업 전 프로젝트 전체 백업을 생성하고 현재 jQuery 로딩 상태를 최종 확인합니다. 메인 사이트에서 jQuery 3.7.1만 로드되고 있음을 재검증하여 안전성을 보장합니다.",
-      "notes": "작업 전 마지막 안전 확인 단계. 만약 예상과 다른 상황이 발견되면 작업 중단",
+      "id": "6a93caea-8e00-43f7-82ec-023346fbd8db",
+      "name": "jQuery UI 미사용 파일 제거",
+      "description": "실제로 사용되지 않는 jquery-ui.js 파일(539KB)을 HTML과 파일 시스템에서 완전히 제거하여 즉시 성능 최적화를 달성합니다.",
+      "notes": "jQuery UI 기능들(.dialog, .datepicker 등)이 실제로 사용되지 않음을 확인했으므로 100% 안전한 제거 작업",
       "status": "completed",
       "dependencies": [],
-      "createdAt": "2025-09-10T01:17:08.795Z",
-      "updatedAt": "2025-09-10T01:19:14.370Z",
+      "createdAt": "2025-09-10T01:42:45.089Z",
+      "updatedAt": "2025-09-10T01:47:22.264Z",
       "relatedFiles": [
         {
           "path": "html/index.html",
-          "type": "REFERENCE",
-          "description": "현재 jQuery 로딩 상태 확인",
-          "lineStart": 105,
-          "lineEnd": 110
+          "type": "TO_MODIFY",
+          "description": "jQuery UI 스크립트 태그 제거",
+          "lineStart": 109,
+          "lineEnd": 109
         },
         {
-          "path": "README.md",
-          "type": "REFERENCE",
-          "description": "프로젝트 현재 상태 문서 확인",
-          "lineStart": 19,
-          "lineEnd": 24
-        }
-      ],
-      "implementationGuide": "1. Git 커밋 상태 확인 및 작업 브랜치 생성\\n2. html/index.html에서 jQuery 로딩 태그 확인\\n3. 브라우저 개발자 도구로 실제 로드된 jQuery 버전 확인\\n4. jQuery.fn.jquery로 버전 출력 확인\\n5. 현재 모든 기능 정상 작동 확인",
-      "verificationCriteria": "Git status가 clean이고, html/index.html에서 jquery-3.7.1.min.js만 로드되며, 브라우저에서 jQuery 3.7.1 버전이 확인되어야 함",
-      "analysisResult": "jQuery 1.8.3 제거 및 정리 작업: 현재 메인 사이트는 이미 jQuery 3.7.1만 사용 중이며, 1.8.3 파일은 미사용 상태로 남아있어 안전한 정리 작업만 필요. jQuery Migrate 3.5.2와 jQuery UI 1.12.1이 완전 호환성을 보장하므로 레이아웃/애니메이션에 전혀 영향 없음",
-      "summary": "✅ Git 백업 완료 (커밋: 76e8452), ✅ html/index.html에서 jQuery 3.7.1만 로드 확인, ✅ jQuery 1.8.3은 미사용 상태 확인, ✅ 로컬 서버 정상 실행 (포트 8001). 모든 안전 확인 기준을 충족하여 다음 단계 진행 가능",
-      "completedAt": "2025-09-10T01:19:14.369Z"
-    },
-    {
-      "id": "955940b8-920d-42eb-8ec2-e071d02a5696",
-      "name": "미사용 jQuery 1.8.3 파일 제거",
-      "description": "js/ 디렉토리에서 실제로 사용되지 않는 jquery-1.8.3.min.js 파일을 안전하게 제거합니다. 이 파일은 어떤 HTML에서도 로드되지 않으므로 제거해도 완전히 안전합니다.",
-      "notes": "92KB 용량 절약. 백업용으로 남겨두지 않음 (Git 히스토리에 남아있음)",
-      "status": "completed",
-      "dependencies": [
-        {
-          "taskId": "fabaa487-98bb-4899-a26e-55f31b7a402e"
-        }
-      ],
-      "createdAt": "2025-09-10T01:17:08.795Z",
-      "updatedAt": "2025-09-10T01:21:07.699Z",
-      "relatedFiles": [
-        {
-          "path": "js/jquery-1.8.3.min.js",
+          "path": "js/jquery-ui.js",
           "type": "TO_MODIFY",
-          "description": "제거할 미사용 jQuery 파일"
+          "description": "539KB 미사용 파일 삭제"
         }
       ],
-      "implementationGuide": "1. jquery-1.8.3.min.js 파일 존재 확인\\n2. 모든 HTML 파일에서 이 파일을 참조하지 않음을 재확인\\n3. rm /Users/dongeuncheon/blee_project/us/js/jquery-1.8.3.min.js 실행\\n4. 파일 삭제 확인",
-      "verificationCriteria": "jquery-1.8.3.min.js 파일이 js/ 디렉토리에서 완전히 제거되고, 웹사이트 기능이 정상 작동해야 함",
-      "analysisResult": "jQuery 1.8.3 제거 및 정리 작업: 현재 메인 사이트는 이미 jQuery 3.7.1만 사용 중이며, 1.8.3 파일은 미사용 상태로 남아있어 안전한 정리 작업만 필요. jQuery Migrate 3.5.2와 jQuery UI 1.12.1이 완전 호환성을 보장하므로 레이아웃/애니메이션에 전혀 영향 없음",
-      "summary": "✅ jquery-1.8.3.min.js 파일 완전히 제거됨 (93KB 절약), ✅ HTML 파일들에서 해당 파일 참조 없음 재확인, ✅ 웹사이트는 jQuery 3.7.1만 로드하여 정상 작동, ✅ 필요한 jQuery 파일들(3.7.1, migrate, UI, menu)은 모두 보존됨. 100% 안전한 제거 작업 완료",
-      "completedAt": "2025-09-10T01:21:07.698Z"
+      "implementationGuide": "1. HTML index.html line 109에서 jquery-ui.js 스크립트 태그 제거\\n2. js/jquery-ui.js 파일 삭제 (539KB)\\n3. 웹사이트 기능 검증 (메뉴, 슬라이더, 애니메이션)\\n4. 브라우저 콘솔 오류 확인\\n5. 성능 개선 효과 측정 및 기록",
+      "verificationCriteria": "jquery-ui.js 파일이 완전히 제거되고, 웹사이트의 모든 기능이 정상 작동하며, 539KB 용량 절약이 확인되어야 함",
+      "analysisResult": "jQuery UI 제거 및 템플릿화/번들링 시스템 구축을 통한 대규모 웹사이트 최적화: 539KB jQuery UI 제거 후 기존 CSS 컴포넌트 시스템을 기반으로 헤더/푸터/서브 히어로 배너를 재사용 가능한 템플릿으로 분리하고, CSS/JS 모듈화 및 번들링으로 30-40% 추가 용량 절약을 달성하여 새 페이지 생성을 템플릿 조합만으로 가능하게 하는 시스템 완성",
+      "summary": "✅ HTML index.html line 109에서 jQuery UI 스크립트 태그 완전 제거, ✅ js/jquery-ui.js 파일 완전 삭제 (539KB), ✅ 웹사이트 모든 기능 정상 작동 확인 (메뉴, 슬라이더, 애니메이션), ✅ 브라우저 콘솔 오류 없음 검증, ✅ 성능 개선 효과 측정 완료: js/ 디렉토리 45% 감소 (1.2MB → 656KB), HTTP 요청 1개 최적화. jQuery UI 미사용 파일 제거 작업이 100% 안전하게 완료되어 즉시 539KB 용량 절약과 성능 최적화 달성",
+      "completedAt": "2025-09-10T01:47:22.262Z"
     },
     {
-      "id": "cf794a3a-6d9c-4f58-b134-984caac85788",
-      "name": "웹사이트 기능 전체 검증",
-      "description": "jQuery 1.8.3 파일 제거 후 모든 웹사이트 기능이 정상 작동하는지 종합적으로 검증합니다. 메뉴, 슬라이더, 애니메이션 등 모든 인터랙션을 테스트합니다.",
-      "notes": "모든 기능이 정상 작동해야 하며, 콘솔에 jQuery 관련 오류가 없어야 함",
-      "status": "completed",
+      "id": "1bb2ee09-96a8-4618-94b6-058e297fa856",
+      "name": "헤더 컴포넌트 템플릿 분리",
+      "description": "상단 네비게이션과 메뉴를 재사용 가능한 header.html 템플릿으로 분리하여 새 페이지 생성 시 일관성 있는 헤더를 쉽게 적용할 수 있도록 합니다.",
+      "notes": "기존 top_menu_script.js와 top_menu_style.css를 그대로 활용하여 호환성 유지",
+      "status": "pending",
       "dependencies": [
         {
-          "taskId": "955940b8-920d-42eb-8ec2-e071d02a5696"
+          "taskId": "6a93caea-8e00-43f7-82ec-023346fbd8db"
         }
       ],
-      "createdAt": "2025-09-10T01:17:08.795Z",
-      "updatedAt": "2025-09-10T01:25:01.142Z",
+      "createdAt": "2025-09-10T01:42:45.089Z",
+      "updatedAt": "2025-09-10T01:42:45.089Z",
       "relatedFiles": [
+        {
+          "path": "templates/",
+          "type": "CREATE",
+          "description": "템플릿 디렉토리 생성"
+        },
+        {
+          "path": "templates/header.html",
+          "type": "CREATE",
+          "description": "헤더 컴포넌트 템플릿"
+        },
         {
           "path": "html/index.html",
           "type": "REFERENCE",
-          "description": "메인 페이지 기능 테스트"
+          "description": "헤더 영역 추출 소스"
+        },
+        {
+          "path": "css/top_menu_style.css",
+          "type": "REFERENCE",
+          "description": "헤더 관련 CSS"
         },
         {
           "path": "js/top_menu_script.js",
           "type": "REFERENCE",
-          "description": "메뉴 스크립트 동작 확인"
-        },
-        {
-          "path": "verification-test.html",
-          "type": "REFERENCE",
-          "description": "jQuery 업그레이드 검증 페이지 참고"
+          "description": "헤더 관련 JS"
         }
       ],
-      "implementationGuide": "1. 로컬 서버 실행 (python3 -m http.server 8000)\\n2. 브라우저에서 html/index.html 접속\\n3. 상단 메뉴 호버 효과 확인\\n4. 히어로 섹션 슬라이더 동작 확인\\n5. 모든 스크롤 애니메이션 확인\\n6. 브라우저 콘솔에서 오류 메시지 확인\\n7. jQuery 버전 확인 (console.log(jQuery.fn.jquery))",
-      "verificationCriteria": "모든 메뉴, 슬라이더, 애니메이션이 정상 작동하고, 브라우저 콘솔에 jQuery 관련 오류가 없으며, jQuery 3.7.1 버전이 정상 로드되어야 함",
-      "analysisResult": "jQuery 1.8.3 제거 및 정리 작업: 현재 메인 사이트는 이미 jQuery 3.7.1만 사용 중이며, 1.8.3 파일은 미사용 상태로 남아있어 안전한 정리 작업만 필요. jQuery Migrate 3.5.2와 jQuery UI 1.12.1이 완전 호환성을 보장하므로 레이아웃/애니메이션에 전혀 영향 없음",
-      "summary": "✅ 로컬 서버 정상 실행 (포트 8001), ✅ 웹사이트 정상 로딩 확인, ✅ 상단 메뉴 jQuery 호버 효과 정상 (mouseenter/mouseleave, fadeIn/fadeOut), ✅ 히어로 섹션 Swiper 11 슬라이더 설정 확인 (loop, autoplay, 반응형), ✅ AOS 스크롤 애니메이션 초기화 및 data-aos 속성들 정상, ✅ jQuery 3.7.1 버전 정상 로드, ✅ jQuery Migrate 3.5.2 호환성 플러그인 정상 로드, ✅ jQuery UI 및 메뉴 스크립트 정상 작동, ✅ 1.8.3 파일 완전 제거 후에도 모든 기능 100% 정상 작동. 콘솔 테스트 페이지로 오류 없음 확인 완료",
-      "completedAt": "2025-09-10T01:25:01.140Z"
+      "implementationGuide": "1. templates/ 디렉토리 생성\\n2. index.html에서 header 영역 추출 (네비게이션, 로고, 메뉴)\\n3. header.html 템플릿 파일 생성\\n4. 관련 CSS (top_menu_style.css) 확인 및 정리\\n5. 템플릿 사용 예시 문서 작성",
+      "verificationCriteria": "header.html 템플릿이 생성되고, 기존 헤더와 동일한 디자인과 기능을 제공하며, 다른 페이지에서 쉽게 포함할 수 있어야 함",
+      "analysisResult": "jQuery UI 제거 및 템플릿화/번들링 시스템 구축을 통한 대규모 웹사이트 최적화: 539KB jQuery UI 제거 후 기존 CSS 컴포넌트 시스템을 기반으로 헤더/푸터/서브 히어로 배너를 재사용 가능한 템플릿으로 분리하고, CSS/JS 모듈화 및 번들링으로 30-40% 추가 용량 절약을 달성하여 새 페이지 생성을 템플릿 조합만으로 가능하게 하는 시스템 완성"
     },
     {
-      "id": "e74014f0-1d33-43fe-9f8e-f3f6cb523108",
-      "name": "성능 개선 효과 측정 및 문서 업데이트",
-      "description": "jQuery 1.8.3 제거로 인한 성능 개선 효과를 측정하고 관련 문서를 업데이트합니다. 번들 크기 감소와 네트워크 요청 최적화 효과를 기록합니다.",
-      "notes": "약 92KB 용량 절약 예상. 문서 업데이트는 선택사항",
-      "status": "in_progress",
+      "id": "68f637d0-5a0d-4734-8bef-48bddf9bbb1a",
+      "name": "푸터 및 히어로 배너 템플릿 분리",
+      "description": "푸터와 히어로 배너 섹션을 재사용 가능한 템플릿으로 분리하여 템플릿 시스템의 핵심 컴포넌트를 완성합니다.",
+      "notes": "hero-section.css, main_banner_style.css 등 기존 CSS를 활용하여 일관성 유지",
+      "status": "pending",
       "dependencies": [
         {
-          "taskId": "cf794a3a-6d9c-4f58-b134-984caac85788"
+          "taskId": "1bb2ee09-96a8-4618-94b6-058e297fa856"
         }
       ],
-      "createdAt": "2025-09-10T01:17:08.795Z",
-      "updatedAt": "2025-09-10T01:30:52.512Z",
+      "createdAt": "2025-09-10T01:42:45.089Z",
+      "updatedAt": "2025-09-10T01:42:45.089Z",
       "relatedFiles": [
         {
-          "path": "README.md",
+          "path": "templates/footer.html",
+          "type": "CREATE",
+          "description": "푸터 컴포넌트 템플릿"
+        },
+        {
+          "path": "templates/hero-banner.html",
+          "type": "CREATE",
+          "description": "메인 히어로 배너 템플릿"
+        },
+        {
+          "path": "templates/sub-hero.html",
+          "type": "CREATE",
+          "description": "서브페이지 히어로 배너 템플릿"
+        },
+        {
+          "path": "css/hero-section.css",
           "type": "REFERENCE",
-          "description": "성능 최적화 현황 문서",
-          "lineStart": 18,
-          "lineEnd": 24
+          "description": "히어로 섹션 CSS"
+        },
+        {
+          "path": "css/main_banner_style.css",
+          "type": "REFERENCE",
+          "description": "배너 스타일 CSS"
         }
       ],
-      "implementationGuide": "1. 제거 전후 js/ 디렉토리 크기 비교\\n2. 브라우저 Network 탭에서 로딩 속도 측정\\n3. README.md의 성능 최적화 섹션 확인\\n4. 필요시 성능 개선 내용 문서 업데이트\\n5. Git commit으로 변경사항 기록",
-      "verificationCriteria": "js/ 디렉토리에서 92KB 감소가 확인되고, 웹사이트 로딩 성능이 개선되며, 모든 변경사항이 Git에 적절히 커밋되어야 함",
-      "analysisResult": "jQuery 1.8.3 제거 및 정리 작업: 현재 메인 사이트는 이미 jQuery 3.7.1만 사용 중이며, 1.8.3 파일은 미사용 상태로 남아있어 안전한 정리 작업만 필요. jQuery Migrate 3.5.2와 jQuery UI 1.12.1이 완전 호환성을 보장하므로 레이아웃/애니메이션에 전혀 영향 없음"
+      "implementationGuide": "1. footer.html 템플릿 생성 (연락처, 링크, 저작권 정보)\\n2. hero-banner.html 템플릿 생성 (메인 배너 영역)\\n3. sub-hero.html 템플릿 생성 (서브페이지용 배너)\\n4. 각 템플릿의 CSS 의존성 정리\\n5. 변수화 가능한 부분 식별 및 문서화",
+      "verificationCriteria": "footer.html, hero-banner.html, sub-hero.html 템플릿이 생성되고, 각각 독립적으로 사용 가능하며, 기존 디자인과 일치해야 함",
+      "analysisResult": "jQuery UI 제거 및 템플릿화/번들링 시스템 구축을 통한 대규모 웹사이트 최적화: 539KB jQuery UI 제거 후 기존 CSS 컴포넌트 시스템을 기반으로 헤더/푸터/서브 히어로 배너를 재사용 가능한 템플릿으로 분리하고, CSS/JS 모듈화 및 번들링으로 30-40% 추가 용량 절약을 달성하여 새 페이지 생성을 템플릿 조합만으로 가능하게 하는 시스템 완성"
+    },
+    {
+      "id": "b23ae908-dc47-497e-9fcd-af8dc4b43cd4",
+      "name": "CSS 모듈화 및 번들링 시스템 구축",
+      "description": "14개의 분산된 CSS 파일을 논리적 그룹으로 재구성하고 번들링하여 로딩 성능을 최적화하고 유지보수성을 향상시킵니다.",
+      "notes": "기존 디자인 토큰 시스템(user.css)을 base로 하여 일관성 유지, vendor 파일들(swiper, aos)은 별도 관리",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "68f637d0-5a0d-4734-8bef-48bddf9bbb1a"
+        }
+      ],
+      "createdAt": "2025-09-10T01:42:45.089Z",
+      "updatedAt": "2025-09-10T01:42:45.089Z",
+      "relatedFiles": [
+        {
+          "path": "css/base/",
+          "type": "CREATE",
+          "description": "기본 스타일 및 토큰 디렉토리"
+        },
+        {
+          "path": "css/components/",
+          "type": "CREATE",
+          "description": "재사용 컴포넌트 CSS 디렉토리"
+        },
+        {
+          "path": "css/layout/",
+          "type": "CREATE",
+          "description": "레이아웃 CSS 디렉토리"
+        },
+        {
+          "path": "css/vendor/",
+          "type": "CREATE",
+          "description": "외부 라이브러리 CSS 디렉토리"
+        },
+        {
+          "path": "build-css.js",
+          "type": "CREATE",
+          "description": "CSS 번들링 스크립트"
+        },
+        {
+          "path": "css/user.css",
+          "type": "REFERENCE",
+          "description": "디자인 토큰 시스템 기준"
+        }
+      ],
+      "implementationGuide": "1. css/ 하위에 base/, components/, layout/, vendor/ 디렉토리 생성\\n2. 기존 CSS 파일들을 논리적 그룹으로 분류 및 이동\\n3. CSS 번들링 스크립트 작성 (Node.js 또는 간단한 bash)\\n4. 미니파이 적용으로 30-40% 용량 절약\\n5. bundle.css 생성 및 HTML 적용 테스트",
+      "verificationCriteria": "CSS 파일들이 논리적으로 재구성되고, 번들링된 파일이 정상 작동하며, 30% 이상 용량 절약이 확인되어야 함",
+      "analysisResult": "jQuery UI 제거 및 템플릿화/번들링 시스템 구축을 통한 대규모 웹사이트 최적화: 539KB jQuery UI 제거 후 기존 CSS 컴포넌트 시스템을 기반으로 헤더/푸터/서브 히어로 배너를 재사용 가능한 템플릿으로 분리하고, CSS/JS 모듈화 및 번들링으로 30-40% 추가 용량 절약을 달성하여 새 페이지 생성을 템플릿 조합만으로 가능하게 하는 시스템 완성"
+    },
+    {
+      "id": "e616cf3a-0625-4fa5-beed-00ca168f3af5",
+      "name": "새 페이지 생성 가이드 및 자동화 도구",
+      "description": "템플릿 시스템을 활용한 새 페이지 생성 가이드와 간단한 자동화 도구를 제작하여 개발 효율성을 극대화합니다.",
+      "notes": "템플릿 조합만으로 새 페이지 생성 시간을 80% 단축하는 것이 목표",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "b23ae908-dc47-497e-9fcd-af8dc4b43cd4"
+        }
+      ],
+      "createdAt": "2025-09-10T01:42:45.089Z",
+      "updatedAt": "2025-09-10T01:42:45.089Z",
+      "relatedFiles": [
+        {
+          "path": "PAGE_CREATION_GUIDE.md",
+          "type": "CREATE",
+          "description": "새 페이지 생성 가이드 문서"
+        },
+        {
+          "path": "create-page.js",
+          "type": "CREATE",
+          "description": "페이지 생성 자동화 스크립트"
+        },
+        {
+          "path": "examples/about.html",
+          "type": "CREATE",
+          "description": "템플릿 사용 예시 페이지"
+        },
+        {
+          "path": "examples/contact.html",
+          "type": "CREATE",
+          "description": "템플릿 사용 예시 페이지"
+        },
+        {
+          "path": "OPTIMIZATION_RESULTS.md",
+          "type": "CREATE",
+          "description": "전체 최적화 결과 문서"
+        }
+      ],
+      "implementationGuide": "1. PAGE_CREATION_GUIDE.md 문서 작성\\n2. 템플릿 조합 방법 상세 설명\\n3. 페이지 생성 자동화 스크립트 개발\\n4. 예시 페이지 생성 (about.html, contact.html)\\n5. 성능 최적화 결과 종합 문서화",
+      "verificationCriteria": "페이지 생성 가이드가 완성되고, 자동화 도구가 정상 작동하며, 예시 페이지들이 템플릿으로 성공적으로 생성되어야 함",
+      "analysisResult": "jQuery UI 제거 및 템플릿화/번들링 시스템 구축을 통한 대규모 웹사이트 최적화: 539KB jQuery UI 제거 후 기존 CSS 컴포넌트 시스템을 기반으로 헤더/푸터/서브 히어로 배너를 재사용 가능한 템플릿으로 분리하고, CSS/JS 모듈화 및 번들링으로 30-40% 추가 용량 절약을 달성하여 새 페이지 생성을 템플릿 조합만으로 가능하게 하는 시스템 완성"
     }
   ]
 }
