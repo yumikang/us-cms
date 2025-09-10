@@ -24,13 +24,13 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
      ========================================== */
   
   /* Brand Colors - 브랜드 메인 컬러 */
-  --primary:#f47320;        /* 메인 오렌지 - 버튼, 강조 */
-  --primary-light:#ff8a47;  /* 밝은 오렌지 - 호버 효과 */
-  --primary-dark:#d35f0c;   /* 어두운 오렌지 - 액티브 상태 */
-  --primary-alpha:rgba(244, 115, 32, 0.1); /* 투명 오렌지 - 배경 */
+  --primary:#3AD2FF;        /* 메인 스카이블루 - 버튼, 강조 */
+  --primary-light:#5EDAFF;  /* 밝은 스카이블루 - 호버 효과 */
+  --primary-dark:#2AB8E5;   /* 어두운 스카이블루 - 액티브 상태 */
+  --primary-alpha:rgba(58, 210, 255, 0.1); /* 투명 스카이블루 - 배경 */
   
   /* Semantic Colors - 의미론적 컬러 */
-  --secondary:#007cf0;       /* 보조 파란색 - 링크, 정보 */
+  --secondary:#1FA2CC;       /* 보조 딥블루 - 링크, 정보 */
   --accent:#ee0979;          /* 강조 핑크 - 특별 강조 */
   --success:#28a745;         /* 성공 초록 - 완료, 성공 메시지 */
   --warning:#ffc107;         /* 경고 노란색 - 주의 메시지 */
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
   
   /* Font Families - 폰트 패밀리 */
   --k-font:'Pretendard';     /* 한글 메인 폰트 */
-  --e-font:'Play';           /* 영문 강조 폰트 */
+  --e-font:'Pretendard';     /* 영문 강조 폰트 */
   
   /* Font Sizes - 폰트 크기 (작은 → 큰) */
   --font-size-xs:11px;       /* 매우 작은 - 캡션, 라벨 */
