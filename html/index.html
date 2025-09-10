@@ -292,60 +292,7 @@ $(function() {
 	
 <article id="inc01">
     <h1 data-aos="fade-up">핵심 서비스</h1>
-
-    <div class="bg"></div>
-
-</article>
-
-<script>
-var incSwiper = new Swiper("#inc01 .all_slider", {
-    loop:true,
-    speed:1000,
-    slidesPerView: 1, // Start with 1 slide for mobile
-    spaceBetween: 30,
-    slideActiveClass:'on',
-    centeredSlides:true,
-    autoplay:{
-        delay:2500,
-        disableOnInteraction:false,
-    },
-    breakpoints: {
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 40,
-        },
-        1024: {
-            slidesPerView: 3,
-            spaceBetween: 50,
-        }
-    }
-    });
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const bg = document.querySelector("#inc01 .bg");
-
-    gsap.to(bg, {
-    scale: window.innerWidth / bg.offsetWidth,
-    borderRadius: 0,
-    transformOrigin: "center center",
-    scrollTrigger: {
-        trigger: "#inc01 h1",
-        start: "center 50%",
-        scrub: 1,
-    }
-    });
-
-    ScrollTrigger.create({
-    trigger: bg,
-    start: "top top",
-    end: "bottom top", 
-    pin: true,
-    pinSpacing: false,
-    onEnter: () => bg.classList.add("on"),
-    onLeaveBack: () => bg.classList.remove("on"),
-    });
-</script>    
+</article>    
 <article id="inc02">
     <div class="inner">
         <div class="tit" data-aos="fade-up">
