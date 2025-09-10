@@ -88,6 +88,17 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* 로고 SVG 스타일 */
+.logo-svg {
+    height: 40px;
+    width: auto;
+    color: white;
+}
+
+#shGnb.on .logo-svg {
+    color: #222;
+}
 </style><!-- IE8 지원 제거: 모던 브라우저만 지원 -->
 <script>
 // 자바스크립트에서 사용하는 전역변수 선언
@@ -183,14 +194,15 @@ $(function() {
             
 <div id="shGnb">	
     
-	<div class="sh_logo"><a href="/"><span class="logo-text">US INNOWAVE</span></a></div>
+	<div class="sh_logo">
+		<a href="index.html">
+			<img src="../images/us-innowave-logo.svg" alt="US INNOWAVE" class="logo-svg">
+		</a>
+	</div>
 
 	<!-- 상단메뉴 -->
     <nav class="sh_nav">
         <ul>
-            <li>
-                <a href="/">HOME</a>
-            </li>
             <li>
                 <a href="/company-intro">회사소개</a>
             </li>
@@ -211,41 +223,6 @@ $(function() {
             </li>
         </ul>
     </nav>
-    <!-- 메뉴버튼 -->
-
-    <div  id="pfBtn">
-        <span></span>
-    </div>    
-    <div id="pfWrap">
-    	<div class="bg_wrap"><div class="bg"></div></div>
-    	<div class="pf_cate_wrap">
-            <div class="pf_cate">
-                <ul>
-                    <li>
-                        <a href="/">HOME</a>
-                    </li>
-                    <li>
-                        <a href="/company-intro">회사소개</a>
-                    </li>
-                    <li>
-                        <a href="/policy-fund">정책자금 컨설팅</a>
-                    </li>
-                    <li>
-                        <a href="/services">수출 지원</a>
-                    </li>
-                    <li>
-                        <a href="/us-market">미국 공급망 & 조달시장</a>
-                    </li>
-                    <li>
-                        <a href="/certification">ISO & 기업인증</a>
-                    </li>
-                    <li>
-                        <a href="/contact">문의하기</a>
-                    </li>
-                </ul>
-            </div>
-		</div>
-    </div>
 </div>	
         </div>
     </header>

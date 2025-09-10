@@ -140,6 +140,16 @@ body {
     overflow: hidden;
 }
 
+/* 커스텀 배경 이미지가 있는 경우 */
+.sub_hero_wrap.with-image {
+    background: 
+        linear-gradient(rgba(0, 123, 255, 0.3), rgba(0, 86, 179, 0.3)),
+        var(--hero-image, none);
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+}
+
 .sub_hero_container {
     max-width: 1200px;
     margin: 0 auto;
@@ -258,7 +268,7 @@ body {
             <div id="shGnb">	
                 <!-- 로고 -->
                 <div class="sh_logo">
-                    <a href="../index.html">
+                    <a href="index.html">
                         <img src="../images/us-innowave-logo.svg" alt="US INNOWAVE" class="logo-svg">
                     </a>
                 </div>
@@ -293,7 +303,7 @@ body {
     <!-- } 상단 끝 -->
 
     <!-- 서브 히어로 배너 시작 -->
-    <section class="sub_hero_wrap">
+    <section class="sub_hero_wrap with-image" style="--hero-image: url('../images/sub-hero.webp')">
         <div class="sub_hero_container">
             <div class="sub_hero_text">
                 <h1>ISO & 기업인증</h1>
