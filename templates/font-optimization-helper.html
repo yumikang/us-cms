@@ -1,0 +1,156 @@
+<!-- 폰트 로딩 최적화 헬퍼 -->
+<!-- 성능 최적화를 위한 폰트 로딩 컴포넌트 -->
+
+<!-- 
+사용법:
+1. HTML <head> 섹션에 이 코드를 추가
+2. 기존 폰트 로딩 방식을 이 방식으로 교체
+3. CSS에서 font-display 속성 확인
+-->
+
+<!-- 1. 폰트 프리로딩 (Critical 폰트만) -->
+<link rel="preload" href="../fonts/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/Pretendard-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- 2. Google Fonts 최적화 로딩 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- 3. 폰트 로딩 전략 -->
+<style>
+/* 폰트 로딩 최적화 CSS */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Regular.woff2') format('woff2'),
+         url('../fonts/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; /* 폰트 로딩 중 대체 폰트 표시 */
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Bold.woff2') format('woff2'),
+         url('../fonts/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 폰트 스택 최적화 */
+:root {
+    --main-font: 'Pretendard', 
+                 -apple-system, 
+                 BlinkMacSystemFont, 
+                 'Apple SD Gothic Neo', 
+                 'Noto Sans KR', 
+                 sans-serif;
+    
+    --english-font: 'Pretendard', 
+                    'Helvetica Neue', 
+                    Helvetica, 
+                    Arial, 
+                    sans-serif;
+}
+
+/* 기본 폰트 적용 */
+body {
+    font-family: var(--main-font);
+    font-feature-settings: "kern" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 폰트 로딩 중 레이아웃 시프트 방지 */
+.font-loading {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    visibility: hidden;
+}
+
+.font-loaded .font-loading {
+    font-family: var(--main-font);
+    visibility: visible;
+}
+
+/* 반응형 폰트 크기 */
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+}
+</style>
+
+<!-- 4. 폰트 로딩 감지 스크립트 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 폰트 로딩 상태 감지
+    if ('fonts' in document) {
+        // Font Loading API 지원
+        Promise.all([
+            document.fonts.load('400 16px Pretendard'),
+            document.fonts.load('700 16px Pretendard')
+        ]).then(function() {
+            document.documentElement.classList.add('font-loaded');
+            console.log('Fonts loaded successfully');
+        }).catch(function() {
+            // 폰트 로딩 실패 시 대체 처리
+            document.documentElement.classList.add('font-loaded');
+            console.warn('Font loading failed, using fallback');
+        });
+    } else {
+        // Font Loading API 미지원 시 타이머 사용
+        setTimeout(function() {
+            document.documentElement.classList.add('font-loaded');
+        }, 3000);
+    }
+    
+    // 성능 메트릭 측정 (옵션)
+    if ('performance' in window && 'measure' in performance) {
+        window.addEventListener('load', function() {
+            // 폰트 로딩 성능 측정
+            const fontEntries = performance.getEntriesByType('resource').filter(entry => 
+                entry.name.includes('.woff') || entry.name.includes('.ttf')
+            );
+            
+            fontEntries.forEach(entry => {
+                console.log(`Font: ${entry.name}, Load time: ${entry.duration}ms`);
+            });
+        });
+    }
+});
+</script>
+
+<!-- 
+폰트 최적화 권장사항:
+
+1. 폰트 파일 크기:
+   - WOFF2 형식 사용 (30-50% 압축률)
+   - 필요한 weight만 로드 (400, 700)
+   - 서브셋 폰트 사용 (한글+영문+숫자만)
+
+2. 로딩 전략:
+   - font-display: swap 사용
+   - Critical 폰트만 preload
+   - 비동기 폰트 로딩
+
+3. 폴백 전략:
+   - 시스템 폰트 스택 준비
+   - 폰트 로딩 실패 시 대체 방안
+   - 레이아웃 시프트 최소화
+
+4. 성능 모니터링:
+   - 폰트 로딩 시간 측정
+   - CLS (Cumulative Layout Shift) 모니터링
+   - 폰트 관련 성능 지표 추적
+-->
