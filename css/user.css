@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 #sh_ft .ft_mn li ul a:hover{opacity:1}
 #sh_ft .copy{margin-top:65px;padding-top:var(--space-4xl);border-top:1px solid rgba(255, 255, 255, .1);font-size:var(--font-size-base);font-weight:var(--font-weight-medium);color:rgba(255, 255, 255, .3)}
 #toTop{display:flex;justify-content:center;align-items:center;position:absolute;bottom:105px;right:var(--container-padding);width:var(--space-6xl);height:var(--space-6xl);border-radius:var(--radius-sm);color:rgb(255, 255, 255, 0.6);transition:var(--transition-normal);background-color:var(--gray-800);cursor:pointer}
-#toTop:hover{color:var(--white);background-color:var(--primary)}
+#toTop:hover{color:var(--white);background-color:#3AD2FF}
 
 /* 사이트맵 */
 #sh_site_map{position:relative;width:100%;font-family:'notokr-regular'}
