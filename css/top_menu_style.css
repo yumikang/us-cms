@@ -2,10 +2,14 @@
 
 #shGnb{display:flex;justify-content:space-between;align-items:center;position:relative;width:100%;height:100px;padding:0 100px;transition:all .2s}
 #shGnb.on{border-bottom:1px solid #e1e1e1}
-.sh_lnb_bg{display:none;position:absolute;top:0;left:0;width:100%;height:270px;background:#fff}
+/* .sh_lnb_bg{display:none;position:absolute;top:0;left:0;width:100%;height:270px;background:#fff} */
 
 /* 로고 */
 #shGnb .sh_logo{position:relative;z-index:20}
+#shGnb .sh_logo a{display:flex;align-items:center;text-decoration:none}
+#shGnb .sh_logo .logo-img{height:40px;margin-right:10px}
+#shGnb .sh_logo .logo-text{font-size:24px;font-weight:700;color:#fff;font-family:var(--main-font)}
+#shGnb.on .sh_logo .logo-text{color:#222}
 
 /* 대분류  */
 #shGnb .sh_nav{margin:0 auto}
@@ -13,19 +17,19 @@
 #shGnb .sh_nav > ul > li > a{position:relative;z-index:20;display:block;padding:0 30px;font-size:16px;font-weight:700;color:#fff;transition:all .2s;font-family:var(--main-font)}
 #shGnb .sh_nav > ul > li > a.form_link{display:flex;align-items:center}
 #shGnb .sh_nav > ul > li:hover > a{color:var(--primary)!important}
-#shGnb .sh_nav > ul > li:hover .sh_lnb_s:before{width:calc(100% + 40px);opacity:1}f#shGnb.fix #pfBtn.active
-#shGnb .sh_nav > ul > li:hover .sh_lnb_s a{color:#777}
-#shGnb .sh_nav > ul > li:hover .sh_lnb_s a:hover{color:var(--primary)}
+/* #shGnb .sh_nav > ul > li:hover .sh_lnb_s:before{width:calc(100% + 40px);opacity:1} */
+/* #shGnb .sh_nav > ul > li:hover .sh_lnb_s a{color:#777} */
+/* #shGnb .sh_nav > ul > li:hover .sh_lnb_s a:hover{color:var(--primary)} */
 #shGnb.on .sh_nav > ul > li > a{padding:0 50px;color:#222}
 #shGnb.on #pfBtn span:before{background:#222}
 #shGnb.on #pfBtn span:after{background:#222}
 #shGnb.on #pfBtn span{background:#222}
 
-/* 소분류 */
-#shGnb .sh_lnb_s{display:none;position:absolute;left:50%;transform:translateX(-50%);min-width:100%;width:max-content;padding-top:25px;min-height:145px}
-#shGnb .sh_lnb_s:before{opacity:0;display:block;content:"";position:absolute;left:50%;top:-1px;z-index:-1;transform:translateX(-50%);width:0;height:1px;background:var(--primary);transition:all .2s}
-#shGnb .sh_lnb_s li a{display:block;font-size:15px;font-weight:500;line-height:1.8;text-align:center;color:#555;transition:all .2s}
-#shGnb .sh_lnb_s li a:hover{color:var(--primary)}
+/* 소분류 - 더 이상 사용하지 않음 */
+/* #shGnb .sh_lnb_s{display:none;position:absolute;left:50%;transform:translateX(-50%);min-width:100%;width:max-content;padding-top:25px;min-height:145px} */
+/* #shGnb .sh_lnb_s:before{opacity:0;display:block;content:"";position:absolute;left:50%;top:-1px;z-index:-1;transform:translateX(-50%);width:0;height:1px;background:var(--primary);transition:all .2s} */
+/* #shGnb .sh_lnb_s li a{display:block;font-size:15px;font-weight:500;line-height:1.8;text-align:center;color:#555;transition:all .2s} */
+/* #shGnb .sh_lnb_s li a:hover{color:var(--primary)} */
 
 /* 메뉴버튼 */
 #pfBtn{display:flex;position:absolute;top:0;right:100px;z-index:101;height:100px;cursor:pointer;transition:all .2s}

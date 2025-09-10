@@ -1,15 +1,6 @@
 ﻿$(document).ready(function(){
-	$(".sh_nav").mouseenter(function(){
-		$("#shGnb").addClass("on");
-        $("#shGnb:not(.fix) .sh_logo img").attr("src","/sh_img/hd/top_menu/logo.png");
-	 	$(".sh_lnb_s").fadeIn(200);
-		$(".sh_lnb_bg").fadeIn(200);	
-	}).mouseleave(function(){
-		$("#shGnb").removeClass("on");
-        $("#shGnb:not(.fix) .sh_logo img").attr("src","/sh_img/hd/top_menu/logo_w.png");
-		$('.sh_lnb_s').stop().fadeOut(200);
-	  	$('.sh_lnb_bg').stop().fadeOut(200);
-	});
+	// 서브메뉴 호버 효과 제거 - 단일 메뉴 구조로 변경
+	// 기존 서브메뉴(.sh_lnb_s, .sh_lnb_bg) 관련 코드 주석 처리
 
 	$(".pf_cate ul > li > a").hover(function(){
 		$(".pf_cate ul > li > a").not(this).addClass("off");
