@@ -1,274 +1,117 @@
 {
   "tasks": [
     {
-      "id": "ff416114-a5c2-404c-aeb7-7bb27070423b",
-      "name": "jQuery 버전 업그레이드 준비 및 백업",
-      "description": "현재 jQuery 1.8.3 기반 코드를 백업하고 jQuery 3.7.1 및 jQuery Migrate 3.5.2 플러그인을 준비한다. 로컬 파일 시스템에 라이브러리를 다운로드하고 테스트 환경을 구성한다.",
-      "notes": "백업은 git 브랜치로 관리하거나 _backup 폴더에 저장. jQuery Migrate는 콘솔에 deprecation 경고를 출력하여 마이그레이션 가이드 제공",
-      "status": "completed",
-      "dependencies": [],
-      "createdAt": "2025-09-05T01:56:49.497Z",
-      "updatedAt": "2025-09-05T01:58:55.396Z",
-      "relatedFiles": [
-        {
-          "path": "/html/index.html",
-          "type": "TO_MODIFY",
-          "description": "jQuery 라이브러리 로드 경로 변경"
-        },
-        {
-          "path": "/js/jquery-1.8.3.min.js",
-          "type": "REFERENCE",
-          "description": "현재 사용 중인 jQuery 버전"
-        },
-        {
-          "path": "/js/jquery-3.7.1.min.js",
-          "type": "CREATE",
-          "description": "새로운 jQuery 버전 추가"
-        },
-        {
-          "path": "/js/jquery-migrate-3.5.2.min.js",
-          "type": "CREATE",
-          "description": "마이그레이션 지원 플러그인"
-        }
-      ],
-      "implementationGuide": "1. 현재 html/index.html 파일 백업\n2. js 폴더의 모든 파일 백업\n3. jQuery 3.7.1 및 jQuery Migrate 3.5.2를 로컬 js 폴더에 다운로드\n4. 테스트용 index-test.html 파일 생성",
-      "verificationCriteria": "1. 백업 파일이 정상적으로 생성되었는지 확인\n2. jQuery 3.7.1과 Migrate 플러그인이 js 폴더에 존재하는지 확인\n3. 테스트 HTML 파일이 생성되었는지 확인",
-      "analysisResult": "US INNOWAVE 웹사이트의 레거시 기술 스택(jQuery 1.8.3, Swiper 6.4.15, IE8 지원)을 최신 버전으로 업그레이드하여 보안 취약점 해결, 성능 30-50% 향상, 유지보수성 개선을 달성한다. 916개의 jQuery 참조를 체계적으로 마이그레이션하고 CDN 의존성을 제거한다.",
-      "summary": "모든 백업 및 준비 작업이 성공적으로 완료됨. html_backup과 js_backup 폴더 생성 완료, jQuery 3.7.1과 jQuery Migrate 3.5.2 다운로드 완료, 테스트용 index-test.html 파일 생성 완료",
-      "completedAt": "2025-09-05T01:58:55.394Z"
-    },
-    {
-      "id": "958aa78e-0965-426e-b990-ecbb49175d6c",
-      "name": "HTML 파일 jQuery 라이브러리 경로 변경",
-      "description": "index.html에서 jQuery 1.8.3 CDN 참조를 jQuery 3.7.1 로컬 파일로 변경하고 jQuery Migrate 플러그인을 추가한다. jquery-ui.js도 최신 버전 호환성을 확인한다.",
-      "notes": "개발 환경에서는 비압축 버전을 사용하여 디버깅 용이성 확보. 프로덕션에서는 min 버전 사용",
-      "status": "completed",
-      "dependencies": [
-        {
-          "taskId": "ff416114-a5c2-404c-aeb7-7bb27070423b"
-        }
-      ],
-      "createdAt": "2025-09-05T01:56:49.497Z",
-      "updatedAt": "2025-09-05T02:07:49.984Z",
-      "relatedFiles": [
-        {
-          "path": "/html/index.html",
-          "type": "TO_MODIFY",
-          "description": "스크립트 태그 수정",
-          "lineStart": 177,
-          "lineEnd": 179
-        }
-      ],
-      "implementationGuide": "1. index.html의 line 177-179에서 jQuery 관련 스크립트 태그 수정\n2. shiningcorp.com CDN 참조를 로컬 경로로 변경\n3. jQuery Migrate를 jQuery 직후에 추가\n4. 로드 순서: jQuery → jQuery Migrate → jQuery UI → 기타 플러그인",
-      "verificationCriteria": "1. 브라우저 개발자 도구 Network 탭에서 jQuery 3.7.1이 정상 로드되는지 확인\n2. jQuery Migrate가 로드되고 콘솔에 마이그레이션 메시지가 출력되는지 확인\n3. jQuery.fn.jquery로 버전이 3.7.1인지 확인",
-      "analysisResult": "US INNOWAVE 웹사이트의 레거시 기술 스택(jQuery 1.8.3, Swiper 6.4.15, IE8 지원)을 최신 버전으로 업그레이드하여 보안 취약점 해결, 성능 30-50% 향상, 유지보수성 개선을 달성한다. 916개의 jQuery 참조를 체계적으로 마이그레이션하고 CDN 의존성을 제거한다.",
-      "summary": "jQuery 라이브러리 경로 변경 완료. CDN에서 로컬 파일로 전환, jQuery 3.7.1과 Migrate 3.5.2 추가, 버전 확인 스크립트 삽입, 검증 페이지 생성",
-      "completedAt": "2025-09-05T02:07:49.983Z"
-    },
-    {
-      "id": "6ec06d98-fb84-4a68-bec8-265aa6468123",
-      "name": "Deprecated jQuery API 식별 및 수정",
-      "description": "jQuery Migrate 경고를 분석하여 deprecated API 사용 부분을 찾고 최신 API로 교체한다. .live(), .die(), .browser, .toggle(fn) 등의 제거된 메서드를 대체한다.",
-      "notes": "jQuery Migrate는 자동으로 폴리필을 제공하므로 즉시 작동하지 않는 것은 아님. 단계적으로 수정",
+      "id": "fabaa487-98bb-4899-a26e-55f31b7a402e",
+      "name": "프로젝트 현재 상태 백업 및 안전 확인",
+      "description": "작업 전 프로젝트 전체 백업을 생성하고 현재 jQuery 로딩 상태를 최종 확인합니다. 메인 사이트에서 jQuery 3.7.1만 로드되고 있음을 재검증하여 안전성을 보장합니다.",
+      "notes": "작업 전 마지막 안전 확인 단계. 만약 예상과 다른 상황이 발견되면 작업 중단",
       "status": "in_progress",
-      "dependencies": [
-        {
-          "taskId": "958aa78e-0965-426e-b990-ecbb49175d6c"
-        }
-      ],
-      "createdAt": "2025-09-05T01:56:49.497Z",
-      "updatedAt": "2025-09-05T02:12:02.450Z",
+      "dependencies": [],
+      "createdAt": "2025-09-10T01:17:08.795Z",
+      "updatedAt": "2025-09-10T01:17:54.494Z",
       "relatedFiles": [
         {
-          "path": "/js/common.js",
-          "type": "TO_MODIFY",
-          "description": "jQuery 의존 코드 수정"
+          "path": "html/index.html",
+          "type": "REFERENCE",
+          "description": "현재 jQuery 로딩 상태 확인",
+          "lineStart": 105,
+          "lineEnd": 110
         },
         {
-          "path": "/js/top_menu_script.js",
-          "type": "TO_MODIFY",
-          "description": "메뉴 관련 jQuery 코드 수정"
-        },
-        {
-          "path": "/js/jquery.menu.js",
-          "type": "TO_MODIFY",
-          "description": "메뉴 플러그인 코드 수정"
+          "path": "README.md",
+          "type": "REFERENCE",
+          "description": "프로젝트 현재 상태 문서 확인",
+          "lineStart": 19,
+          "lineEnd": 24
         }
       ],
-      "implementationGuide": "1. 브라우저 콘솔에서 JQMIGRATE 경고 메시지 수집\n2. common.js, top_menu_script.js, jquery.menu.js 파일 검토\n3. Deprecated API 교체:\n   - .live() → .on()\n   - .die() → .off()\n   - $.browser → 기능 감지 또는 제거\n   - .toggle(fn1, fn2) → 커스텀 토글 함수\n   - .size() → .length\n4. 각 수정 후 기능 테스트",
-      "verificationCriteria": "1. 콘솔에 JQMIGRATE 경고가 50% 이상 감소\n2. 모든 인터랙티브 기능(메뉴, 클릭 이벤트 등)이 정상 작동\n3. 수정된 코드가 jQuery 3.x 공식 문서 기준에 부합",
-      "analysisResult": "US INNOWAVE 웹사이트의 레거시 기술 스택(jQuery 1.8.3, Swiper 6.4.15, IE8 지원)을 최신 버전으로 업그레이드하여 보안 취약점 해결, 성능 30-50% 향상, 유지보수성 개선을 달성한다. 916개의 jQuery 참조를 체계적으로 마이그레이션하고 CDN 의존성을 제거한다."
+      "implementationGuide": "1. Git 커밋 상태 확인 및 작업 브랜치 생성\\n2. html/index.html에서 jQuery 로딩 태그 확인\\n3. 브라우저 개발자 도구로 실제 로드된 jQuery 버전 확인\\n4. jQuery.fn.jquery로 버전 출력 확인\\n5. 현재 모든 기능 정상 작동 확인",
+      "verificationCriteria": "Git status가 clean이고, html/index.html에서 jquery-3.7.1.min.js만 로드되며, 브라우저에서 jQuery 3.7.1 버전이 확인되어야 함",
+      "analysisResult": "jQuery 1.8.3 제거 및 정리 작업: 현재 메인 사이트는 이미 jQuery 3.7.1만 사용 중이며, 1.8.3 파일은 미사용 상태로 남아있어 안전한 정리 작업만 필요. jQuery Migrate 3.5.2와 jQuery UI 1.12.1이 완전 호환성을 보장하므로 레이아웃/애니메이션에 전혀 영향 없음"
     },
     {
-      "id": "615eb023-2bfc-4771-978f-9fdb5eced540",
-      "name": "Swiper 라이브러리 업그레이드",
-      "description": "Swiper 6.4.15를 11.x 최신 버전으로 업그레이드하고 초기화 코드를 새로운 API에 맞게 수정한다. CSS 클래스명 변경과 옵션 구조 변경을 반영한다.",
-      "notes": "Swiper 11은 모듈형 구조를 지원하므로 필요한 모듈만 임포트 가능. 초기에는 전체 번들 사용",
+      "id": "955940b8-920d-42eb-8ec2-e071d02a5696",
+      "name": "미사용 jQuery 1.8.3 파일 제거",
+      "description": "js/ 디렉토리에서 실제로 사용되지 않는 jquery-1.8.3.min.js 파일을 안전하게 제거합니다. 이 파일은 어떤 HTML에서도 로드되지 않으므로 제거해도 완전히 안전합니다.",
+      "notes": "92KB 용량 절약. 백업용으로 남겨두지 않음 (Git 히스토리에 남아있음)",
       "status": "pending",
       "dependencies": [
         {
-          "taskId": "6ec06d98-fb84-4a68-bec8-265aa6468123"
+          "taskId": "fabaa487-98bb-4899-a26e-55f31b7a402e"
         }
       ],
-      "createdAt": "2025-09-05T01:56:49.497Z",
-      "updatedAt": "2025-09-05T01:56:49.497Z",
+      "createdAt": "2025-09-10T01:17:08.795Z",
+      "updatedAt": "2025-09-10T01:17:08.795Z",
       "relatedFiles": [
         {
-          "path": "/html/index.html",
+          "path": "js/jquery-1.8.3.min.js",
           "type": "TO_MODIFY",
-          "description": "Swiper 초기화 코드 수정",
-          "lineStart": 399,
-          "lineEnd": 483
-        },
-        {
-          "path": "/js/swiper.min.js",
-          "type": "TO_MODIFY",
-          "description": "구버전을 신버전으로 교체"
-        },
-        {
-          "path": "/css/swiper.min.css",
-          "type": "TO_MODIFY",
-          "description": "Swiper 스타일시트 업데이트"
+          "description": "제거할 미사용 jQuery 파일"
         }
       ],
-      "implementationGuide": "1. Swiper 11.x 다운로드 및 js/css 폴더에 추가\n2. HTML에서 Swiper CSS/JS 경로 변경\n3. 초기화 코드 수정:\n   - .swiper-container → .swiper\n   - 파라미터 구조 업데이트\n   - navigation, pagination 옵션 형식 변경\n4. CSS 클래스 호환성 확인",
-      "verificationCriteria": "1. 메인 배너 슬라이더가 정상 작동\n2. 서비스 섹션 슬라이더가 정상 작동\n3. 네비게이션 버튼과 페이지네이션이 표시되고 작동\n4. 자동 재생 기능이 정상 작동",
-      "analysisResult": "US INNOWAVE 웹사이트의 레거시 기술 스택(jQuery 1.8.3, Swiper 6.4.15, IE8 지원)을 최신 버전으로 업그레이드하여 보안 취약점 해결, 성능 30-50% 향상, 유지보수성 개선을 달성한다. 916개의 jQuery 참조를 체계적으로 마이그레이션하고 CDN 의존성을 제거한다."
+      "implementationGuide": "1. jquery-1.8.3.min.js 파일 존재 확인\\n2. 모든 HTML 파일에서 이 파일을 참조하지 않음을 재확인\\n3. rm /Users/dongeuncheon/blee_project/us/js/jquery-1.8.3.min.js 실행\\n4. 파일 삭제 확인",
+      "verificationCriteria": "jquery-1.8.3.min.js 파일이 js/ 디렉토리에서 완전히 제거되고, 웹사이트 기능이 정상 작동해야 함",
+      "analysisResult": "jQuery 1.8.3 제거 및 정리 작업: 현재 메인 사이트는 이미 jQuery 3.7.1만 사용 중이며, 1.8.3 파일은 미사용 상태로 남아있어 안전한 정리 작업만 필요. jQuery Migrate 3.5.2와 jQuery UI 1.12.1이 완전 호환성을 보장하므로 레이아웃/애니메이션에 전혀 영향 없음"
     },
     {
-      "id": "f84ac172-4f5c-4561-a4b3-3b12657b9788",
-      "name": "IE8 지원 코드 및 폴리필 제거",
-      "description": "IE8 조건부 주석, html5shiv, respond.js, placeholders.js 등 레거시 브라우저 지원 코드를 제거한다. CSS에서 IE 전용 핵도 정리한다.",
-      "notes": "IE8 점유율은 0.1% 미만이므로 제거해도 무방. 필요시 별도 안내 페이지 제공",
+      "id": "cf794a3a-6d9c-4f58-b134-984caac85788",
+      "name": "웹사이트 기능 전체 검증",
+      "description": "jQuery 1.8.3 파일 제거 후 모든 웹사이트 기능이 정상 작동하는지 종합적으로 검증합니다. 메뉴, 슬라이더, 애니메이션 등 모든 인터랙션을 테스트합니다.",
+      "notes": "모든 기능이 정상 작동해야 하며, 콘솔에 jQuery 관련 오류가 없어야 함",
       "status": "pending",
       "dependencies": [
         {
-          "taskId": "615eb023-2bfc-4771-978f-9fdb5eced540"
+          "taskId": "955940b8-920d-42eb-8ec2-e071d02a5696"
         }
       ],
-      "createdAt": "2025-09-05T01:56:49.497Z",
-      "updatedAt": "2025-09-05T01:56:49.497Z",
+      "createdAt": "2025-09-10T01:17:08.795Z",
+      "updatedAt": "2025-09-10T01:17:08.795Z",
       "relatedFiles": [
         {
-          "path": "/html/index.html",
-          "type": "TO_MODIFY",
-          "description": "IE 조건부 주석 제거",
-          "lineStart": 162,
-          "lineEnd": 163
+          "path": "html/index.html",
+          "type": "REFERENCE",
+          "description": "메인 페이지 기능 테스트"
         },
         {
-          "path": "/js/html5.js",
-          "type": "TO_MODIFY",
-          "description": "제거 또는 비활성화"
+          "path": "js/top_menu_script.js",
+          "type": "REFERENCE",
+          "description": "메뉴 스크립트 동작 확인"
         },
         {
-          "path": "/js/placeholders.min.js",
-          "type": "TO_MODIFY",
-          "description": "제거 또는 비활성화"
+          "path": "verification-test.html",
+          "type": "REFERENCE",
+          "description": "jQuery 업그레이드 검증 페이지 참고"
         }
       ],
-      "implementationGuide": "1. HTML에서 <!--[if lte IE 8]> 조건부 주석 제거\n2. html5.js, placeholders.min.js 파일 제거 또는 주석 처리\n3. CSS 파일에서 IE 핵 제거:\n   - _property, *property 형식\n   - filter 속성\n   - zoom: 1\n4. modernizr 등 기능 감지 라이브러리로 대체 검토",
-      "verificationCriteria": "1. HTML5 요소들이 모던 브라우저에서 정상 렌더링\n2. placeholder 속성이 정상 작동\n3. CSS 레이아웃이 깨지지 않음\n4. 파일 크기가 10KB 이상 감소",
-      "analysisResult": "US INNOWAVE 웹사이트의 레거시 기술 스택(jQuery 1.8.3, Swiper 6.4.15, IE8 지원)을 최신 버전으로 업그레이드하여 보안 취약점 해결, 성능 30-50% 향상, 유지보수성 개선을 달성한다. 916개의 jQuery 참조를 체계적으로 마이그레이션하고 CDN 의존성을 제거한다."
+      "implementationGuide": "1. 로컬 서버 실행 (python3 -m http.server 8000)\\n2. 브라우저에서 html/index.html 접속\\n3. 상단 메뉴 호버 효과 확인\\n4. 히어로 섹션 슬라이더 동작 확인\\n5. 모든 스크롤 애니메이션 확인\\n6. 브라우저 콘솔에서 오류 메시지 확인\\n7. jQuery 버전 확인 (console.log(jQuery.fn.jquery))",
+      "verificationCriteria": "모든 메뉴, 슬라이더, 애니메이션이 정상 작동하고, 브라우저 콘솔에 jQuery 관련 오류가 없으며, jQuery 3.7.1 버전이 정상 로드되어야 함",
+      "analysisResult": "jQuery 1.8.3 제거 및 정리 작업: 현재 메인 사이트는 이미 jQuery 3.7.1만 사용 중이며, 1.8.3 파일은 미사용 상태로 남아있어 안전한 정리 작업만 필요. jQuery Migrate 3.5.2와 jQuery UI 1.12.1이 완전 호환성을 보장하므로 레이아웃/애니메이션에 전혀 영향 없음"
     },
     {
-      "id": "50bb950b-70e1-4387-b22b-3133ca3f03b4",
-      "name": "CDN 의존성 제거 및 리소스 로컬화",
-      "description": "shiningcorp.com CDN에서 로드하는 모든 리소스를 로컬 파일로 전환한다. CSS, 폰트, 이미지 등 모든 외부 리소스를 로컬화하여 로딩 속도 개선과 안정성을 확보한다.",
-      "notes": "CDN 장애 시에도 서비스 가능하도록 로컬화. 추후 CloudFlare 등 신뢰할 수 있는 CDN 검토",
+      "id": "e74014f0-1d33-43fe-9f8e-f3f6cb523108",
+      "name": "성능 개선 효과 측정 및 문서 업데이트",
+      "description": "jQuery 1.8.3 제거로 인한 성능 개선 효과를 측정하고 관련 문서를 업데이트합니다. 번들 크기 감소와 네트워크 요청 최적화 효과를 기록합니다.",
+      "notes": "약 92KB 용량 절약 예상. 문서 업데이트는 선택사항",
       "status": "pending",
       "dependencies": [
         {
-          "taskId": "f84ac172-4f5c-4561-a4b3-3b12657b9788"
+          "taskId": "cf794a3a-6d9c-4f58-b134-984caac85788"
         }
       ],
-      "createdAt": "2025-09-05T01:56:49.497Z",
-      "updatedAt": "2025-09-05T01:56:49.497Z",
+      "createdAt": "2025-09-10T01:17:08.795Z",
+      "updatedAt": "2025-09-10T01:17:08.795Z",
       "relatedFiles": [
         {
-          "path": "/html/index.html",
-          "type": "TO_MODIFY",
-          "description": "모든 외부 리소스 경로 변경",
-          "lineStart": 8,
-          "lineEnd": 17
-        },
-        {
-          "path": "/css/default.css",
-          "type": "CREATE",
-          "description": "CDN에서 로컬로 이동"
-        },
-        {
-          "path": "/css/user.css",
-          "type": "CREATE",
-          "description": "CDN에서 로컬로 이동"
+          "path": "README.md",
+          "type": "REFERENCE",
+          "description": "성능 최적화 현황 문서",
+          "lineStart": 18,
+          "lineEnd": 24
         }
       ],
-      "implementationGuide": "1. HTML에서 모든 shiningcorp.com 참조 찾기\n2. CSS 파일들을 로컬 /css 폴더로 다운로드\n3. 웹폰트를 /fonts 폴더로 다운로드\n4. 모든 경로를 상대 경로로 변경\n5. CORS 이슈 확인 및 해결",
-      "verificationCriteria": "1. Network 탭에서 모든 리소스가 로컬에서 로드되는지 확인\n2. 404 에러가 없는지 확인\n3. 폰트가 정상적으로 표시되는지 확인\n4. 초기 로딩 속도가 개선되었는지 측정",
-      "analysisResult": "US INNOWAVE 웹사이트의 레거시 기술 스택(jQuery 1.8.3, Swiper 6.4.15, IE8 지원)을 최신 버전으로 업그레이드하여 보안 취약점 해결, 성능 30-50% 향상, 유지보수성 개선을 달성한다. 916개의 jQuery 참조를 체계적으로 마이그레이션하고 CDN 의존성을 제거한다."
-    },
-    {
-      "id": "5ec218c9-610a-40dd-9c0a-55d7b6da0ba9",
-      "name": "빌드 도구 설정 및 번들링 구성",
-      "description": "Vite 또는 Webpack을 설정하여 JavaScript 모듈 번들링, CSS 최적화, 이미지 압축 등을 자동화한다. package.json을 생성하고 의존성을 관리한다.",
-      "notes": "Vite는 개발 속도가 빠르고 설정이 간단함. 초기에는 간단한 설정으로 시작",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "50bb950b-70e1-4387-b22b-3133ca3f03b4"
-        }
-      ],
-      "createdAt": "2025-09-05T01:56:49.497Z",
-      "updatedAt": "2025-09-05T01:56:49.497Z",
-      "relatedFiles": [
-        {
-          "path": "/package.json",
-          "type": "CREATE",
-          "description": "프로젝트 의존성 관리"
-        },
-        {
-          "path": "/vite.config.js",
-          "type": "CREATE",
-          "description": "Vite 빌드 설정"
-        },
-        {
-          "path": "/.gitignore",
-          "type": "TO_MODIFY",
-          "description": "node_modules 추가"
-        }
-      ],
-      "implementationGuide": "1. package.json 생성 및 기본 설정\n2. npm install jquery@3.7.1 swiper@11 gsap aos\n3. Vite 설정 파일 생성 (vite.config.js)\n4. 개발/프로덕션 스크립트 설정\n5. 번들 최적화 설정 (트리쉐이킹, 압축)",
-      "verificationCriteria": "1. npm run dev로 개발 서버가 정상 실행\n2. npm run build로 프로덕션 빌드 생성\n3. 번들 크기가 원본 대비 30% 이상 감소\n4. 모든 기능이 번들링 후에도 정상 작동",
-      "analysisResult": "US INNOWAVE 웹사이트의 레거시 기술 스택(jQuery 1.8.3, Swiper 6.4.15, IE8 지원)을 최신 버전으로 업그레이드하여 보안 취약점 해결, 성능 30-50% 향상, 유지보수성 개선을 달성한다. 916개의 jQuery 참조를 체계적으로 마이그레이션하고 CDN 의존성을 제거한다."
-    },
-    {
-      "id": "4e172701-2fb7-4145-8bc4-1116cc85ff62",
-      "name": "통합 테스트 및 성능 최적화",
-      "description": "모든 업그레이드 작업 완료 후 종합적인 테스트를 수행하고 성능을 측정한다. Lighthouse를 사용하여 성능 점수를 확인하고 최적화한다.",
-      "notes": "목표 점수: Performance 90+, Accessibility 95+, Best Practices 95+, SEO 90+",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "5ec218c9-610a-40dd-9c0a-55d7b6da0ba9"
-        }
-      ],
-      "createdAt": "2025-09-05T01:56:49.497Z",
-      "updatedAt": "2025-09-05T01:56:49.497Z",
-      "relatedFiles": [
-        {
-          "path": "/test-results.md",
-          "type": "CREATE",
-          "description": "테스트 결과 문서화"
-        },
-        {
-          "path": "/lighthouse-report.html",
-          "type": "CREATE",
-          "description": "Lighthouse 리포트"
-        }
-      ],
-      "implementationGuide": "1. 기능 테스트 체크리스트 작성 및 수행\n2. 크로스 브라우저 테스트 (Chrome, Firefox, Safari, Edge)\n3. 모바일 반응형 테스트\n4. Lighthouse 성능 측정\n5. 이미지 최적화 (WebP 변환)\n6. Critical CSS 추출 및 인라인화",
-      "verificationCriteria": "1. 모든 인터랙티브 기능이 정상 작동\n2. 페이지 로드 시간 3초 이내\n3. Lighthouse 점수가 목표치 달성\n4. 콘솔에 에러나 경고가 없음\n5. 모바일에서 터치 이벤트가 정상 작동",
-      "analysisResult": "US INNOWAVE 웹사이트의 레거시 기술 스택(jQuery 1.8.3, Swiper 6.4.15, IE8 지원)을 최신 버전으로 업그레이드하여 보안 취약점 해결, 성능 30-50% 향상, 유지보수성 개선을 달성한다. 916개의 jQuery 참조를 체계적으로 마이그레이션하고 CDN 의존성을 제거한다."
+      "implementationGuide": "1. 제거 전후 js/ 디렉토리 크기 비교\\n2. 브라우저 Network 탭에서 로딩 속도 측정\\n3. README.md의 성능 최적화 섹션 확인\\n4. 필요시 성능 개선 내용 문서 업데이트\\n5. Git commit으로 변경사항 기록",
+      "verificationCriteria": "js/ 디렉토리에서 92KB 감소가 확인되고, 웹사이트 로딩 성능이 개선되며, 모든 변경사항이 Git에 적절히 커밋되어야 함",
+      "analysisResult": "jQuery 1.8.3 제거 및 정리 작업: 현재 메인 사이트는 이미 jQuery 3.7.1만 사용 중이며, 1.8.3 파일은 미사용 상태로 남아있어 안전한 정리 작업만 필요. jQuery Migrate 3.5.2와 jQuery UI 1.12.1이 완전 호환성을 보장하므로 레이아웃/애니메이션에 전혀 영향 없음"
     }
   ]
 }

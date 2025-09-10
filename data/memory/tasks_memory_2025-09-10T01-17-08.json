@@ -1,0 +1,69 @@
+{
+  "tasks": [
+    {
+      "id": "ff416114-a5c2-404c-aeb7-7bb27070423b",
+      "name": "jQuery 버전 업그레이드 준비 및 백업",
+      "description": "현재 jQuery 1.8.3 기반 코드를 백업하고 jQuery 3.7.1 및 jQuery Migrate 3.5.2 플러그인을 준비한다. 로컬 파일 시스템에 라이브러리를 다운로드하고 테스트 환경을 구성한다.",
+      "notes": "백업은 git 브랜치로 관리하거나 _backup 폴더에 저장. jQuery Migrate는 콘솔에 deprecation 경고를 출력하여 마이그레이션 가이드 제공",
+      "status": "completed",
+      "dependencies": [],
+      "createdAt": "2025-09-05T01:56:49.497Z",
+      "updatedAt": "2025-09-05T01:58:55.396Z",
+      "relatedFiles": [
+        {
+          "path": "/html/index.html",
+          "type": "TO_MODIFY",
+          "description": "jQuery 라이브러리 로드 경로 변경"
+        },
+        {
+          "path": "/js/jquery-1.8.3.min.js",
+          "type": "REFERENCE",
+          "description": "현재 사용 중인 jQuery 버전"
+        },
+        {
+          "path": "/js/jquery-3.7.1.min.js",
+          "type": "CREATE",
+          "description": "새로운 jQuery 버전 추가"
+        },
+        {
+          "path": "/js/jquery-migrate-3.5.2.min.js",
+          "type": "CREATE",
+          "description": "마이그레이션 지원 플러그인"
+        }
+      ],
+      "implementationGuide": "1. 현재 html/index.html 파일 백업\n2. js 폴더의 모든 파일 백업\n3. jQuery 3.7.1 및 jQuery Migrate 3.5.2를 로컬 js 폴더에 다운로드\n4. 테스트용 index-test.html 파일 생성",
+      "verificationCriteria": "1. 백업 파일이 정상적으로 생성되었는지 확인\n2. jQuery 3.7.1과 Migrate 플러그인이 js 폴더에 존재하는지 확인\n3. 테스트 HTML 파일이 생성되었는지 확인",
+      "analysisResult": "US INNOWAVE 웹사이트의 레거시 기술 스택(jQuery 1.8.3, Swiper 6.4.15, IE8 지원)을 최신 버전으로 업그레이드하여 보안 취약점 해결, 성능 30-50% 향상, 유지보수성 개선을 달성한다. 916개의 jQuery 참조를 체계적으로 마이그레이션하고 CDN 의존성을 제거한다.",
+      "summary": "모든 백업 및 준비 작업이 성공적으로 완료됨. html_backup과 js_backup 폴더 생성 완료, jQuery 3.7.1과 jQuery Migrate 3.5.2 다운로드 완료, 테스트용 index-test.html 파일 생성 완료",
+      "completedAt": "2025-09-05T01:58:55.394Z"
+    },
+    {
+      "id": "958aa78e-0965-426e-b990-ecbb49175d6c",
+      "name": "HTML 파일 jQuery 라이브러리 경로 변경",
+      "description": "index.html에서 jQuery 1.8.3 CDN 참조를 jQuery 3.7.1 로컬 파일로 변경하고 jQuery Migrate 플러그인을 추가한다. jquery-ui.js도 최신 버전 호환성을 확인한다.",
+      "notes": "개발 환경에서는 비압축 버전을 사용하여 디버깅 용이성 확보. 프로덕션에서는 min 버전 사용",
+      "status": "completed",
+      "dependencies": [
+        {
+          "taskId": "ff416114-a5c2-404c-aeb7-7bb27070423b"
+        }
+      ],
+      "createdAt": "2025-09-05T01:56:49.497Z",
+      "updatedAt": "2025-09-05T02:07:49.984Z",
+      "relatedFiles": [
+        {
+          "path": "/html/index.html",
+          "type": "TO_MODIFY",
+          "description": "스크립트 태그 수정",
+          "lineStart": 177,
+          "lineEnd": 179
+        }
+      ],
+      "implementationGuide": "1. index.html의 line 177-179에서 jQuery 관련 스크립트 태그 수정\n2. shiningcorp.com CDN 참조를 로컬 경로로 변경\n3. jQuery Migrate를 jQuery 직후에 추가\n4. 로드 순서: jQuery → jQuery Migrate → jQuery UI → 기타 플러그인",
+      "verificationCriteria": "1. 브라우저 개발자 도구 Network 탭에서 jQuery 3.7.1이 정상 로드되는지 확인\n2. jQuery Migrate가 로드되고 콘솔에 마이그레이션 메시지가 출력되는지 확인\n3. jQuery.fn.jquery로 버전이 3.7.1인지 확인",
+      "analysisResult": "US INNOWAVE 웹사이트의 레거시 기술 스택(jQuery 1.8.3, Swiper 6.4.15, IE8 지원)을 최신 버전으로 업그레이드하여 보안 취약점 해결, 성능 30-50% 향상, 유지보수성 개선을 달성한다. 916개의 jQuery 참조를 체계적으로 마이그레이션하고 CDN 의존성을 제거한다.",
+      "summary": "jQuery 라이브러리 경로 변경 완료. CDN에서 로컬 파일로 전환, jQuery 3.7.1과 Migrate 3.5.2 추가, 버전 확인 스크립트 삽입, 검증 페이지 생성",
+      "completedAt": "2025-09-05T02:07:49.983Z"
+    }
+  ]
+}
