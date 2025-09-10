@@ -113,16 +113,26 @@
 - 인증 서비스 페이지: {{PAGE_TITLE}} → "ISO & 기업인증"
 
 배경 이미지 설정:
-- 기본 배경: SVG 패턴 (../images/sub-hero-pattern.svg) + 그라디언트
-- 커스텀 이미지 (선택사항):
-  * class="sub_hero_wrap with-image" 추가
-  * style="--hero-image: url('../images/custom-bg.jpg')" 인라인 스타일 사용
-  * 권장 크기: 최소 1920x600px
-  * 지원 형식: JPG, PNG, WebP
-- 예시: <section class="sub_hero_wrap with-image" style="--hero-image: url('../images/custom-bg.jpg')">
+현재 설정:
+- 기본 배경 (라인 24-36): SVG 패턴 (../images/sub-hero-pattern.svg) + 파란색 그라디언트
+- 선택적 이미지 (라인 39-47): with-image 클래스 추가 시 커스텀 이미지 사용 가능
+
+배경 옵션:
+1. 기본 배경 (SVG 패턴만 사용):
+   - 자동 적용: <section class="sub_hero_wrap">
+   - SVG 패턴 + 파란색 그라디언트 오버레이
+   - 별도 설정 불필요
+
+2. 커스텀 이미지 배경 (선택사항):
+   - class="sub_hero_wrap with-image" 추가
+   - style="--hero-image: url('../images/custom-bg.jpg')" 인라인 스타일 사용
+   - 권장 크기: 최소 1920x600px
+   - 지원 형식: JPG, PNG, WebP
+   - 예시: <section class="sub_hero_wrap with-image" style="--hero-image: url('../images/custom-bg.jpg')">
+   - 적용 시: SVG 패턴 + 그라디언트 + 커스텀 이미지 (3개 레이어)
 
 CSS 커스터마이징:
-- 배경색상 오버레이 조정: rgba(0, 123, 255, 0.8) 값 변경
+- 배경색상 오버레이 조정: rgba(0, 123, 255, 0.9) 값 변경
 - 패딩 조정: padding 값으로 높이 조절 (기본: 180px 0 160px)
 - 텍스트 색상: color 속성으로 조정
 -->
