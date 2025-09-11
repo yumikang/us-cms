@@ -229,6 +229,7 @@ a.partner-logo,
     align-items: flex-start;
     transition: all 0.3s ease;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .partner-card:hover {
@@ -255,6 +256,7 @@ a.partner-logo,
 
 .partner-content {
     flex: 1;
+    padding-right: 180px;
 }
 
 .partner-content h3 {
@@ -273,6 +275,9 @@ a.partner-logo,
 }
 
 .visit-btn {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -322,6 +327,7 @@ a.partner-logo,
         flex-direction: column;
         padding: 30px;
         gap: 20px;
+        padding-bottom: 80px;
     }
     
     .partner-logo-img {
@@ -332,6 +338,17 @@ a.partner-logo,
     
     .partner-content {
         text-align: center;
+        padding-right: 0;
+    }
+    
+    .visit-btn {
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+    
+    .visit-btn:hover {
+        transform: translateX(50%) translateX(2px);
     }
     
     .process-step-new h4 {
