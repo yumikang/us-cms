@@ -228,6 +228,60 @@
     text-align: center;
 }
 
+/* 새로운 프로세스 스텝 스타일 */
+.process-steps-new {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.process-step-new {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.step-icon {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    background: var(--gray-50);
+    padding: 0 10px;
+}
+
+.step-divider {
+    position: absolute;
+    top: 30px;
+    right: -50%;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #E0E0E0 0%, #E0E0E0 50%, transparent 50%);
+    background-size: 8px 1px;
+    z-index: 1;
+}
+
+.step-divider-none {
+    display: none;
+}
+
+.process-step-new h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.process-step-new p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 기존 프로세스 스텝 스타일 (유지) */
 .process-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -587,24 +641,52 @@
             <section class="content-section">
                 <div class="process-box" data-aos="fade-up">
                     <h3>체계적인 4단계 해외 수출 프로세스</h3>
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">01</div>
+                    <div class="process-steps-new">
+                        <div class="process-step-new">
+                            <div class="step-icon">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="60" height="60" rx="8" fill="#F0F8FF"/>
+                                    <path d="M25 20H35C36.1 20 37 20.9 37 22V38C37 39.1 36.1 40 35 40H25C23.9 40 23 39.1 23 38V22C23 20.9 23.9 20 25 20Z" stroke="#003d82" stroke-width="2"/>
+                                    <path d="M30 35L33 32L30 29" stroke="#003d82" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="27" cy="25" r="1.5" fill="#003d82"/>
+                                </svg>
+                            </div>
+                            <div class="step-divider"></div>
                             <h4>현황 분석</h4>
                             <p>제품 및 시장 분석<br>규제 요구사항 검토</p>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">02</div>
+                        <div class="process-step-new">
+                            <div class="step-icon">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="60" height="60" rx="8" fill="#F0F8FF"/>
+                                    <path d="M30 20C24.48 20 20 24.48 20 30C20 35.52 24.48 40 30 40C35.52 40 40 35.52 40 30C40 24.48 35.52 20 30 20Z" stroke="#003d82" stroke-width="2"/>
+                                    <path d="M30 25V30L33.5 33.5" stroke="#003d82" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="step-divider"></div>
                             <h4>전략 수립</h4>
                             <p>진출 전략 기획<br>인증 계획 수립</p>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">03</div>
+                        <div class="process-step-new">
+                            <div class="step-icon">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="60" height="60" rx="8" fill="#F0F8FF"/>
+                                    <path d="M22 30V38L30 34L38 38V30" stroke="#003d82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <rect x="22" y="22" width="16" height="8" stroke="#003d82" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="step-divider"></div>
                             <h4>실행 지원</h4>
                             <p>인증 진행<br>현지 파트너 연결</p>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">04</div>
+                        <div class="process-step-new">
+                            <div class="step-icon">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="60" height="60" rx="8" fill="#F0F8FF"/>
+                                    <path d="M30 20L32.5 27.5H40L34 32L36.5 40L30 35L23.5 40L26 32L20 27.5H27.5L30 20Z" stroke="#003d82" stroke-width="2" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="step-divider-none"></div>
                             <h4>사후 관리</h4>
                             <p>지속적인 컴플라이언스<br>사업 확장 지원</p>
                         </div>
