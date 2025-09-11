@@ -11,11 +11,15 @@
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../css/top_menu_style.css">
 <link rel="stylesheet" href="../css/cta-section.css">
+<link rel="stylesheet" href="../css/subpage.css">
 <link rel="stylesheet" href="../css/user.css">
 
 <!-- SEO 메타 태그 -->
 <meta name="description" content="US INNOWAVE - 정책자금 컨설팅 및 미국 진출 상담 문의">
 <meta name="keywords" content="문의하기, 상담신청, 컨설팅문의, 미국진출상담, 정책자금상담">
+
+<!-- jQuery를 먼저 로드 -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <style>
 /* Pretendard 폰트 - 모던한 한글/영문 폰트 */
@@ -315,18 +319,248 @@ body {
 
     <!-- 메인 콘텐츠 영역 -->
     <main id="sh_container" class="sub_container">
-        <div class="container">
-            <section class="content_section">
-                <div class="section_inner">
-                    <h2>전문 컨설팅 상담 신청</h2>
-                    <p>
+        <!-- 인트로 섹션 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-aos="fade-up">전문가와 함께하는 성공적인 비즈니스 여정</h2>
+                    <p class="desc" data-aos="fade-up" data-aos-delay="100">
                         정책자금 컨설팅부터 미국 진출, ISO 인증까지 다양한 분야의 전문 컨설팅 서비스에 대해 궁금한 점이 있으시면 언제든 문의해 주세요. 
-                        경험 풍부한 전문가가 고객님의 상황에 맞는 최적의 솔루션을 제공해드립니다. 
-                        신속하고 정확한 답변으로 성공적인 비즈니스 여정을 함께 시작하겠습니다.
+                        경험 풍부한 전문가가 고객님의 상황에 맞는 최적의 솔루션을 제공해드립니다.
                     </p>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+
+        <!-- 상담 분야 섹션 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-aos="fade-up">전문 상담 분야</h2>
+                    <p class="desc" data-aos="fade-up" data-aos-delay="100">각 분야별 전문가가 맞춤형 컨설팅을 제공합니다</p>
+                </div>
+                
+                <div class="card-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="dollar-sign"></i>
+                        </div>
+                        <h3>정책자금 컨설팅</h3>
+                        <p>정부 지원 자금 신청부터 승인까지 전 과정을 체계적으로 지원하여 기업의 성장 동력을 확보해드립니다.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="globe"></i>
+                        </div>
+                        <h3>미국 진출 지원</h3>
+                        <p>미국 시장 분석부터 현지 진출 전략, 법률 및 세무 자문까지 성공적인 해외 진출을 위한 토탈 솔루션을 제공합니다.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="award"></i>
+                        </div>
+                        <h3>ISO & 기업인증</h3>
+                        <p>ISO 국제표준인증과 각종 정부 기업인증 취득을 통해 기업의 신뢰도와 경쟁력을 향상시켜드립니다.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="trending-up"></i>
+                        </div>
+                        <h3>수출 지원</h3>
+                        <p>수출 인큐베이팅부터 해외 바이어 발굴, 수출 계약 체결까지 수출 전반에 걸친 종합 지원 서비스를 제공합니다.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="users"></i>
+                        </div>
+                        <h3>맞춤형 컨설팅</h3>
+                        <p>기업의 고유한 상황과 니즈를 분석하여 최적화된 솔루션과 전략적 방향성을 제시해드립니다.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="headphones"></i>
+                        </div>
+                        <h3>사후 관리</h3>
+                        <p>프로젝트 완료 후에도 지속적인 모니터링과 개선 방안을 제시하여 장기적인 성공을 보장합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 연락처 정보 섹션 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-aos="fade-up">연락처 정보</h2>
+                    <p class="desc" data-aos="fade-up" data-aos-delay="100">다양한 방법으로 문의하실 수 있습니다</p>
+                </div>
+                
+                <div class="two-column" data-aos="fade-up" data-aos-delay="200">
+                    <div class="column-content">
+                        <h3 class="content-title">오시는 길</h3>
+                        <p class="content-text">
+                            <strong>주소:</strong> 서울특별시 강남구 테헤란로 123, 컨설팅빌딩 10층<br>
+                            <strong>지하철:</strong> 2호선 강남역 3번 출구에서 도보 5분<br>
+                            <strong>버스:</strong> 간선 146, 341, 360번 / 지선 3412, 4212번
+                        </p>
+                        
+                        <h3 class="content-title">주차 안내</h3>
+                        <ul class="feature-list">
+                            <li>지하 주차장 이용 가능</li>
+                            <li>방문객 2시간 무료 주차</li>
+                            <li>장시간 주차 시 인근 공영주차장 이용</li>
+                        </ul>
+                        
+                        <h3 class="content-title">운영 시간</h3>
+                        <ul class="feature-list">
+                            <li>평일: 오전 9시 ~ 오후 6시</li>
+                            <li>점심시간: 오후 12시 ~ 오후 1시</li>
+                            <li>주말 및 공휴일: 휴무</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="column-content">
+                        <h3 class="content-title">연락처</h3>
+                        <p class="content-text">
+                            <strong>대표전화:</strong> 02-1234-5678<br>
+                            <strong>팩스:</strong> 02-1234-5679<br>
+                            <strong>이메일:</strong> info@usinnowave.com<br>
+                            <strong>카카오톡:</strong> @usinnowave
+                        </p>
+                        
+                        <h3 class="content-title">빠른 상담</h3>
+                        <ul class="feature-list">
+                            <li>전화 상담: 평일 오전 9시 ~ 오후 6시</li>
+                            <li>이메일 상담: 24시간 접수 (1일 내 답변)</li>
+                            <li>카카오톡 상담: 평일 오전 9시 ~ 오후 6시</li>
+                            <li>방문 상담: 사전 예약 필수</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 지도 섹션 -->
+                <div class="map-section" data-aos="fade-up" data-aos-delay="300" style="margin-top: 60px;">
+                    <h3 class="content-title" style="text-align: center; margin-bottom: 30px;">오시는 길 지도</h3>
+                    <div class="map-container" style="width: 100%; height: 400px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.293842823265!2d127.02478397651084!3d37.49794133511916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15a3f3de1db%3A0x5b656e0c89e80d0c!2z7Iag7ZWY7Yq567OE7IucIOqwleuCqOq1rCDthYzsqbTrnpzroZwgMTIz!5e0!3m2!1sko!2skr!4v1694594832123!5m2!1sko!2skr"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <p style="text-align: center; margin-top: 15px; color: var(--gray-600); font-size: 14px;">
+                        * 정확한 위치는 방문 전 전화 문의 바랍니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 상담 절차 섹션 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-aos="fade-up">상담 절차</h2>
+                    <p class="desc" data-aos="fade-up" data-aos-delay="100">체계적인 상담 프로세스로 최적의 솔루션을 제공합니다</p>
+                </div>
+                
+                <div class="card-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="phone"></i>
+                        </div>
+                        <h3>1단계: 초기 상담</h3>
+                        <p>전화, 이메일, 또는 방문을 통해 기업 현황과 니즈를 파악하고 기본적인 상담을 진행합니다.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="search"></i>
+                        </div>
+                        <h3>2단계: 현황 진단</h3>
+                        <p>기업의 현재 상황을 정확히 분석하고 문제점과 개선 사항을 도출합니다.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="file-text"></i>
+                        </div>
+                        <h3>3단계: 솔루션 제안</h3>
+                        <p>분석 결과를 바탕으로 최적의 솔루션과 실행 계획을 구체적으로 제안드립니다.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="play"></i>
+                        </div>
+                        <h3>4단계: 프로젝트 실행</h3>
+                        <p>승인된 계획에 따라 전문가 팀이 프로젝트를 체계적으로 실행합니다.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="shield-check"></i>
+                        </div>
+                        <h3>5단계: 사후 관리</h3>
+                        <p>프로젝트 완료 후에도 지속적인 모니터링과 개선 방안을 제시합니다.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon">
+                            <i data-feather="check-circle"></i>
+                        </div>
+                        <h3>6단계: 성과 평가</h3>
+                        <p>프로젝트 성과를 정량적으로 평가하고 추가 개선 방안을 논의합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 통계 섹션 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="stats-container" data-aos="fade-up">
+                    <div class="stat-item">
+                        <div class="stat-number">1,000+</div>
+                        <div class="stat-label">상담 건수</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">고객 만족도</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24시간</div>
+                        <div class="stat-label">평균 응답시간</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15년</div>
+                        <div class="stat-label">업계 경험</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 인용구 섹션 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="quote-box" data-aos="fade-up">
+                    <div class="quote-text">
+                        "성공적인 비즈니스는 올바른 파트너 선택에서 시작됩니다. 
+                        US INNOWAVE는 고객의 성공이 곧 우리의 성공이라는 신념으로 
+                        최고의 컨설팅 서비스를 제공하겠습니다."
+                    </div>
+                    <div class="quote-author">- US INNOWAVE 대표이사</div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- CTA Section -->
@@ -590,13 +824,18 @@ body {
 </style>
 
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- AOS CSS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
 <script src="../js/common.js"></script>
 <script src="../js/wrest.js"></script>
 <!-- Font Awesome 로컬화 -->
 <link rel="stylesheet" href="../css/font-awesome.min.css">
-<script src="../js/feather.min.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
 <script src="../js/top_menu_script.js"></script>
+
+<!-- AOS JavaScript -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <!-- 맨 위로 버튼 및 모달 스크립트 -->
 <script>
@@ -644,8 +883,19 @@ $(document).ready(function() {
         $('html, body').animate({scrollTop:0}, 400);
     });
     
-    // Feather icons 초기화
-    feather.replace();
+    // Feather icons 초기화 (안전하게)
+    if (typeof feather !== 'undefined') {
+        feather.replace();
+    }
+    
+    // AOS 초기화
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true
+        });
+    }
 });
 </script>
 
