@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="../css/cta-section.css">
 <link rel="stylesheet" href="../css/user.css">
 <link rel="stylesheet" href="../css/subpage.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
 <!-- SEO 메타 태그 -->
 <meta name="description" content="US INNOWAVE - 미국 공급망 진출 및 조달시장 참여 전문 컨설팅 서비스">
@@ -795,6 +796,7 @@ body {
 <!-- Font Awesome 로컬화 -->
 <link rel="stylesheet" href="../css/font-awesome.min.css">
 <script src="../js/feather.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="../js/top_menu_script.js"></script>
 
 <!-- 맨 위로 버튼 및 모달 스크립트 -->
@@ -845,6 +847,14 @@ $(document).ready(function() {
     
     // Feather icons 초기화
     feather.replace();
+    
+    // AOS 애니메이션 초기화
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
 });
 </script>
 
