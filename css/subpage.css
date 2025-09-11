@@ -71,7 +71,7 @@
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1450px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -96,7 +96,7 @@
     padding: 8px 20px;
     background: rgba(58, 210, 255, 0.1);
     color: var(--primary);
-    border-radius: 30px;
+    border-radius: 0;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -141,8 +141,7 @@
 .column-image img {
     width: 100%;
     height: auto;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 0;
 }
 
 /* 텍스트 스타일 */
@@ -194,7 +193,7 @@
     height: 24px;
     background: var(--primary);
     color: var(--white);
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -213,7 +212,7 @@
 .info-card {
     background: var(--white);
     border: 1px solid var(--gray-200);
-    border-radius: 16px;
+    border-radius: 0;
     padding: 40px 30px;
     text-align: center;
     transition: all 0.3s ease;
@@ -221,7 +220,6 @@
 
 .info-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     border-color: var(--primary);
 }
 
@@ -230,7 +228,7 @@
     height: 80px;
     margin: 0 auto 25px;
     background: rgba(58, 210, 255, 0.1);
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -256,7 +254,7 @@
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: var(--white);
     padding: 50px;
-    border-radius: 20px;
+    border-radius: 0;
     margin: 60px 0;
     position: relative;
 }
@@ -291,7 +289,7 @@
     justify-content: space-around;
     padding: 60px 0;
     background: var(--gray-50);
-    border-radius: 20px;
+    border-radius: 0;
     margin: 60px 0;
 }
 
@@ -324,9 +322,20 @@
 }
 
 /* 반응형 디자인 */
+@media (max-width: 1490px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+
 @media (max-width: 1024px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .container {
+        padding: 0 30px;
     }
 }
 
