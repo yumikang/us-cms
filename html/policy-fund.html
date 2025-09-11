@@ -291,6 +291,32 @@ a.partner-logo,
     transform: translateX(2px);
 }
 
+/* 새로운 프로세스 스텝 스타일 - 좌측 상단 번호 */
+.process-step-new {
+    position: relative;
+}
+
+.step-number-new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.process-step-new h4 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
 @media (max-width: 768px) {
     .partner-card {
         flex-direction: column;
@@ -306,6 +332,10 @@ a.partner-logo,
     
     .partner-content {
         text-align: center;
+    }
+    
+    .process-step-new h4 {
+        margin-top: 40px;
     }
 }
 </style>
@@ -425,8 +455,8 @@ a.partner-logo,
                 </div>
 
                     <div class="process-steps">
-                        <div class="process-step" data-aos="fade-up" data-aos-delay="100">
-                            <div class="step-number">01</div>
+                        <div class="process-step process-step-new" data-aos="fade-up" data-aos-delay="100">
+                            <div class="step-number-new">01</div>
                             <h4>기업 진단</h4>
                             <p>
                                 현재 상황 분석<br>
@@ -434,8 +464,8 @@ a.partner-logo,
                                 지원 가능성 검토
                             </p>
                         </div>
-                        <div class="process-step" data-aos="fade-up" data-aos-delay="200">
-                            <div class="step-number">02</div>
+                        <div class="process-step process-step-new" data-aos="fade-up" data-aos-delay="200">
+                            <div class="step-number-new">02</div>
                             <h4>자금 매칭</h4>
                             <p>
                                 최적 정책자금 발굴<br>
@@ -443,8 +473,8 @@ a.partner-logo,
                                 신청 전략 수립
                             </p>
                         </div>
-                        <div class="process-step" data-aos="fade-up" data-aos-delay="300">
-                            <div class="step-number">03</div>
+                        <div class="process-step process-step-new" data-aos="fade-up" data-aos-delay="300">
+                            <div class="step-number-new">03</div>
                             <h4>사업계획서</h4>
                             <p>
                                 평가위원 관점 작성<br>
@@ -452,8 +482,8 @@ a.partner-logo,
                                 차별화 전략 수립
                             </p>
                         </div>
-                        <div class="process-step" data-aos="fade-up" data-aos-delay="400">
-                            <div class="step-number">04</div>
+                        <div class="process-step process-step-new" data-aos="fade-up" data-aos-delay="400">
+                            <div class="step-number-new">04</div>
                             <h4>대면평가</h4>
                             <p>
                                 모의 PT 진행<br>
@@ -461,8 +491,8 @@ a.partner-logo,
                                 프레젠테이션 코칭
                             </p>
                         </div>
-                        <div class="process-step" data-aos="fade-up" data-aos-delay="500">
-                            <div class="step-number">05</div>
+                        <div class="process-step process-step-new" data-aos="fade-up" data-aos-delay="500">
+                            <div class="step-number-new">05</div>
                             <h4>사후관리</h4>
                             <p>
                                 협약 체결 지원<br>
