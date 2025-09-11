@@ -40,6 +40,42 @@
     flex-direction: row-reverse;
 }
 
+/* 테이블 스타일 레이아웃 */
+.service-header {
+    margin-bottom: 20px;
+}
+
+.service-summary {
+    margin: 20px 0;
+}
+
+.service-description {
+    margin-top: 20px;
+}
+
+.service-label {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 12px;
+    min-width: 100px;
+}
+
+.service-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 20px 0;
+}
+
+.service-divider-bold {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    margin: 20px 0;
+}
+
 .service-image {
     flex: 1;
     max-width: 500px;
@@ -448,30 +484,46 @@
                             <img src="../images/services-03.webp" alt="FDA 인증 서비스" />
                         </div>
                         <div class="service-content">
-                            <h3>FDA 인증 서비스</h3>
-                            <p>의료기기, 화장품, 식품 등 FDA 인증 전문 지원</p>
-                            <ul class="features">
-                                <li>의료기기 FDA 510(k) 승인</li>
-                                <li>화장품 FDA 등록</li>
-                                <li>식품 FDA 시설등록</li>
-                                <li>NDI 신고 및 cGMP 컨설팅</li>
-                                <li>라벨링 검토 및 수정</li>
-                            </ul>
+                            <div class="service-header">
+                                <h3>FDA 인증 서비스</h3>
+                            </div>
+                            <div class="service-divider-bold"></div>
+                            <div class="service-summary">
+                                <p>의료기기, 화장품, 식품 등 FDA 인증 전문 지원</p>
+                            </div>
+                            <div class="service-divider"></div>
+                            <div class="service-description">
+                                <ul class="features">
+                                    <li>의료기기 FDA 510(k) 승인</li>
+                                    <li>화장품 FDA 등록</li>
+                                    <li>식품 FDA 시설등록</li>
+                                    <li>NDI 신고 및 cGMP 컨설팅</li>
+                                    <li>라벨링 검토 및 수정</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                     <!-- U.S. Agent 서비스 - 우측 이미지 -->
                     <div class="service-section reverse" data-aos="fade-up" data-aos-delay="200">
                         <div class="service-content">
-                            <h3>U.S. Agent 서비스</h3>
-                            <p>FDA 커뮤니케이션 채널 및 현지 비즈니스 지원</p>
-                            <ul class="features">
-                                <li>FDA 공식 소통 창구 역할</li>
-                                <li>24시간 긴급 대응 시스템</li>
-                                <li>규제 업데이트 알림</li>
-                                <li>현지 비즈니스 지원</li>
-                                <li>법적 대리인 서비스</li>
-                            </ul>
+                            <div class="service-header">
+                                <h3>U.S. Agent 서비스</h3>
+                            </div>
+                            <div class="service-divider-bold"></div>
+                            <div class="service-summary">
+                                <p>FDA 커뮤니케이션 채널 및 현지 비즈니스 지원</p>
+                            </div>
+                            <div class="service-divider"></div>
+                            <div class="service-description">
+                                <ul class="features">
+                                    <li>FDA 공식 소통 창구 역할</li>
+                                    <li>24시간 긴급 대응 시스템</li>
+                                    <li>규제 업데이트 알림</li>
+                                    <li>현지 비즈니스 지원</li>
+                                    <li>법적 대리인 서비스</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="service-image">
                             <img src="../images/services-04.webp" alt="U.S. Agent 서비스" />
@@ -483,30 +535,46 @@
                             <img src="../images/services-05.webp" alt="시장 진입 컨설팅" />
                         </div>
                         <div class="service-content">
-                            <h3>시장 진입 컨설팅</h3>
-                            <p>미국 시장 분석부터 진출 전략 수립까지</p>
-                            <ul class="features">
-                                <li>시장 분석 보고서 제공</li>
-                                <li>경쟁사 분석 및 포지셔닝</li>
-                                <li>가격 전략 수립</li>
-                                <li>유통 채널 연결</li>
-                                <li>마케팅 전략 컨설팅</li>
-                            </ul>
+                            <div class="service-header">
+                                <h3>시장 진입 컨설팅</h3>
+                            </div>
+                            <div class="service-divider-bold"></div>
+                            <div class="service-summary">
+                                <p>미국 시장 분석부터 진출 전략 수립까지</p>
+                            </div>
+                            <div class="service-divider"></div>
+                            <div class="service-description">
+                                <ul class="features">
+                                    <li>시장 분석 보고서 제공</li>
+                                    <li>경쟁사 분석 및 포지셔닝</li>
+                                    <li>가격 전략 수립</li>
+                                    <li>유통 채널 연결</li>
+                                    <li>마케팅 전략 컨설팅</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                     <!-- 종합 행정 지원 - 우측 이미지 -->
                     <div class="service-section reverse" data-aos="fade-up" data-aos-delay="400">
                         <div class="service-content">
-                            <h3>종합 행정 지원</h3>
-                            <p>SAM/GSA 등록부터 현지화까지 원스톱 지원</p>
-                            <ul class="features">
-                                <li>SAM/GSA 등록 대행</li>
-                                <li>현지화 서비스</li>
-                                <li>법무/행정 업무 지원</li>
-                                <li>세무 컨설팅</li>
-                                <li>지적재산권 보호</li>
-                            </ul>
+                            <div class="service-header">
+                                <h3>종합 행정 지원</h3>
+                            </div>
+                            <div class="service-divider-bold"></div>
+                            <div class="service-summary">
+                                <p>SAM/GSA 등록부터 현지화까지 원스톱 지원</p>
+                            </div>
+                            <div class="service-divider"></div>
+                            <div class="service-description">
+                                <ul class="features">
+                                    <li>SAM/GSA 등록 대행</li>
+                                    <li>현지화 서비스</li>
+                                    <li>법무/행정 업무 지원</li>
+                                    <li>세무 컨설팅</li>
+                                    <li>지적재산권 보호</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="service-image">
                             <img src="../images/services-02.webp" alt="종합 행정 지원" />
