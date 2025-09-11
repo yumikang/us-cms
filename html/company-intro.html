@@ -289,45 +289,62 @@
                     </p>
                 </div>
 
-                <div class="business-area-container">
-                    <div class="business-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="business-image">
+                <div class="business-area-grid">
+                    <!-- 정책자금 컨설팅 카드 (새 디자인) -->
+                    <div class="business-card-horizontal" data-aos="fade-up" data-aos-delay="100">
+                        <div class="business-card-left">
                             <img src="../images/company-intro-07.webp" alt="정책자금 컨설팅" />
                         </div>
-                        <div class="business-content">
+                        <div class="business-card-right">
+                            <span class="business-label">Government Support Consulting</span>
                             <h3>정책자금 컨설팅</h3>
-                            <p>
-                                정부지원사업 신청부터<br>
-                                사후관리까지 원스톱 서비스
-                            </p>
+                            <p>정부지원사업 신청부터 사후관리까지 원스톱 서비스를 제공하고 있습니다. 고객의 차별화된 가치 창출을 위해 끊임없이 혁신하고, 최고의 기술로 한 걸음 앞서가기 위해 계속 변화해나가겠습니다.</p>
+                            <a href="policy-fund.html" class="business-link-btn">
+                                자세히 보기
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
                         </div>
-                        <div class="business-divider"></div>
                     </div>
-                    <div class="business-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="business-image">
+
+                    <!-- 미국 시장 진출 카드 -->
+                    <div class="business-card-horizontal" data-aos="fade-up" data-aos-delay="200">
+                        <div class="business-card-left">
                             <img src="../images/company-intro-09.webp" alt="미국 시장 진출" />
                         </div>
-                        <div class="business-content">
+                        <div class="business-card-right">
+                            <span class="business-label">U.S. Market Entry</span>
                             <h3>미국 시장 진출</h3>
-                            <p>
-                                FDA 인증, U.S. Agent,<br>
-                                현지 마케팅 지원
-                            </p>
+                            <p>FDA 인증부터 U.S. Agent 서비스, 현지 마케팅 지원까지 미국 시장 진출의 모든 과정을 체계적으로 지원합니다. 현지 네트워크를 활용한 맞춤형 전략으로 성공적인 미국 비즈니스를 실현해드립니다.</p>
+                            <a href="services.html" class="business-link-btn">
+                                자세히 보기
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
                         </div>
-                        <div class="business-divider"></div>
                     </div>
-                    <div class="business-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="business-image">
+
+                    <!-- ISO 인증 카드 -->
+                    <div class="business-card-horizontal" data-aos="fade-up" data-aos-delay="300">
+                        <div class="business-card-left">
                             <img src="../images/company-intro-08.webp" alt="ISO 인증" />
                         </div>
-                        <div class="business-content">
-                            <h3>ISO 인증</h3>
-                            <p>
-                                국제표준 인증 취득 및<br>
-                                품질경영시스템 구축
-                            </p>
+                        <div class="business-card-right">
+                            <span class="business-label">ISO Certification</span>
+                            <h3>ISO & 기업인증</h3>
+                            <p>국제표준 인증 취득부터 품질경영시스템 구축까지 기업의 글로벌 경쟁력을 높이는 인증 서비스를 제공합니다. 체계적인 프로세스와 전문 컨설팅으로 빠르고 확실한 인증 취득을 지원합니다.</p>
+                            <a href="certification.html" class="business-link-btn">
+                                자세히 보기
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
                         </div>
-                        <div class="business-divider"></div>
                     </div>
                 </div>
             </section>
@@ -646,68 +663,148 @@
 }
 
 /* 새로운 BUSINESS AREA 스타일 */
-.business-area-container {
+.business-area-grid {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-top: 80px;
-    padding: 60px 0;
+    margin-top: 60px;
+    padding: 40px 0;
 }
 
-.business-item {
+/* 가로형 카드 디자인 */
+.business-card-horizontal {
+    background: var(--white);
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
     display: flex;
     align-items: center;
-    padding: 0;
-    background: var(--white);
-    position: relative;
-    min-height: 220px;
+    min-height: 400px;
+    transition: all 0.3s ease;
 }
 
-.business-image {
-    width: 300px;
-    height: 180px;
-    border-radius: 12px;
+.business-card-horizontal:hover {
+    box-shadow: none;
+    transform: translateY(-5px);
+}
+
+.business-card-left {
+    width: 45%;
+    height: 400px;
     overflow: hidden;
     flex-shrink: 0;
 }
 
-.business-image img {
+.business-card-left img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.business-content {
+.business-card-horizontal:hover .business-card-left img {
+    transform: scale(1.05);
+}
+
+.business-card-right {
     flex: 1;
-    padding: 0 50px;
-    text-align: left;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.business-content h3 {
-    font-size: 24px;
+.business-label {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.business-card-right h3 {
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: 8px;
-}
-
-.business-content p {
-    font-size: 16px;
-    color: var(--gray-600);
-    line-height: 1.6;
+    color: #1a1a1a;
     margin: 0;
+    line-height: 1.2;
 }
 
-.business-divider {
-    width: 100%;
-    height: 1px;
-    background: var(--gray-200);
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.business-card-right p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    margin: 10px 0 30px;
 }
 
-.business-item:last-child .business-divider {
-    display: none;
+.business-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.business-link-btn:hover {
+    background: var(--primary);
+    color: white;
+    gap: 15px;
+}
+
+.business-link-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.business-link-btn:hover svg {
+    transform: translateX(3px);
+}
+
+
+/* 반응형 */
+@media (max-width: 1024px) {
+    .business-card-horizontal {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .business-card-left {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .business-card-right {
+        padding: 40px;
+    }
+    
+    .business-card-right h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .business-card-left {
+        height: 250px;
+    }
+    
+    .business-card-right {
+        padding: 30px;
+    }
+    
+    .business-card-right h3 {
+        font-size: 1.8rem;
+    }
+    
+    .business-card-right p {
+        font-size: 1rem;
+    }
 }
 
 /* 서브페이지 로고 색상 변경 */
