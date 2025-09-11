@@ -117,15 +117,38 @@
 /* 기관 로고 섹션 */
 .partners-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     margin: 80px 0;
     padding: 0 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.partners-grid .partner-logo:nth-child(4) {
+    grid-column: 1 / span 1;
+}
+
+.partners-grid .partner-logo:nth-child(5) {
+    grid-column: 2 / span 1;
+}
+
+.partners-grid .partner-logo:nth-child(6) {
+    grid-column: 3 / span 1;
+}
+
+.partners-grid .partner-logo:nth-child(7) {
+    grid-column: 2 / span 1;
+}
+
+a.partner-logo,
 .partner-logo {
     padding: 40px 30px;
     background: var(--gray-50);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
     border-radius: 0;
     height: 100px;
     display: flex;
@@ -427,27 +450,27 @@
                 </div>
 
                 <div class="partners-grid">
-                    <div class="partner-logo" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://www.mss.go.kr" target="_blank" class="partner-logo" data-aos="fade-up" data-aos-delay="100">
                         <span>중소벤처기업부</span>
-                    </div>
-                    <div class="partner-logo" data-aos="fade-up" data-aos-delay="150">
+                    </a>
+                    <a href="https://www.kodit.co.kr" target="_blank" class="partner-logo" data-aos="fade-up" data-aos-delay="150">
                         <span>신용보증기금</span>
-                    </div>
-                    <div class="partner-logo" data-aos="fade-up" data-aos-delay="200">
+                    </a>
+                    <a href="https://www.kibo.or.kr" target="_blank" class="partner-logo" data-aos="fade-up" data-aos-delay="200">
                         <span>기술보증기금</span>
-                    </div>
-                    <div class="partner-logo" data-aos="fade-up" data-aos-delay="250">
+                    </a>
+                    <a href="https://www.kised.or.kr" target="_blank" class="partner-logo" data-aos="fade-up" data-aos-delay="250">
                         <span>창업진흥원</span>
-                    </div>
-                    <div class="partner-logo" data-aos="fade-up" data-aos-delay="300">
+                    </a>
+                    <a href="https://www.sbc.or.kr" target="_blank" class="partner-logo" data-aos="fade-up" data-aos-delay="300">
                         <span>중소기업진흥공단</span>
-                    </div>
-                    <div class="partner-logo" data-aos="fade-up" data-aos-delay="350">
+                    </a>
+                    <a href="https://www.semas.or.kr" target="_blank" class="partner-logo" data-aos="fade-up" data-aos-delay="350">
                         <span>소상공인진흥공단</span>
-                    </div>
-                    <div class="partner-logo" data-aos="fade-up" data-aos-delay="400">
+                    </a>
+                    <a href="https://www.kdb.co.kr" target="_blank" class="partner-logo" data-aos="fade-up" data-aos-delay="400">
                         <span>산업은행</span>
-                    </div>
+                    </a>
                 </div>
             </section>
         </div>
