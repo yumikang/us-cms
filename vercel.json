@@ -5,8 +5,32 @@
       "destination": "/html/index.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/index.html",
       "destination": "/html/index.html"
+    },
+    {
+      "source": "/company-intro.html",
+      "destination": "/html/company-intro.html"
+    },
+    {
+      "source": "/policy-fund.html",
+      "destination": "/html/policy-fund.html"
+    },
+    {
+      "source": "/services.html",
+      "destination": "/html/services.html"
+    },
+    {
+      "source": "/us-market.html",
+      "destination": "/html/us-market.html"
+    },
+    {
+      "source": "/certification.html",
+      "destination": "/html/certification.html"
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/html/contact.html"
     }
   ]
 }
