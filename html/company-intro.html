@@ -289,30 +289,45 @@
                     </p>
                 </div>
 
-                <div class="card-grid">
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon">📊</div>
-                        <h3>정책자금 컨설팅</h3>
-                        <p>
-                            정부지원사업 신청부터<br>
-                            사후관리까지 원스톱 서비스
-                        </p>
+                <div class="business-area-container">
+                    <div class="business-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="business-image">
+                            <img src="../images/company-intro-04.webp" alt="정책자금 컨설팅" />
+                        </div>
+                        <div class="business-content">
+                            <h3>정책자금 컨설팅</h3>
+                            <p>
+                                정부지원사업 신청부터<br>
+                                사후관리까지 원스톱 서비스
+                            </p>
+                        </div>
+                        <div class="business-divider"></div>
                     </div>
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon">🌎</div>
-                        <h3>미국 시장 진출</h3>
-                        <p>
-                            FDA 인증, U.S. Agent,<br>
-                            현지 마케팅 지원
-                        </p>
+                    <div class="business-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="business-image">
+                            <img src="../images/company-intro-02.webp" alt="미국 시장 진출" />
+                        </div>
+                        <div class="business-content">
+                            <h3>미국 시장 진출</h3>
+                            <p>
+                                FDA 인증, U.S. Agent,<br>
+                                현지 마케팅 지원
+                            </p>
+                        </div>
+                        <div class="business-divider"></div>
                     </div>
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon">🏆</div>
-                        <h3>ISO 인증</h3>
-                        <p>
-                            국제표준 인증 취득 및<br>
-                            품질경영시스템 구축
-                        </p>
+                    <div class="business-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="business-image">
+                            <img src="../images/company-intro-03.webp" alt="ISO 인증" />
+                        </div>
+                        <div class="business-content">
+                            <h3>ISO 인증</h3>
+                            <p>
+                                국제표준 인증 취득 및<br>
+                                품질경영시스템 구축
+                            </p>
+                        </div>
+                        <div class="business-divider"></div>
                     </div>
                 </div>
             </section>
@@ -628,6 +643,71 @@
     font-size: 1rem;
     line-height: 1.6;
     color: var(--gray-600);
+}
+
+/* 새로운 BUSINESS AREA 스타일 */
+.business-area-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 80px;
+    padding: 60px 0;
+}
+
+.business-item {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: var(--white);
+    position: relative;
+    min-height: 220px;
+}
+
+.business-image {
+    width: 300px;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.business-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.business-content {
+    flex: 1;
+    padding: 0 50px;
+    text-align: left;
+}
+
+.business-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+}
+
+.business-content p {
+    font-size: 16px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.business-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--gray-200);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.business-item:last-child .business-divider {
+    display: none;
 }
 
 /* 서브페이지 로고 색상 변경 */
