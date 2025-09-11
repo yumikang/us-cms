@@ -6,7 +6,7 @@
 #inc02 .num{display:flex;flex-wrap:wrap;width:55%}
 #inc02 .num li{width:50%}
 #inc02 .num li:nth-child(even){margin-top:230px}
-#inc02 .icon{display:flex;flex-direction:column;justify-content:space-between;width:315px;height:315px;padding:40px;border-radius:13px;background:#f5f5f5;transition:all .3s}
+#inc02 .icon{display:flex;flex-direction:column;justify-content:space-between;width:340px;height:340px;padding:45px;border-radius:13px;background:#f5f5f5;transition:all .3s}
 #inc02 .icon:hover{background:var(--primary)}
 #inc02 .icon:hover p{color:#fff}
 #inc02 .icon p{font-size:35px;font-weight:700;color:var(--primary);transition:all .3s}
