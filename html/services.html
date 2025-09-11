@@ -5,265 +5,251 @@
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>수출 지원 - US INNOWAVE</title>
+<title>수출 지원 서비스 - US INNOWAVE</title>
 
 <!-- 기본 CSS -->
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../css/top_menu_style.css">
 <link rel="stylesheet" href="../css/cta-section.css">
 <link rel="stylesheet" href="../css/user.css">
+<link rel="stylesheet" href="../css/subpage.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
 <!-- SEO 메타 태그 -->
-<meta name="description" content="US INNOWAVE - 해외 수출 지원 및 글로벌 진출 전문 컨설팅 서비스">
-<meta name="keywords" content="수출지원, 해외진출, 글로벌, 무역, 수출컨설팅, 해외마케팅">
+<meta name="description" content="US INNOWAVE - FDA 인증, U.S. Agent 서비스 등 미국 수출 전문 컨설팅">
+<meta name="keywords" content="FDA인증, U.S.Agent, 미국수출, 의료기기, 화장품, 식품, 컨설팅">
 
 <style>
-/* Pretendard 폰트 - 모던한 한글/영문 폰트 */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
-    font-weight: 100;
-    font-display: swap;
+/* 수출 지원 페이지 전용 스타일 */
+
+/* 서비스 그리드 */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
 }
 
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff') format('woff');
-    font-weight: 200;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
-    font-weight: 300;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
-    font-weight: 500;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
-    font-weight: 700;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
-    font-weight: 800;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
-    font-weight: 900;
-    font-display: swap;
-}
-
-:root {
-    --main-font: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    --primary: #007bff;
-    --primary-dark: #0056b3;
-    --secondary: #6c757d;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --light: #f8f9fa;
-    --dark: #343a40;
-    --white: #ffffff;
-    --gray-100: #f8f9fa;
-    --gray-200: #e9ecef;
-    --gray-300: #dee2e6;
-    --gray-400: #ced4da;
-    --gray-500: #adb5bd;
-    --gray-600: #6c757d;
-    --gray-700: #495057;
-    --gray-800: #343a40;
-    --gray-900: #212529;
-}
-
-body {
-    font-family: var(--main-font);
-    line-height: 1.6;
-    color: var(--gray-800);
-}
-
-/* 로고 SVG 스타일 */
-.logo-svg {
-    height: 40px;
-    width: auto;
-    color: white;
-}
-
-#shGnb.on .logo-svg {
-    color: #222;
-}
-
-/* 서브페이지 전용 스타일 */
-.sub_container {
-    margin-top: 100px;
-}
-
-.sub_hero_wrap {
-    background: 
-        url('../images/sub-hero-pattern.svg'),
-        linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 86, 179, 0.85)),
-        url('../images/sub-hero.png');
-    background-size: cover, cover, cover;
-    background-position: center, center, center;
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    color: white;
-    padding: 180px 0 160px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* 커스텀 배경 이미지가 있는 경우 */
-.sub_hero_wrap.with-image {
-    background: 
-        linear-gradient(rgba(0, 123, 255, 0.3), rgba(0, 86, 179, 0.3)),
-        var(--hero-image, none);
-    background-size: cover, cover;
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
-}
-
-.sub_hero_container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
+.service-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 0;
+    padding: 40px 30px;
     text-align: center;
+    transition: all 0.3s ease;
 }
 
-.sub_hero_text h1 {
-    font-size: 2.5rem;
+.service-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.service-item .icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: rgba(58, 210, 255, 0.1);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: var(--primary);
+}
+
+.service-item h3 {
+    font-size: 24px;
     font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    color: var(--gray-900);
+    margin-bottom: 15px;
 }
 
-/* 콘텐츠 영역 */
-.content_section {
-    padding: 80px 0;
-}
-
-.section_inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.content_section h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: var(--gray-800);
-    text-align: center;
-}
-
-.content_section p {
-    font-size: 1.125rem;
-    line-height: 1.7;
+.service-item p {
+    font-size: 15px;
     color: var(--gray-600);
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-/* 반응형 */
+.service-item .features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.service-item .features li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--gray-700);
+}
+
+.service-item .features li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* 프로세스 박스 */
+.process-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 0;
+    padding: 40px;
+    margin: 50px 0;
+}
+
+.process-box h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.process-step {
+    text-align: center;
+    padding: 20px 15px;
+}
+
+.process-step .step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 auto 15px;
+}
+
+.process-step h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+}
+
+.process-step p {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.4;
+}
+
+/* 성공사례 그리드 */
+.case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.case-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 0;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.case-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.case-item .category {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(58, 210, 255, 0.1);
+    color: var(--primary);
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.case-item h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 10px;
+}
+
+.case-item p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .case-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 @media (max-width: 768px) {
-    .sub_hero_wrap {
-        padding: 140px 0 120px;
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
     
-    .sub_hero_text h1 {
-        font-size: 2rem;
+    .process-box {
+        padding: 30px 20px;
     }
     
-    .content_section {
-        padding: 60px 0;
-    }
-    
-    .content_section h2 {
-        font-size: 2rem;
-    }
-    
-    .content_section p {
-        font-size: 1rem;
+    .service-item {
+        padding: 30px 20px;
     }
 }
 
 @media (max-width: 480px) {
-    .sub_hero_wrap {
-        padding: 120px 0 100px;
+    .service-item .icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
     }
     
-    .sub_hero_text h1 {
-        font-size: 1.75rem;
-    }
-    
-    .content_section h2 {
-        font-size: 1.75rem;
+    .process-step .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
     }
 }
 </style>
 </head>
-
 <body>
+
+<!-- 100% 배경이미지 때문에 사용 -->
 <div id="sh_wrapper">
-<!-- 상단 시작 { -->
+    <!-- 헤더 시작 -->
     <header id="sh_hd">	
         <div class="sh_lnb_bg"></div>
         <div id="skip_to_container"><a href="#sh_container">본문 바로가기</a></div>
-        
-        <!-- 팝업레이어 시작 { -->
-        <div id="hd_pop">
-            <h2>팝업레이어 알림</h2>
-            <span class="sound_only">팝업레이어 알림이 없습니다.</span>
-        </div>
-
-        <script>
-        $(function() {
-            $(".hd_pops_reject").click(function() {
-                var id = $(this).attr('class').split(' ');
-                var ck_name = id[1];
-                var exp_time = parseInt(id[2]);
-                $("#"+id[1]).css("display", "none");
-                set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
-            });
-            $('.hd_pops_close').click(function() {
-                var idb = $(this).attr('class').split(' ');
-                $('#'+idb[1]).css('display','none');
-            });
-            $("#hd").css("z-index", 1000);
-        });
-        </script>
-        <!-- } 팝업레이어 끝 -->
         
         <div id="sh_hd_wrapper">
             <div id="shGnb">	
@@ -273,6 +259,13 @@ body {
                         <img src="../images/us-innowave-logo.svg" alt="US INNOWAVE" class="logo-svg">
                     </a>
                 </div>
+
+                <!-- 모바일 햄버거 메뉴 버튼 -->
+                <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
                 <!-- 상단메뉴 -->
                 <nav class="sh_nav">
@@ -284,7 +277,7 @@ body {
                             <a href="policy-fund.html">정책자금 컨설팅</a>
                         </li>
                         <li>
-                            <a href="services.html">수출 지원</a>
+                            <a href="services.html" class="active">수출 지원</a>
                         </li>
                         <li>
                             <a href="us-market.html">미국 공급망 & 조달시장</a>
@@ -296,34 +289,218 @@ body {
                             <a class="form_link" href="contact.html">문의하기 <i data-feather="arrow-up-right"></i></a>
                         </li>
                     </ul>
+                    
+                    <!-- 모바일 메뉴 오버레이 -->
+                    <div class="mobile-menu-overlay"></div>
                 </nav>
-                
             </div>	
         </div>
     </header>
-    <!-- } 상단 끝 -->
+    <!-- 헤더 끝 -->
 
-    <!-- 서브 히어로 배너 시작 -->
-    <section class="sub_hero_wrap with-image" style="--hero-image: url('../images/sub-hero.webp')">
-        <div class="sub_hero_container">
-            <div class="sub_hero_text">
-                <h1>수출 지원</h1>
+    <!-- 서브 비주얼 영역 -->
+    <section class="sub-visual">
+        <div class="sub-visual-content">
+            <h1>수출 지원 서비스</h1>
+            <div class="breadcrumb">
+                <a href="index.html">HOME</a>
+                <span>></span>
+                <span>수출 지원 서비스</span>
             </div>
         </div>
     </section>
-    <!-- 서브 히어로 배너 끝 -->
 
     <!-- 메인 콘텐츠 영역 -->
-    <main id="sh_container" class="sub_container">
+    <main id="sh_container" class="sub-container">
         <div class="container">
-            <section class="content_section">
-                <div class="section_inner">
-                    <h2>글로벌 시장 진출 전문 서비스</h2>
-                    <p>
-                        해외 진출을 꿈꾸는 기업을 위한 맞춤형 수출 지원 서비스를 제공합니다. 
-                        시장 조사부터 수출 절차, 현지 파트너 발굴까지 성공적인 글로벌 진출을 위한 
-                        전 과정을 체계적으로 지원하여 기업의 해외 사업 확장을 돕습니다.
+            <!-- 서비스 소개 섹션 -->
+            <section class="content-section">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="label">EXPORT SERVICES</span>
+                    <h2>미국 수출의 모든 것을 해결합니다</h2>
+                    <p class="desc">
+                        FDA 인증부터 U.S. Agent 서비스까지<br>
+                        복잡한 미국 수출 규제와 절차를 전문가가 완벽하게 지원합니다
                     </p>
+                </div>
+
+                <div class="two-column" data-aos="fade-up">
+                    <div class="column-content">
+                        <h3 class="content-title">왜 미국 수출이 어려운가?</h3>
+                        <p class="highlight-text">
+                            까다로운 FDA 규제, 복잡한 인증 절차, 현지 에이전트 의무...<br>
+                            미국 수출의 높은 진입장벽을 뛰어넘으세요
+                        </p>
+                        <ul class="feature-list">
+                            <li>FDA 등록 및 인증 의무화</li>
+                            <li>U.S. Agent 지정 필수</li>
+                            <li>복잡한 라벨링 및 표시 요구사항</li>
+                            <li>주별 상이한 규제 및 세금 정책</li>
+                            <li>현지 유통업체와의 네트워크 구축 어려움</li>
+                        </ul>
+                    </div>
+                    <div class="column-image">
+                        <img src="../images/export-intro.webp" alt="미국 수출 서비스">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 주요 서비스 섹션 -->
+            <section class="content-section">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="label">MAIN SERVICES</span>
+                    <h2>핵심 수출 지원 서비스</h2>
+                    <p class="desc">
+                        분야별 전문성을 바탕으로 한 맞춤형 수출 지원
+                    </p>
+                </div>
+
+                <div class="service-grid">
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon">🏥</div>
+                        <h3>FDA 인증 서비스</h3>
+                        <p>의료기기, 화장품, 식품 등 FDA 인증 전문 지원</p>
+                        <ul class="features">
+                            <li>의료기기 FDA 510(k) 승인</li>
+                            <li>화장품 FDA 등록</li>
+                            <li>식품 FDA 시설등록</li>
+                            <li>NDI 신고 및 cGMP 컨설팅</li>
+                            <li>라벨링 검토 및 수정</li>
+                        </ul>
+                    </div>
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon">🤝</div>
+                        <h3>U.S. Agent 서비스</h3>
+                        <p>FDA 커뮤니케이션 채널 및 현지 비즈니스 지원</p>
+                        <ul class="features">
+                            <li>FDA 공식 소통 창구 역할</li>
+                            <li>24시간 긴급 대응 시스템</li>
+                            <li>규제 업데이트 알림</li>
+                            <li>현지 비즈니스 지원</li>
+                            <li>법적 대리인 서비스</li>
+                        </ul>
+                    </div>
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon">📊</div>
+                        <h3>시장 진입 컨설팅</h3>
+                        <p>미국 시장 분석부터 진출 전략 수립까지</p>
+                        <ul class="features">
+                            <li>시장 분석 보고서 제공</li>
+                            <li>경쟁사 분석 및 포지셔닝</li>
+                            <li>가격 전략 수립</li>
+                            <li>유통 채널 연결</li>
+                            <li>마케팅 전략 컨설팅</li>
+                        </ul>
+                    </div>
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon">📋</div>
+                        <h3>종합 행정 지원</h3>
+                        <p>SAM/GSA 등록부터 현지화까지 원스톱 지원</p>
+                        <ul class="features">
+                            <li>SAM/GSA 등록 대행</li>
+                            <li>현지화 서비스</li>
+                            <li>법무/행정 업무 지원</li>
+                            <li>세무 컨설팅</li>
+                            <li>지적재산권 보호</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 지원 프로세스 섹션 -->
+            <section class="content-section">
+                <div class="process-box" data-aos="fade-up">
+                    <h3>체계적인 4단계 수출 지원 프로세스</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">01</div>
+                            <h4>현황 분석</h4>
+                            <p>제품 및 시장 분석<br>규제 요구사항 검토</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">02</div>
+                            <h4>전략 수립</h4>
+                            <p>진출 전략 기획<br>인증 계획 수립</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">03</div>
+                            <h4>실행 지원</h4>
+                            <p>인증 진행<br>현지 파트너 연결</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">04</div>
+                            <h4>사후 관리</h4>
+                            <p>지속적인 컴플라이언스<br>사업 확장 지원</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 성공 사례 섹션 -->
+            <section class="content-section">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="label">SUCCESS CASES</span>
+                    <h2>검증된 성공 사례</h2>
+                    <p class="desc">
+                        다양한 분야에서 축적한 성공 경험과 노하우
+                    </p>
+                </div>
+
+                <div class="case-grid">
+                    <div class="case-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="category">의료기기</div>
+                        <h4>의료기기 FDA 510(k) 승인</h4>
+                        <p>
+                            국내 의료기기 제조사의 신규 제품에 대한 FDA 510(k) 승인을 
+                            6개월만에 성공적으로 획득하여 미국 시장 진출을 지원했습니다.
+                        </p>
+                    </div>
+                    <div class="case-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="category">화장품</div>
+                        <h4>K-Beauty 아마존 시장 진입</h4>
+                        <p>
+                            한국 화장품 브랜드의 FDA 등록부터 아마존 입점까지 
+                            전 과정을 지원하여 월 매출 10만 달러 달성을 도왔습니다.
+                        </p>
+                    </div>
+                    <div class="case-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="category">건강기능식품</div>
+                        <h4>건강보조식품 NDI 신고</h4>
+                        <p>
+                            신규 기능성 원료에 대한 NDI(New Dietary Ingredient) 신고를 
+                            성공적으로 완료하여 미국 시장 독점 진출 기회를 확보했습니다.
+                        </p>
+                    </div>
+                    <div class="case-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="category">전자제품</div>
+                        <h4>IoT 기기 FCC 인증</h4>
+                        <p>
+                            스마트 IoT 기기의 FCC 인증과 함께 아마존 B2B 채널 진출을 
+                            지원하여 연간 50만 달러 매출 달성에 기여했습니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 성과 통계 섹션 -->
+            <section class="content-section">
+                <div class="stats-container">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">FDA 등록 완료</div>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">승인 성공률</div>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-number">60일</div>
+                        <div class="stat-label">평균 처리 기간</div>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">긴급 대응 시스템</div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -333,18 +510,17 @@ body {
     <article id="ctaBanner" class="cta-section">
         <div class="inner">
             <div class="cta-content" data-aos="fade-up">
-                <h2 class="cta-title">지금 바로 시작하세요</h2>
-                <p class="cta-subtitle">기업 현황 진단부터 실행 로드맵 수립까지, 
-                전문가와 함께 성공적인 글로벌 비즈니스를 시작하세요</p>
+                <h2 class="cta-title">미국 수출 컨설팅이 필요하신가요?</h2>
+                <p class="cta-subtitle">전문가와 함께 성공적인 미국 시장 진출을 시작하세요</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn-primary">무료 상담 신청 <i data-feather="chevron-right"></i></a>
-                    <a href="company-intro.html" class="btn-secondary">회사 소개 <i data-feather="arrow-right"></i></a>
+                    <a href="policy-fund.html" class="btn-secondary">다른 서비스 보기 <i data-feather="arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </article>
 
-    <!-- 하단 시작 { -->
+    <!-- 푸터 시작 -->
     <footer id="sh_ft">	
         <div class="flex">
             <div class="info">
@@ -362,7 +538,6 @@ body {
                 <div class="links">
                     <a href="javascript:void(0);" onclick="openPrivacyModal();">개인정보처리방침</a>
                     <a href="javascript:void(0);" onclick="openTermsModal();">이용약관</a>
-                    
                 </div>
             </div>
             
@@ -402,9 +577,15 @@ body {
             </svg>
         </div> 
     </footer>
-    <!-- } 하단 끝 -->
-
+    <!-- 푸터 끝 -->
 </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/wrest.js"></script>
+<script src="../js/feather.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../js/top_menu_script.js"></script>
 
 <!-- 개인정보처리방침/이용약관 모달 -->
 <div id="privacyModal" class="modal" style="display: none;">
@@ -414,28 +595,7 @@ body {
             <span class="close" onclick="closeModal('privacyModal')">&times;</span>
         </div>
         <div class="modal-body">
-            <h3>제1조 (개인정보의 처리목적)</h3>
-            <p>US INNOWAVE는 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
-            <ul>
-                <li>서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산</li>
-                <li>회원 가입의사 확인, 회원제 서비스 제공에 따른 본인 식별·인증</li>
-                <li>불만처리 등 민원처리, 고지사항 전달</li>
-            </ul>
-            
-            <h3>제2조 (개인정보의 처리 및 보유기간)</h3>
-            <p>① US INNOWAVE는 정보주체로부터 개인정보를 수집할 때 동의받은 개인정보 보유·이용기간 또는 법령에 따른 개인정보 보유·이용기간 내에서 개인정보를 처리·보유합니다.</p>
-            <p>② 각각의 개인정보 처리 및 보유 기간은 다음과 같습니다.</p>
-            <ul>
-                <li>컨설팅 서비스 이용기록: 3년</li>
-                <li>문의 및 상담 기록: 3년</li>
-            </ul>
-            
-            <h3>제3조 (개인정보의 제3자 제공)</h3>
-            <p>① US INNOWAVE는 개인정보를 제1조(개인정보의 처리목적)에서 명시한 범위 내에서만 처리하며, 정보주체의 동의, 법률의 특별한 규정 등 개인정보보호법 제17조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.</p>
-            
-            <h3>제4조 (개인정보처리의 위탁)</h3>
-            <p>① US INNOWAVE는 원활한 개인정보 업무처리를 위하여 다음과 같이 개인정보 처리업무를 위탁하고 있습니다.</p>
-            <p>② 회사는 위탁계약 체결시 개인정보보호법 제26조에 따라 위탁업무 수행목적 외 개인정보 처리금지, 기술적·관리적 보호조치, 재위탁 제한, 수탁자에 대한 관리·감독, 손해배상 등 책임에 관한 사항을 계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.</p>
+            <!-- 개인정보처리방침 내용 -->
         </div>
     </div>
 </div>
@@ -447,157 +607,11 @@ body {
             <span class="close" onclick="closeModal('termsModal')">&times;</span>
         </div>
         <div class="modal-body">
-            <h3>제1조 (목적)</h3>
-            <p>이 약관은 US INNOWAVE(이하 "회사")가 제공하는 모든 서비스(이하 "서비스")의 이용조건 및 절차, 회사와 회원간의 권리, 의무, 책임사항과 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
-            
-            <h3>제2조 (정의)</h3>
-            <p>이 약관에서 사용하는 용어의 정의는 다음과 같습니다.</p>
-            <ul>
-                <li>① "서비스"라 함은 회사가 제공하는 정책자금 컨설팅, 미국 진출 지원, ISO 인증 등 모든 서비스를 의미합니다.</li>
-                <li>② "회원"이라 함은 회사와 서비스 이용계약을 체결한 개인 또는 법인을 의미합니다.</li>
-                <li>③ "이용자"라 함은 회사의 서비스에 접속하여 이 약관에 따라 회사가 제공하는 서비스를 받는 회원 및 비회원을 의미합니다.</li>
-            </ul>
-            
-            <h3>제3조 (약관의 게시와 개정)</h3>
-            <p>① 회사는 이 약관의 내용을 이용자가 쉽게 알 수 있도록 서비스 초기 화면에 게시합니다.</p>
-            <p>② 회사는 약관의규제에관한법률, 정보통신망이용촉진및정보보호등에관한법률(이하 "정보통신망법") 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.</p>
-            
-            <h3>제4조 (서비스의 제공 및 변경)</h3>
-            <p>① 회사는 다음과 같은 업무를 수행합니다.</p>
-            <ul>
-                <li>정책자금 컨설팅 서비스</li>
-                <li>미국 진출 지원 서비스</li>
-                <li>ISO 및 기업인증 서비스</li>
-                <li>기타 회사가 정하는 업무</li>
-            </ul>
-            
-            <h3>제5조 (서비스 이용계약의 성립)</h3>
-            <p>① 서비스 이용계약은 이용고객이 약관의 내용에 대하여 동의를 한 다음 서비스 이용신청을 하고 회사가 이러한 신청에 대하여 승낙함으로써 성립합니다.</p>
-            <p>② 회사는 이용신청고객에 대하여 서비스 이용을 승낙함을 원칙으로 합니다. 다만, 회사는 다음 각 호에 해당하는 신청에 대하여는 승낙을 하지 않거나 사후에 이용계약을 해지할 수 있습니다.</p>
+            <!-- 이용약관 내용 -->
         </div>
     </div>
 </div>
 
-<!-- 모달 스타일 -->
-<style>
-.modal {
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 0;
-    border: none;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 800px;
-    max-height: 80vh;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
-
-.modal-header {
-    background-color: var(--primary);
-    color: white;
-    padding: 20px;
-    position: relative;
-}
-
-.modal-header h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.close {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    line-height: 1;
-}
-
-.close:hover {
-    opacity: 0.7;
-}
-
-.modal-body {
-    padding: 30px;
-    overflow-y: auto;
-    max-height: calc(80vh - 80px);
-    line-height: 1.6;
-}
-
-.modal-body h3 {
-    color: var(--primary);
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 25px 0 15px 0;
-    border-bottom: 2px solid var(--gray-200);
-    padding-bottom: 8px;
-}
-
-.modal-body h3:first-child {
-    margin-top: 0;
-}
-
-.modal-body p {
-    margin-bottom: 15px;
-    color: var(--gray-700);
-}
-
-.modal-body ul {
-    margin: 15px 0;
-    padding-left: 25px;
-}
-
-.modal-body li {
-    margin-bottom: 8px;
-    color: var(--gray-700);
-}
-
-/* 반응형 */
-@media (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        margin: 10% auto;
-    }
-    
-    .modal-header {
-        padding: 15px;
-    }
-    
-    .modal-header h2 {
-        font-size: 1.3rem;
-    }
-    
-    .modal-body {
-        padding: 20px;
-    }
-}
-</style>
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="../js/common.js"></script>
-<script src="../js/wrest.js"></script>
-<!-- Font Awesome 로컬화 -->
-<link rel="stylesheet" href="../css/font-awesome.min.css">
-<script src="../js/feather.min.js"></script>
-<script src="../js/top_menu_script.js"></script>
-
-<!-- 맨 위로 버튼 및 모달 스크립트 -->
 <script>
 // 모달 함수들
 function openPrivacyModal() {
@@ -628,15 +642,6 @@ window.onclick = function(event) {
     }
 }
 
-// ESC 키로 모달 닫기
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        closeModal('privacyModal');
-        closeModal('termsModal');
-    }
-});
-
-// 맨 위로 버튼 및 Feather 아이콘 초기화
 $(document).ready(function() {
     // 맨 위로 버튼
     $('#toTop').click(function(){
@@ -645,6 +650,14 @@ $(document).ready(function() {
     
     // Feather icons 초기화
     feather.replace();
+    
+    // AOS 애니메이션 초기화
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
 });
 </script>
 
