@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="../css/top_menu_style.css">
 <link rel="stylesheet" href="../css/cta-section.css">
 <link rel="stylesheet" href="../css/user.css">
+<link rel="stylesheet" href="../css/subpage.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
 <!-- SEO 메타 태그 -->
 <meta name="description" content="US INNOWAVE - 정책자금 컨설팅 및 미국 진출 전문 기업 소개">
@@ -343,26 +345,176 @@ body {
     </header>
     <!-- } 상단 끝 -->
 
-    <!-- 서브 히어로 배너 시작 -->
-    <section class="sub_hero_wrap with-image" style="--hero-image: url('../images/sub-hero.webp')">
-        <div class="sub_hero_container">
-            <div class="sub_hero_text">
-                <h1>회사소개</h1>
+    <!-- 서브 비주얼 영역 -->
+    <section class="sub-visual">
+        <div class="sub-visual-content">
+            <h1>회사소개</h1>
+            <div class="breadcrumb">
+                <a href="index.html">HOME</a>
+                <span>></span>
+                <span>회사소개</span>
             </div>
         </div>
     </section>
-    <!-- 서브 히어로 배너 끝 -->
 
     <!-- 메인 콘텐츠 영역 -->
-    <main id="sh_container" class="sub_container">
+    <main id="sh_container" class="sub-container">
         <div class="container">
-            <section class="content_section">
-                <div class="section_inner">
-                    <h2>US INNOWAVE</h2>
-                    <p>
-                        정책자금 컨설팅과 미국 진출 지원을 통해 기업의 성장과 글로벌 진출을 돕는 전문 컨설팅 기업입니다. 
-                        다년간의 경험과 전문성을 바탕으로 고객의 성공적인 비즈니스 확장을 지원합니다.
+            <!-- 회사 소개 섹션 -->
+            <section class="content-section">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="label">ABOUT US</span>
+                    <h2>글로벌 성공의 동반자<br>US INNOWAVE</h2>
+                    <p class="desc">
+                        기업의 글로벌 여정을 함께 설계하는 전략 파트너로서,
+                        정책자금 컨설팅부터 미국 시장 진출까지 체계적인 솔루션을 제공합니다.
                     </p>
+                </div>
+
+                <div class="two-column" data-aos="fade-up">
+                    <div class="column-content">
+                        <h3 class="content-title">우리나라 기업의 글로벌 경쟁력을 높이는 전문 컨설팅</h3>
+                        <p class="highlight-text">
+                            "모든 기업이 글로벌 시장에서 성공할 수 있는 세상"
+                        </p>
+                        <p class="content-text">
+                            US INNOWAVE는 대한민국 중소·중견기업의 우수한 기술력과 제품이 
+                            세계 시장에서 정당한 평가를 받을 수 있도록 돕는 것을 사명으로 합니다.
+                        </p>
+                        <p class="content-text">
+                            정부 정책자금 활용부터 미국 시장 진출까지, 기업 성장의 모든 단계에서 
+                            최적의 솔루션을 제공하며, 고객사의 지속가능한 성장을 지원합니다.
+                        </p>
+                        <ul class="feature-list">
+                            <li>10년 이상의 정책자금 컨설팅 전문성</li>
+                            <li>미국 현지 네트워크를 통한 직접 지원</li>
+                            <li>ISO 인증 및 품질경영 시스템 구축</li>
+                            <li>맞춤형 토탈 비즈니스 솔루션</li>
+                        </ul>
+                    </div>
+                    <div class="column-image">
+                        <img src="../images/company-about.webp" alt="US INNOWAVE 회사 소개">
+                    </div>
+                </div>
+            </section>
+
+            <!-- CEO 인사말 섹션 -->
+            <section class="content-section">
+                <div class="quote-box" data-aos="fade-up">
+                    <p class="quote-text">
+                        "우리나라 중소기업의 우수한 기술력과 제품이 세계 시장에서 정당한 평가를 받을 수 있도록 
+                        돕는 것이 저희의 사명입니다. 정부 정책자금 활용부터 미국 시장 진출까지, 
+                        기업 성장의 모든 단계에서 최적의 솔루션을 제공하겠습니다."
+                    </p>
+                    <p class="quote-author">- 김영철 대표이사</p>
+                </div>
+            </section>
+
+            <!-- 비전 & 미션 섹션 -->
+            <section class="content-section">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="label">VISION & MISSION</span>
+                    <h2>우리가 추구하는 가치</h2>
+                </div>
+
+                <div class="card-grid">
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon">🎯</div>
+                        <h3>비전</h3>
+                        <p>
+                            모든 기업이 글로벌 시장에서<br>
+                            성공할 수 있는 세상을 만들어갑니다
+                        </p>
+                    </div>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon">🚀</div>
+                        <h3>미션</h3>
+                        <p>
+                            기업 성장의 모든 단계에서<br>
+                            최적의 솔루션을 제공합니다
+                        </p>
+                    </div>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon">💎</div>
+                        <h3>핵심가치</h3>
+                        <p>
+                            전문성, 신뢰, 혁신, 성과를 바탕으로<br>
+                            고객과 함께 성장합니다
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 핵심 역량 섹션 -->
+            <section class="content-section">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="label">CORE COMPETENCY</span>
+                    <h2>US INNOWAVE의 핵심 역량</h2>
+                </div>
+
+                <div class="two-column reverse" data-aos="fade-up">
+                    <div class="column-content">
+                        <h3 class="content-title">체계적인 프로세스와 전문성</h3>
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">성공 프로젝트</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">95%</div>
+                                <div class="stat-label">고객 만족도</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">전문가 팀</div>
+                            </div>
+                        </div>
+                        <p class="content-text">
+                            각 분야 최고의 전문가들이 모여 고객사의 성공을 위해 헌신합니다.
+                            체계적인 프로세스와 검증된 방법론으로 확실한 성과를 보장합니다.
+                        </p>
+                    </div>
+                    <div class="column-image">
+                        <img src="../images/company-team.webp" alt="US INNOWAVE 팀">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 주요 사업분야 섹션 -->
+            <section class="content-section">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="label">BUSINESS AREA</span>
+                    <h2>주요 사업분야</h2>
+                    <p class="desc">
+                        기업의 성장 단계별 맞춤형 솔루션을 제공합니다
+                    </p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon">📊</div>
+                        <h3>정책자금 컨설팅</h3>
+                        <p>
+                            정부지원사업 신청부터<br>
+                            사후관리까지 원스톱 서비스
+                        </p>
+                    </div>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon">🌎</div>
+                        <h3>미국 시장 진출</h3>
+                        <p>
+                            FDA 인증, U.S. Agent,<br>
+                            현지 마케팅 지원
+                        </p>
+                    </div>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon">🏆</div>
+                        <h3>ISO 인증</h3>
+                        <p>
+                            국제표준 인증 취득 및<br>
+                            품질경영시스템 구축
+                        </p>
+                    </div>
                 </div>
             </section>
         </div>
@@ -450,6 +602,7 @@ body {
 <!-- Font Awesome 로컬화 -->
 <link rel="stylesheet" href="../css/font-awesome.min.css">
 <script src="../js/feather.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="../js/top_menu_script.js"></script>
 
 <!-- 개인정보처리방침/이용약관 모달 -->
@@ -682,6 +835,14 @@ $(document).ready(function() {
     
     // Feather icons 초기화
     feather.replace();
+    
+    // AOS 애니메이션 초기화
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
 });
 </script>
 
