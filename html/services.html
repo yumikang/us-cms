@@ -5,7 +5,7 @@
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>수출 지원 서비스 - US INNOWAVE</title>
+<title>해외 수출 서비스 - US INNOWAVE</title>
 <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 
 <!-- 기본 CSS -->
@@ -21,9 +21,89 @@
 <meta name="keywords" content="FDA인증, U.S.Agent, 미국수출, 의료기기, 화장품, 식품, 컨설팅">
 
 <style>
-/* 수출 지원 페이지 전용 스타일 */
+/* 해외 수출 페이지 전용 스타일 */
 
-/* 서비스 그리드 */
+/* 새로운 서비스 섹션 스타일 */
+.service-sections {
+    margin-top: 80px;
+}
+
+.service-section {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 120px;
+    padding: 60px 0;
+}
+
+.service-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.service-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.service-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.service-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.service-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 20px;
+}
+
+.service-content > p {
+    font-size: 18px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.service-content .features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-content .features li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: var(--gray-700);
+    line-height: 1.6;
+}
+
+.service-content .features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 기존 서비스 그리드 (남은 카드들을 위해 유지) */
 .service-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -282,7 +362,7 @@
                             <a href="policy-fund.html">정책자금 컨설팅</a>
                         </li>
                         <li>
-                            <a href="services.html" class="active">수출 지원</a>
+                            <a href="services.html" class="active">해외 수출</a>
                         </li>
                         <li>
                             <a href="us-market.html">미국 공급망 & 조달시장</a>
@@ -306,11 +386,11 @@
     <!-- 서브 비주얼 영역 -->
     <section class="sub-visual">
         <div class="sub-visual-content">
-            <h1>수출 지원 서비스</h1>
+            <h1>해외 수출 서비스</h1>
             <div class="breadcrumb">
                 <a href="index.html">HOME</a>
                 <span>></span>
-                <span>수출 지원 서비스</span>
+                <span>해외 수출 서비스</span>
             </div>
         </div>
     </section>
@@ -355,60 +435,82 @@
             <section class="content-section">
                 <div class="section-header" data-aos="fade-up">
                     <span class="label">MAIN SERVICES</span>
-                    <h2>핵심 수출 지원 서비스</h2>
+                    <h2>핵심 해외 수출 서비스</h2>
                     <p class="desc">
-                        분야별 전문성을 바탕으로 한 맞춤형 수출 지원
+                        분야별 전문성을 바탕으로 한 맞춤형 해외 수출
                     </p>
                 </div>
 
-                <div class="service-grid">
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon">🏥</div>
-                        <h3>FDA 인증 서비스</h3>
-                        <p>의료기기, 화장품, 식품 등 FDA 인증 전문 지원</p>
-                        <ul class="features">
-                            <li>의료기기 FDA 510(k) 승인</li>
-                            <li>화장품 FDA 등록</li>
-                            <li>식품 FDA 시설등록</li>
-                            <li>NDI 신고 및 cGMP 컨설팅</li>
-                            <li>라벨링 검토 및 수정</li>
-                        </ul>
+                <div class="service-sections">
+                    <!-- FDA 인증 서비스 - 좌측 이미지 -->
+                    <div class="service-section" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-image">
+                            <img src="../images/company-intro-04.webp" alt="FDA 인증 서비스" />
+                        </div>
+                        <div class="service-content">
+                            <h3>FDA 인증 서비스</h3>
+                            <p>의료기기, 화장품, 식품 등 FDA 인증 전문 지원</p>
+                            <ul class="features">
+                                <li>의료기기 FDA 510(k) 승인</li>
+                                <li>화장품 FDA 등록</li>
+                                <li>식품 FDA 시설등록</li>
+                                <li>NDI 신고 및 cGMP 컨설팅</li>
+                                <li>라벨링 검토 및 수정</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon">🤝</div>
-                        <h3>U.S. Agent 서비스</h3>
-                        <p>FDA 커뮤니케이션 채널 및 현지 비즈니스 지원</p>
-                        <ul class="features">
-                            <li>FDA 공식 소통 창구 역할</li>
-                            <li>24시간 긴급 대응 시스템</li>
-                            <li>규제 업데이트 알림</li>
-                            <li>현지 비즈니스 지원</li>
-                            <li>법적 대리인 서비스</li>
-                        </ul>
+
+                    <!-- U.S. Agent 서비스 - 우측 이미지 -->
+                    <div class="service-section reverse" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-content">
+                            <h3>U.S. Agent 서비스</h3>
+                            <p>FDA 커뮤니케이션 채널 및 현지 비즈니스 지원</p>
+                            <ul class="features">
+                                <li>FDA 공식 소통 창구 역할</li>
+                                <li>24시간 긴급 대응 시스템</li>
+                                <li>규제 업데이트 알림</li>
+                                <li>현지 비즈니스 지원</li>
+                                <li>법적 대리인 서비스</li>
+                            </ul>
+                        </div>
+                        <div class="service-image">
+                            <img src="../images/company-intro-06.webp" alt="U.S. Agent 서비스" />
+                        </div>
                     </div>
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon">📊</div>
-                        <h3>시장 진입 컨설팅</h3>
-                        <p>미국 시장 분석부터 진출 전략 수립까지</p>
-                        <ul class="features">
-                            <li>시장 분석 보고서 제공</li>
-                            <li>경쟁사 분석 및 포지셔닝</li>
-                            <li>가격 전략 수립</li>
-                            <li>유통 채널 연결</li>
-                            <li>마케팅 전략 컨설팅</li>
-                        </ul>
+                    <!-- 시장 진입 컨설팅 - 좌측 이미지 -->
+                    <div class="service-section" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-image">
+                            <img src="../images/company-intro-05.webp" alt="시장 진입 컨설팅" />
+                        </div>
+                        <div class="service-content">
+                            <h3>시장 진입 컨설팅</h3>
+                            <p>미국 시장 분석부터 진출 전략 수립까지</p>
+                            <ul class="features">
+                                <li>시장 분석 보고서 제공</li>
+                                <li>경쟁사 분석 및 포지셔닝</li>
+                                <li>가격 전략 수립</li>
+                                <li>유통 채널 연결</li>
+                                <li>마케팅 전략 컨설팅</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="icon">📋</div>
-                        <h3>종합 행정 지원</h3>
-                        <p>SAM/GSA 등록부터 현지화까지 원스톱 지원</p>
-                        <ul class="features">
-                            <li>SAM/GSA 등록 대행</li>
-                            <li>현지화 서비스</li>
-                            <li>법무/행정 업무 지원</li>
-                            <li>세무 컨설팅</li>
-                            <li>지적재산권 보호</li>
-                        </ul>
+
+                    <!-- 종합 행정 지원 - 우측 이미지 -->
+                    <div class="service-section reverse" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-content">
+                            <h3>종합 행정 지원</h3>
+                            <p>SAM/GSA 등록부터 현지화까지 원스톱 지원</p>
+                            <ul class="features">
+                                <li>SAM/GSA 등록 대행</li>
+                                <li>현지화 서비스</li>
+                                <li>법무/행정 업무 지원</li>
+                                <li>세무 컨설팅</li>
+                                <li>지적재산권 보호</li>
+                            </ul>
+                        </div>
+                        <div class="service-image">
+                            <img src="../images/company-intro-08.webp" alt="종합 행정 지원" />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -416,7 +518,7 @@
             <!-- 지원 프로세스 섹션 -->
             <section class="content-section">
                 <div class="process-box" data-aos="fade-up">
-                    <h3>체계적인 4단계 수출 지원 프로세스</h3>
+                    <h3>체계적인 4단계 해외 수출 프로세스</h3>
                     <div class="process-steps">
                         <div class="process-step">
                             <div class="step-number">01</div>
@@ -556,7 +658,7 @@
                     <a href="policy-fund.html">정책자금 컨설팅</a>
                 </li>
                 <li>
-                    <a href="services.html">수출 지원</a>
+                    <a href="services.html">해외 수출</a>
                 </li>
                 <li>
                     <a href="us-market.html">미국 공급망 & 조달시장</a>
