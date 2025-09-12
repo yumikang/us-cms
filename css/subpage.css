@@ -833,7 +833,7 @@
 
 .card-image {
     width: 100%;
-    height: 280px;
+    height: 320px;
     overflow: hidden;
     background: var(--gray-100);
 }
@@ -854,10 +854,15 @@
 }
 
 .card-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--gray-900);
+    margin-bottom: 20px;
+    color: var(--primary);
+    display: inline-block;
+    padding: 10px 24px;
+    background: rgba(58, 210, 255, 0.1);
+    border-left: 4px solid var(--primary);
+    position: relative;
 }
 
 .card-content p {
@@ -870,7 +875,7 @@
 /* Responsive for Vision Cards */
 @media (max-width: 768px) {
     .card-image {
-        height: 220px;
+        height: 260px;
     }
     
     .card-content {
@@ -878,7 +883,7 @@
     }
     
     .card-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     
     .card-content p {
