@@ -812,3 +812,77 @@
     }
 }
 
+/* Vision & Mission Style Cards */
+.info-card-new {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.info-card-new:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: var(--gray-100);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.info-card-new:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 30px;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--gray-900);
+}
+
+.card-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-600);
+    margin: 0;
+}
+
+/* Responsive for Vision Cards */
+@media (max-width: 768px) {
+    .card-image {
+        height: 220px;
+    }
+    
+    .card-content {
+        padding: 25px;
+    }
+    
+    .card-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .card-content p {
+        font-size: 0.95rem;
+    }
+}
+
