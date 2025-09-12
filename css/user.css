@@ -187,6 +187,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 #sh_ft .ft_mn li ul a{opacity:.5;transition:var(--transition-normal);font-size:var(--font-size-sm);font-family:var(--k-font)}
 #sh_ft .ft_mn li ul a:hover{opacity:1}
 #sh_ft .copy{margin-top:65px;padding-top:var(--space-4xl);border-top:1px solid rgba(255, 255, 255, .1);font-size:var(--font-size-base);font-weight:var(--font-weight-medium);color:rgba(255, 255, 255, .3)}
+#sh_ft .footer-logo-svg{height:40px;width:auto;filter:brightness(0) saturate(100%) invert(100%);opacity:0.6;margin-bottom:10px}
 #toTop{display:flex;justify-content:center;align-items:center;position:absolute;bottom:105px;right:var(--container-padding);width:var(--space-6xl);height:var(--space-6xl);border-radius:var(--radius-sm);color:rgb(255, 255, 255, 0.6);transition:var(--transition-normal);background-color:var(--gray-800);cursor:pointer}
 #toTop:hover{color:var(--white);background-color:#3AD2FF}
 
