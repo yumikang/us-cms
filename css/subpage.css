@@ -578,7 +578,7 @@
 }
 
 .cert-table thead {
-    background: #0066CC;
+    background: var(--primary);
     color: var(--white);
 }
 
