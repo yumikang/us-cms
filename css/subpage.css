@@ -215,10 +215,12 @@
     background: var(--white);
     border: 1px solid var(--gray-200);
     border-radius: 0;
-    padding: 50px 30px;
-    text-align: center;
+    padding: 25px;
+    text-align: left;
     transition: all 0.3s ease;
-    min-height: 320px;
+    min-height: 240px;
+    position: relative;
+    padding-top: 70px;
 }
 
 .info-card:hover {
@@ -227,20 +229,21 @@
 }
 
 .info-card .icon {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 30px;
-    background: rgba(58, 210, 255, 0.1);
-    border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 36px;
-    color: var(--primary);
+    font-size: 20px;
+    color: var(--white);
 }
 
 .info-card h3 {
-    font-size: 24px;
+    font-size: 19px;
     font-weight: 700;
     color: var(--gray-900);
     margin-bottom: 15px;
@@ -249,7 +252,7 @@
 .info-card p {
     font-size: 15px;
     color: var(--gray-600);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* 인용문 */
