@@ -564,6 +564,88 @@
     }
 }
 
+/* Certification Table Styles */
+.cert-table-container {
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+.cert-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    font-size: 15px;
+}
+
+.cert-table thead {
+    background: #0066CC;
+    color: var(--white);
+}
+
+.cert-table thead th {
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+}
+
+.cert-table tbody tr {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.cert-table tbody tr:hover {
+    background: rgba(58, 210, 255, 0.02);
+}
+
+.cert-table tbody td {
+    padding: 18px 20px;
+    text-align: left;
+    color: var(--gray-700);
+    line-height: 1.6;
+    border: none;
+}
+
+.cert-table tbody td.cert-name {
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .cert-table {
+        font-size: 14px;
+    }
+    
+    .cert-table thead th {
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+    
+    .cert-table tbody td {
+        padding: 15px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cert-table-container {
+        margin-top: 30px;
+    }
+    
+    .cert-table {
+        font-size: 13px;
+    }
+    
+    .cert-table thead th {
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+    
+    .cert-table tbody td {
+        padding: 12px 8px;
+    }
+}
+
 /* Gallery Style Cards */
 .gallery-wrap {
     display: flex;
