@@ -91,29 +91,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* 로고 SVG 스타일 */
-.logo-svg {
-    height: 55px;
-    width: auto;
-    filter: brightness(0) saturate(100%) invert(73%) sepia(88%) saturate(1598%) hue-rotate(166deg) brightness(101%) contrast(101%);
-}
-
-#shGnb.on .logo-svg {
-    filter: brightness(0) saturate(100%) invert(73%) sepia(88%) saturate(1598%) hue-rotate(166deg) brightness(101%) contrast(101%);
-}
-
-/* 반응형 로고 크기 조절 */
-@media (max-width: 768px) {
-    .logo-svg {
-        height: 45px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-svg {
-        height: 40px;
-    }
-}
 </style><!-- IE8 지원 제거: 모던 브라우저만 지원 -->
 <script>
 // 자바스크립트에서 사용하는 전역변수 선언
@@ -204,7 +181,7 @@ $(function() {
     
 	<div class="sh_logo">
 		<a href="index.html">
-			<img src="../images/us-logo.svg" alt="US INNOWAVE" class="logo-svg">
+			<img src="../images/us-logo.svg" alt="US INNOWAVE" class="logo-svg main-color">
 		</a>
 	</div>
 

@@ -8,9 +8,11 @@
 #shGnb .sh_logo{position:relative;z-index:20}
 #shGnb .sh_logo a{display:flex;align-items:center;text-decoration:none}
 #shGnb .sh_logo .logo-img{height:40px;margin-right:10px}
-#shGnb .sh_logo .logo-svg{height:55px;width:auto;filter:brightness(0) saturate(100%) invert(73%) sepia(88%) saturate(1598%) hue-rotate(166deg) brightness(101%) contrast(101%)}
+#shGnb .sh_logo .logo-svg{height:55px;width:auto;filter:brightness(0) saturate(100%) invert(100%)}
+#shGnb .sh_logo .logo-svg.main-color{filter:brightness(0) saturate(100%) invert(73%) sepia(88%) saturate(1598%) hue-rotate(166deg) brightness(101%) contrast(101%)}
 #shGnb .sh_logo .logo-text{font-size:24px;font-weight:700;color:#fff;font-family:var(--main-font)}
 #shGnb.on .sh_logo .logo-text{color:#222}
+#shGnb.on .sh_logo .logo-svg{filter:brightness(0) saturate(100%) invert(0%)}
 
 /* 대분류  */
 #shGnb .sh_nav{margin:0 auto}
