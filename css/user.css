@@ -360,10 +360,6 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 
 /* Typography Components */
 .title {
-  position:sticky;
-  top:0;
-  left:0;
-  height:100%;
   padding-top:var(--space-5xl);
 }
 

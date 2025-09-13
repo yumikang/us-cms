@@ -412,6 +412,10 @@ $(function() {
         trigger: text,
         start: "top 40%",
         end: "bottom 0%",
+        onEnter: () => {
+        // 처음 스크롤 내릴 때 해당 텍스트가 화면에 들어오면
+        setActive(i);
+        },
         onEnterBack: () => {
         // 스크롤 올릴 때 해당 텍스트가 화면에 들어오면
         setActive(i);
@@ -419,6 +423,10 @@ $(function() {
         onLeave: () => {
         // 스크롤 내릴 때 해당 텍스트가 화면에서 완전히 지나가면
         if(i < lastIndex) setActive(i + 1);
+        },
+        onLeaveBack: () => {
+        // 스크롤 올릴 때 해당 텍스트가 화면 위로 사라지면
+        if(i > 0) setActive(i - 1);
         }
     });
     });
