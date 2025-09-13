@@ -212,6 +212,159 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 #toTop{display:flex;justify-content:center;align-items:center;position:absolute;bottom:105px;right:var(--container-padding);width:var(--space-6xl);height:var(--space-6xl);border-radius:var(--radius-sm);color:rgb(255, 255, 255, 0.6);transition:var(--transition-normal);background-color:var(--gray-800);cursor:pointer}
 #toTop:hover{color:var(--white);background-color:#3AD2FF}
 
+/* ========================================
+   📱 FOOTER MOBILE RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    /* 푸터 기본 패딩 조정 */
+    #sh_ft {
+        padding: 40px 20px 30px;
+        font-size: 14px;
+    }
+
+    /* 플렉스 레이아웃을 세로 방향으로 변경 */
+    #sh_ft .flex {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* 로고 크기 조정 */
+    #sh_ft .footer-logo-svg {
+        height: 32px;
+        margin-bottom: 20px;
+    }
+
+    /* 회사 정보 섹션 */
+    #sh_ft .info ul {
+        margin: 25px 0;
+    }
+
+    #sh_ft .info ul li {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    #sh_ft .info ul li+li {
+        margin-top: 15px;
+    }
+
+    #sh_ft .info ul li span {
+        width: auto;
+        margin-bottom: 5px;
+        font-size: 12px;
+        opacity: 0.7;
+        display: block;
+    }
+
+    /* 링크 버튼들 (통신판매업종신고, 개인정보처리방침 등) */
+    #sh_ft .info .links {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    #sh_ft .info .links a {
+        flex: 1;
+        min-width: calc(50% - 4px);
+        text-align: center;
+        padding: 10px 12px;
+        font-size: 11px;
+        border-radius: 4px;
+    }
+
+    #sh_ft .info .links a+a {
+        margin-left: 0;
+    }
+
+    /* 푸터 메뉴 */
+    #sh_ft .ft_mn {
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #sh_ft .ft_mn > li+li {
+        margin-left: 0;
+    }
+
+    #sh_ft .ft_mn > li > a {
+        font-size: 15px;
+        font-weight: 600;
+        display: block;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    #sh_ft .ft_mn li ul {
+        margin-top: 12px;
+        padding-left: 15px;
+    }
+
+    #sh_ft .ft_mn li ul li+li {
+        margin-top: 8px;
+    }
+
+    #sh_ft .ft_mn li ul a {
+        font-size: 13px;
+        opacity: 0.6;
+        display: block;
+        padding: 2px 0;
+    }
+
+    /* 카피라이트 */
+    #sh_ft .copy {
+        margin-top: 40px;
+        padding-top: 20px;
+        font-size: 12px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    /* To Top 버튼 */
+    #toTop {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+}
+
+/* 태블릿 크기 미세 조정 (769px ~ 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #sh_ft {
+        padding: 60px 30px 40px;
+    }
+
+    #sh_ft .flex {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    #sh_ft .ft_mn {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    #sh_ft .ft_mn > li {
+        flex: 0 0 calc(50% - 15px);
+    }
+
+    #sh_ft .ft_mn > li+li {
+        margin-left: 0;
+    }
+
+    #toTop {
+        bottom: 30px;
+        right: 30px;
+    }
+}
+
 /* 사이트맵 */
 #sh_site_map{position:relative;width:100%;font-family:'notokr-regular'}
 #sh_site_map > div{float:left;width:32%;min-height:280px;margin-right:2%}
