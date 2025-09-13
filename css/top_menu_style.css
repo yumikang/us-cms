@@ -19,7 +19,7 @@
 #shGnb .sh_nav > ul > li{float:left;position:relative;line-height:100px;transition:all .4s ease-in-out}
 #shGnb .sh_nav > ul > li > a{position:relative;z-index:20;display:block;padding:0 30px;font-size:16px;font-weight:700;color:#fff;transition:all .2s;font-family:var(--main-font)}
 #shGnb .sh_nav > ul > li > a.form_link{display:flex;align-items:center}
-#shGnb .sh_nav > ul > li:hover > a{color:var(--primary)!important}
+#shGnb .sh_nav > ul > li:hover > a{color:var(--secondary)!important}
 /* #shGnb .sh_nav > ul > li:hover .sh_lnb_s:before{width:calc(100% + 40px);opacity:1} */
 /* #shGnb .sh_nav > ul > li:hover .sh_lnb_s a{color:#777} */
 /* #shGnb .sh_nav > ul > li:hover .sh_lnb_s a:hover{color:var(--primary)} */
