@@ -12,7 +12,12 @@
 #inc04 .late_tabs{display:flex;gap:10px}
 #inc04 .late_tabs li{padding:10px 25px;border-radius:50px;font-size:20px;font-weight:700;color:#111;cursor:pointer}
 #inc04 .late_tabs li.on{color:#fff;background:var(--primary)}
-#inc04 .tabs{width:910px;padding-bottom:30px;border-top:2px solid #111;border-bottom:1px solid #e1e1e1}
+@media (min-width: 1200px) {
+    #inc04 .tabs{width:910px;padding-bottom:30px;border-top:2px solid #111;border-bottom:1px solid #e1e1e1}
+}
+@media (max-width: 1199px) {
+    #inc04 .tabs{width:100%;max-width:100%;padding-bottom:30px;border-top:2px solid #111;border-bottom:1px solid #e1e1e1}
+}
 #inc04 .tabs .fir_date{display:flex;flex-direction:column;align-items:center;justify-content:center;width:85px;height:85px;border-radius:13px;background:#f5f5f5}
 #inc04 .tabs .fir_date span{font-size:30px;font-weight:700;line-height:1;color:var(--primary)}
 #inc04 .tabs .fir_date p{font-size:15px;font-weight:700}
