@@ -836,6 +836,32 @@ $(document).ready(function() {
         var scrollHeight = firstAccordion.find('.accordion-content')[0].scrollHeight;
         firstAccordion.find('.accordion-content').css('max-height', scrollHeight + 'px');
     }
+
+    // 모바일 메뉴 토글
+    $('.mobile-menu-toggle').click(function() {
+        $(this).toggleClass('active');
+        $('.sh_nav').toggleClass('active');
+        $('.mobile-menu-overlay').toggleClass('active');
+        $('body').toggleClass('mobile-menu-open');
+    });
+
+    // 오버레이 클릭시 메뉴 닫기
+    $('.mobile-menu-overlay').click(function() {
+        $('.mobile-menu-toggle').removeClass('active');
+        $('.sh_nav').removeClass('active');
+        $('.mobile-menu-overlay').removeClass('active');
+        $('body').removeClass('mobile-menu-open');
+    });
+
+    // 모바일 메뉴 항목 클릭시 메뉴 닫기 (선택사항)
+    if ($(window).width() <= 768) {
+        $('.sh_nav > ul > li > a').click(function() {
+            $('.mobile-menu-toggle').removeClass('active');
+            $('.sh_nav').removeClass('active');
+            $('.mobile-menu-overlay').removeClass('active');
+            $('body').removeClass('mobile-menu-open');
+        });
+    }
 });
 </script>
 

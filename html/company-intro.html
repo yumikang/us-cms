@@ -85,8 +85,18 @@
                         </li>
                     </ul>
                 </nav>
-                
-            </div>	
+
+                <!-- 모바일 메뉴 토글 버튼 -->
+                <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- 모바일 메뉴 오버레이 -->
+                <div class="mobile-menu-overlay"></div>
+
+            </div>
         </div>
     </header>
     <!-- } 상단 끝 -->
@@ -893,10 +903,10 @@ $(document).ready(function() {
     $('#toTop').click(function(){
         $('html, body').animate({scrollTop:0}, 400);
     });
-    
+
     // Feather icons 초기화
     feather.replace();
-    
+
     // AOS 애니메이션 초기화
     AOS.init({
         duration: 800,
@@ -904,6 +914,32 @@ $(document).ready(function() {
         once: true,
         offset: 100
     });
+
+    // 모바일 메뉴 토글
+    $('.mobile-menu-toggle').click(function() {
+        $(this).toggleClass('active');
+        $('.sh_nav').toggleClass('active');
+        $('.mobile-menu-overlay').toggleClass('active');
+        $('body').toggleClass('mobile-menu-open');
+    });
+
+    // 오버레이 클릭시 메뉴 닫기
+    $('.mobile-menu-overlay').click(function() {
+        $('.mobile-menu-toggle').removeClass('active');
+        $('.sh_nav').removeClass('active');
+        $('.mobile-menu-overlay').removeClass('active');
+        $('body').removeClass('mobile-menu-open');
+    });
+
+    // 모바일 메뉴 항목 클릭시 메뉴 닫기 (선택사항)
+    if ($(window).width() <= 768) {
+        $('.sh_nav > ul > li > a').click(function() {
+            $('.mobile-menu-toggle').removeClass('active');
+            $('.sh_nav').removeClass('active');
+            $('.mobile-menu-overlay').removeClass('active');
+            $('body').removeClass('mobile-menu-open');
+        });
+    }
 });
 </script>
 

@@ -115,109 +115,187 @@
     z-index: 18;
 }
 
-/* 반응형 디자인 */
+/* ========================================
+   📱 HEADER MOBILE RESPONSIVE
+   ======================================== */
+
+/* 반응형 디자인 - 768px 이하 */
 @media (max-width: 768px) {
-    /* 헤더 패딩 조정 */
+    /* 헤더 기본 구조 조정 */
     #shGnb {
         padding: 0 20px;
+        height: 70px;
     }
-    
+
+    /* 로고 스타일 */
+    #shGnb .sh_logo {
+        z-index: 22;
+    }
+
+    #shGnb .sh_logo .logo-svg {
+        height: 40px;
+    }
+
     /* 햄버거 메뉴 버튼 표시 */
     .mobile-menu-toggle {
         display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
-    
-    /* 데스크톱 네비게이션 숨기기 */
-    #shGnb .sh_nav > ul {
+
+    /* 데스크톱 메뉴 버튼 숨기기 */
+    #pfBtn {
+        display: none;
+    }
+
+    /* 모바일 네비게이션 메뉴 */
+    #shGnb .sh_nav {
         position: fixed;
         top: 0;
         right: -100%;
         width: 280px;
         height: 100vh;
         background: #fff;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: stretch;
-        padding: 100px 0 0 0;
-        margin: 0;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
         transition: right 0.3s ease;
-        z-index: 19;
-        overflow-y: auto;
+        z-index: 20;
+        margin: 0;
     }
-    
-    #shGnb .sh_nav.active > ul {
+
+    #shGnb .sh_nav.active {
         right: 0;
     }
-    
-    #shGnb .sh_nav.active .mobile-menu-overlay {
-        display: block;
+
+    #shGnb .sh_nav > ul {
+        display: flex;
+        flex-direction: column;
+        padding: 80px 0 20px 0;
+        margin: 0;
+        height: 100%;
+        overflow-y: auto;
     }
-    
+
     /* 모바일 메뉴 항목 스타일 */
     #shGnb .sh_nav > ul > li {
         float: none;
         width: 100%;
         line-height: 1;
-        border-bottom: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f0f0f0;
     }
-    
+
     #shGnb .sh_nav > ul > li > a {
         display: block;
         width: 100%;
-        padding: 20px 30px;
-        color: #222;
-        font-size: 16px;
+        padding: 18px 25px;
+        color: #333 !important;
+        font-size: 15px;
+        font-weight: 600;
         line-height: 1.4;
         text-align: left;
         background: none;
+        transition: all 0.2s;
     }
-    
-    #shGnb .sh_nav > ul > li > a:hover {
+
+    #shGnb .sh_nav > ul > li > a:hover,
+    #shGnb .sh_nav > ul > li > a:active {
         background: #f8f9fa;
-        color: var(--primary);
+        color: var(--primary) !important;
+        padding-left: 30px;
     }
-    
+
+    /* 상담 신청 버튼 특별 스타일 */
+    #shGnb .sh_nav > ul > li:last-child {
+        border-bottom: none;
+        margin-top: auto;
+        padding: 20px;
+    }
+
     #shGnb .sh_nav > ul > li > a.form_link {
         background: var(--primary);
-        color: #fff;
-        margin: 20px;
+        color: #fff !important;
         border-radius: 8px;
         text-align: center;
+        padding: 15px 25px;
+        font-weight: 700;
     }
-    
+
     #shGnb .sh_nav > ul > li > a.form_link:hover {
         background: var(--primary-dark);
-        color: #fff;
+        color: #fff !important;
+        padding-left: 25px;
     }
-    
+
+    /* 모바일 메뉴 오버레이 수정 */
+    .mobile-menu-overlay {
+        display: none;
+    }
+
+    .mobile-menu-overlay.active {
+        display: block;
+    }
+
     /* 모바일 메뉴 열린 상태에서 body 스크롤 방지 */
     body.mobile-menu-open {
         overflow: hidden;
     }
 }
 
-@media (max-width: 768px) {
-    /* 태블릿에서 로고 크기 조정 */
+/* 작은 모바일 화면 (480px 이하) */
+@media (max-width: 480px) {
+    /* 헤더 패딩 축소 */
+    #shGnb {
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    /* 로고 크기 추가 조정 */
     #shGnb .sh_logo .logo-svg {
-        height: 45px;
+        height: 35px;
+    }
+
+    /* 햄버거 메뉴 위치 조정 */
+    .mobile-menu-toggle {
+        right: 15px;
+    }
+
+    /* 모바일 메뉴 전체 화면 */
+    #shGnb .sh_nav {
+        width: 100%;
+    }
+
+    /* 메뉴 항목 패딩 조정 */
+    #shGnb .sh_nav > ul > li > a {
+        padding: 16px 20px;
+        font-size: 14px;
+    }
+
+    #shGnb .sh_nav > ul > li > a:hover,
+    #shGnb .sh_nav > ul > li > a:active {
+        padding-left: 25px;
     }
 }
 
-@media (max-width: 480px) {
-    /* 더 작은 화면에서 패딩 조정 */
+/* 태블릿 크기 (769px ~ 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* 헤더 패딩 조정 */
     #shGnb {
-        padding: 0 15px;
+        padding: 0 40px;
     }
-    
-    /* 모바일 메뉴 폭 조정 */
-    #shGnb .sh_nav > ul {
-        width: 100%;
-        right: -100%;
+
+    /* 네비게이션 메뉴 간격 조정 */
+    #shGnb .sh_nav > ul > li > a {
+        padding: 0 20px;
+        font-size: 15px;
     }
-    
+
+    /* 메뉴 버튼 위치 조정 */
+    #pfBtn {
+        right: 40px;
+    }
+
     /* 로고 크기 조정 */
     #shGnb .sh_logo .logo-svg {
-        height: 40px;
+        height: 50px;
     }
 }
