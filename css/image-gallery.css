@@ -20,9 +20,156 @@
 #inc03 .txt_box li div{margin:10px 0 20px;font-size:20px;font-weight:500}
 #inc03 .cm_btn:hover{color:var(--primary);background:#fff}
 
-/* 모바일에서 이미지 갤러리 섹션 숨기기 */
+/* ========================================
+   모바일 반응형 - 서비스 카드 레이아웃
+   ======================================== */
 @media (max-width: 768px) {
+    /* 섹션 전체 재구성 */
     #inc03 {
+        display: block;
+        padding: 60px 0;
+        background: #f8f9fa;
+    }
+
+    /* 스크롤 애니메이션 클래스 비활성화 */
+    #inc03.on {
+        background: #f8f9fa;
+    }
+
+    /* 상단 타이틀 모바일 최적화 */
+    #inc03 .cross {
+        display: block;
+        height: auto;
+        padding: 30px 20px;
+        margin-bottom: 30px;
+        font-size: 24px;
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+        background: transparent;
+        transition: none;
+    }
+
+    #inc03 .cross p {
+        display: block;
+        transform: none;
+        font-size: 20px;
+        line-height: 1.4;
+        margin: 5px 0;
+        color: #333;
+    }
+
+    #inc03 .cross .l_txt,
+    #inc03 .cross .r_txt {
+        transform: translateX(0);
+    }
+
+    /* 데스크톱 이미지 갤러리 완전 숨김 */
+    #inc03 .img_inner {
         display: none;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+    }
+
+    #inc03 .img_box {
+        display: none;
+    }
+
+    /* 컨테이너 배경 리셋 */
+    #inc03 .cont {
+        background: transparent;
+        transition: none;
+    }
+
+    #inc03.on .cont {
+        background: transparent;
+    }
+
+    /* 서비스 카드 컨테이너 */
+    #inc03 .txt_box {
+        position: static;
+        z-index: 1;
+        padding: 0 15px;
+        background: transparent;
+        color: #333;
+    }
+
+    /* 서비스 카드 스타일 */
+    #inc03 .txt_box li {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 0 20px 0;
+        margin-left: 0;
+        padding: 25px 20px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #inc03 .txt_box li:last-child {
+        margin-bottom: 0;
+    }
+
+    /* 카드 호버/터치 효과 */
+    #inc03 .txt_box li:active {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    }
+
+    /* 카드 제목 */
+    #inc03 .txt_box h2 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin: 0 0 12px 0;
+        line-height: 1.4;
+    }
+
+    /* 카드 설명 */
+    #inc03 .txt_box li div,
+    #inc03 .txt_box li .pl {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.6;
+        color: #666;
+        margin: 0 0 20px 0;
+        white-space: normal;
+    }
+
+    /* CTA 버튼 */
+    #inc03 .txt_box .cm_btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        padding: 12px 24px;
+        background: #3AD2FF;
+        color: #ffffff;
+        border: 2px solid #3AD2FF;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    #inc03 .txt_box .cm_btn:hover,
+    #inc03 .txt_box .cm_btn:active {
+        background: transparent;
+        color: #3AD2FF;
+    }
+
+    /* 아이콘 스타일 */
+    #inc03 .txt_box .cm_btn i,
+    #inc03 .txt_box .cm_btn svg {
+        width: 16px;
+        height: 16px;
+        margin-left: 6px;
+        vertical-align: middle;
     }
 }
