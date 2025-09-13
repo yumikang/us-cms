@@ -50,6 +50,11 @@
         transition: none;
     }
 
+    #inc03.on .cross {
+        color: #333;
+        background: transparent;
+    }
+
     #inc03 .cross p {
         display: block;
         transform: none;
