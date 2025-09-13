@@ -29,3 +29,54 @@
 /* Hero Text Slides */
 #mainVisual .slide-text{display:none;opacity:0;transition:all 0.5s ease-in-out}
 #mainVisual .slide-text.active{display:block;opacity:1}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    #mainVisual .txt h2 {
+        font-size: 36px;
+        line-height: 1.1;
+    }
+    
+    #mainVisual .txt p {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    
+    #mainVisual .txt {
+        bottom: 10%;
+        padding: 0 20px;
+    }
+    
+    #mainVisual .inner {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #mainVisual .txt h2 {
+        font-size: 28px;
+        line-height: 1.1;
+    }
+    
+    #mainVisual .txt p {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+    
+    #mainVisual .txt {
+        bottom: 8%;
+        padding: 0 15px;
+    }
+    
+    #mainVisual .inner {
+        padding: 0 15px;
+    }
+    
+    #mainVisual .pager {
+        margin-top: 30px;
+    }
+    
+    #mainVisual .mouse {
+        display: none;
+    }
+}

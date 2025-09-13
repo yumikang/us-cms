@@ -14,3 +14,122 @@
 #inc02 dl{margin-top:20px}
 #inc02 dt{font-size:25px;font-weight:700;color:#111}
 #inc02 dd{font-size:20px;font-weight:500;color:#777}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    #inc02 {
+        padding: 100px 0 150px;
+    }
+    
+    #inc02 .inner {
+        flex-direction: column;
+    }
+    
+    #inc02 .tit {
+        position: static;
+        padding: 0 20px;
+        margin-bottom: 60px;
+    }
+    
+    #inc02 .tit h2 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    
+    #inc02 .num {
+        width: 100%;
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #inc02 .num li {
+        width: 100%;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #inc02 .num li:nth-child(even) {
+        margin-top: 0;
+    }
+    
+    #inc02 .icon {
+        width: 100%;
+        height: auto;
+        min-height: 240px;
+        padding: 30px;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+    
+    #inc02 .icon img {
+        max-width: 120px;
+        max-height: 120px;
+    }
+    
+    #inc02 .icon p {
+        font-size: 24px;
+        margin-top: 15px;
+    }
+    
+    #inc02 dt {
+        font-size: 20px;
+    }
+    
+    #inc02 dd {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #inc02 {
+        padding: 80px 0 120px;
+    }
+    
+    #inc02 .tit {
+        padding: 0 15px;
+        margin-bottom: 40px;
+    }
+    
+    #inc02 .tit h2 {
+        font-size: 24px;
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+    
+    #inc02 .num {
+        padding: 0 15px;
+    }
+    
+    #inc02 .num li {
+        margin-bottom: 30px;
+    }
+    
+    #inc02 .icon {
+        height: auto;
+        min-height: 200px;
+        padding: 25px;
+        max-width: 350px;
+    }
+    
+    #inc02 .icon img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    
+    #inc02 .icon p {
+        font-size: 20px;
+        margin-top: 12px;
+    }
+    
+    #inc02 dt {
+        font-size: 18px;
+    }
+    
+    #inc02 dd {
+        font-size: 14px;
+    }
+}

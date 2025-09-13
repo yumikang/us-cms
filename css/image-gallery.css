@@ -19,3 +19,10 @@
 #inc03 .txt_box li{display:flex;flex-direction:column;justify-content:center;width:50%;height:100vh;margin-left:auto}
 #inc03 .txt_box li div{margin:10px 0 20px;font-size:20px;font-weight:500}
 #inc03 .cm_btn:hover{color:var(--primary);background:#fff}
+
+/* 모바일에서 이미지 갤러리 섹션 숨기기 */
+@media (max-width: 768px) {
+    #inc03 {
+        display: none;
+    }
+}

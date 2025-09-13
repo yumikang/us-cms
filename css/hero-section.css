@@ -22,3 +22,32 @@
 #inc01 .list a span{opacity:0;position:absolute;bottom:50px;right:50px;z-index:30;display:flex;justify-content:center;align-items:center;width:60px;height:60px;margin-left:auto;border-radius:50px;color:#fff;background:rgba(0,0,0,.2);transition:all .5s}
 #inc01 .list a:hover span{opacity:1}
 @keyframes gradientMove {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    #inc01 {
+        padding: 60px 0;
+        min-height: auto;
+    }
+    
+    #inc01 h1 {
+        font-size: 36px;
+        height: auto;
+        min-height: 30vh;
+        padding: 20px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 480px) {
+    #inc01 {
+        padding: 40px 0;
+    }
+    
+    #inc01 h1 {
+        font-size: 28px;
+        min-height: 25vh;
+        padding: 15px;
+        line-height: 1.1;
+    }
+}
