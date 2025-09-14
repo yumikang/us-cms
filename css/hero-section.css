@@ -29,13 +29,32 @@
         padding: 60px 0;
         min-height: auto;
     }
-    
+
     #inc01 h1 {
         font-size: 36px;
-        height: auto;
-        min-height: 30vh;
+        height: 50vh; /* 75vh -> 50vh로 줄임 */
+        height: 50svh; /* 작은 뷰포트 높이 - 모바일 브라우저 UI 고려 */
         padding: 20px;
         line-height: 1.2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* 히어로 섹션 내 다른 요소들도 조정 */
+    #inc01 .bg {
+        height: 70vh;
+        height: 70svh;
+    }
+
+    #inc01 .list {
+        height: 70vh;
+        height: 70svh;
+    }
+
+    #inc01 .list a {
+        height: 400px; /* 540px -> 400px */
     }
 }
 
@@ -43,11 +62,34 @@
     #inc01 {
         padding: 40px 0;
     }
-    
+
     #inc01 h1 {
         font-size: 28px;
-        min-height: 25vh;
+        height: 40vh; /* 더 작은 화면에서는 40vh */
+        height: 40svh;
         padding: 15px;
         line-height: 1.1;
+    }
+
+    /* 작은 화면에서 추가 조정 */
+    #inc01 .bg {
+        height: 60vh;
+        height: 60svh;
+        width: 95%; /* 좌우 여백 조금 더 줄임 */
+    }
+
+    #inc01 .list {
+        height: 60vh;
+        height: 60svh;
+    }
+
+    #inc01 .list a {
+        height: 350px; /* 더 작게 조정 */
+        padding: 30px;
+    }
+
+    #inc01 .list h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
     }
 }

@@ -32,50 +32,82 @@
 
 /* 모바일 반응형 */
 @media (max-width: 768px) {
+    /* 메인 비주얼 높이 조정 - 실제 디바이스 뷰포트에 맞춤 */
+    #mainVisual .main_bnr {
+        height: 70vh; /* 100vh -> 70vh로 줄임 */
+        height: 70svh; /* 작은 뷰포트 높이 (Small Viewport Height) - 모바일 브라우저 UI 고려 */
+    }
+
+    #mainVisual .main_bnr:after {
+        height: 70vh;
+        height: 70svh;
+    }
+
+    #mainVisual .main_bnr .bg {
+        height: 70vh;
+        height: 70svh;
+    }
+
     #mainVisual .txt h2 {
         font-size: 36px;
         line-height: 1.1;
     }
-    
+
     #mainVisual .txt p {
         font-size: 16px;
         margin-top: 20px;
     }
-    
+
     #mainVisual .txt {
         bottom: 10%;
         padding: 0 20px;
     }
-    
+
     #mainVisual .inner {
         padding: 0 20px;
     }
 }
 
 @media (max-width: 480px) {
+    /* 작은 모바일 화면에서 더 줄임 */
+    #mainVisual .main_bnr {
+        height: 60vh;
+        height: 60svh;
+    }
+
+    #mainVisual .main_bnr:after {
+        height: 60vh;
+        height: 60svh;
+    }
+
+    #mainVisual .main_bnr .bg {
+        height: 60vh;
+        height: 60svh;
+    }
+
     #mainVisual .txt h2 {
         font-size: 28px;
         line-height: 1.1;
     }
-    
+
     #mainVisual .txt p {
         font-size: 14px;
         margin-top: 15px;
     }
-    
+
     #mainVisual .txt {
         bottom: 8%;
         padding: 0 15px;
     }
-    
+
     #mainVisual .inner {
         padding: 0 15px;
     }
-    
+
     #mainVisual .pager {
         margin-top: 30px;
     }
-    
+
     #mainVisual .mouse {
         display: none;
     }
