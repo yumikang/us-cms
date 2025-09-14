@@ -880,17 +880,25 @@
     .card-image {
         height: 260px;
     }
-    
+
     .card-content {
         padding: 25px;
     }
-    
+
     .card-content h3 {
         font-size: 1.1rem;
     }
-    
+
     .card-content p {
         font-size: 0.95rem;
+    }
+}
+
+/* FDA U.S. Agent Section Mobile Responsive */
+@media (max-width: 768px) {
+    .fda-agent-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
     }
 }
 
