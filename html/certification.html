@@ -243,7 +243,7 @@
                     <h2 data-aos="fade-up">인증 취득 주요 혜택</h2>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;" data-aos="fade-up" data-aos-delay="100">
+                <div class="certification-benefits-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;" data-aos="fade-up" data-aos-delay="100">
                     <div class="accordion-item" style="background: var(--white); border: 1px solid var(--gray-200); padding: 0; border-radius: 0;">
                         <div class="accordion-header" style="padding: 25px; cursor: pointer; border-bottom: 1px solid var(--gray-200);">
                             <div class="accordion-title" style="display: flex; align-items: center; gap: 15px;">
@@ -852,17 +852,97 @@
         width: 95%;
         margin: 10% auto;
     }
-    
+
     .modal-header {
         padding: 15px;
     }
-    
+
     .modal-header h2 {
         font-size: 1.3rem;
     }
-    
+
     .modal-body {
         padding: 20px;
+    }
+
+    /* CERTIFICATION BENEFITS 섹션 모바일 반응형 */
+    .certification-benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 15px;
+    }
+
+    .certification-benefits-grid .accordion-item {
+        margin-bottom: 10px;
+    }
+
+    .certification-benefits-grid .accordion-header {
+        padding: 20px !important;
+    }
+
+    .certification-benefits-grid .accordion-title {
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+
+    .certification-benefits-grid .accordion-icon {
+        width: 35px !important;
+        height: 35px !important;
+        flex-shrink: 0;
+    }
+
+    .certification-benefits-grid .accordion-icon svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .certification-benefits-grid h4 {
+        font-size: 15px !important;
+        line-height: 1.3;
+    }
+
+    .certification-benefits-grid > div > div:last-child {
+        padding: 18px 20px !important;
+    }
+
+    .certification-benefits-grid p {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* CERTIFICATION BENEFITS 섹션 작은 화면 반응형 */
+    .certification-benefits-grid {
+        gap: 15px !important;
+        padding: 0 10px;
+    }
+
+    .certification-benefits-grid .accordion-header {
+        padding: 18px 15px !important;
+    }
+
+    .certification-benefits-grid .accordion-icon {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .certification-benefits-grid .accordion-icon svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .certification-benefits-grid h4 {
+        font-size: 14px !important;
+    }
+
+    .certification-benefits-grid > div > div:last-child {
+        padding: 15px !important;
+    }
+
+    .certification-benefits-grid p {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
     }
 }
 /* 서브페이지 로고 색상 변경 */
