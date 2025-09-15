@@ -259,6 +259,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
         align-items: flex-start;
         font-size: 13px;
         line-height: 1.6;
+        color: var(--white);
     }
 
     #sh_ft .info ul li+li {
