@@ -259,7 +259,14 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
         align-items: flex-start;
         font-size: 13px;
         line-height: 1.6;
+        color: #ffffff !important;
         color: var(--white) !important;
+    }
+
+    /* 전화번호, 팩스 텍스트 명시적 색상 지정 */
+    #sh_ft .info ul li:nth-child(2),
+    #sh_ft .info ul li:nth-child(3) {
+        color: #ffffff !important;
     }
 
     #sh_ft .info ul li+li {
@@ -272,6 +279,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
         font-size: 12px;
         opacity: 0.7;
         display: block;
+        color: rgba(255, 255, 255, 0.7) !important;
     }
 
     /* 링크 버튼들 (통신판매업종신고, 개인정보처리방침 등) */
@@ -348,6 +356,26 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
         height: 50px;
         z-index: 100;
         box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* 모바일에서 푸터 텍스트 색상 강제 적용 */
+    footer#sh_ft,
+    footer#sh_ft * {
+        -webkit-text-fill-color: #ffffff !important;
+    }
+
+    footer#sh_ft .info ul li {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+    }
+}
+
+/* 모든 모바일 기기에서 푸터 색상 강제 적용 */
+@media only screen and (max-width: 768px) {
+    #sh_ft .info ul li,
+    #sh_ft .info ul li * {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
     }
 }
 
