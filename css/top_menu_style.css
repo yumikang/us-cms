@@ -10,14 +10,14 @@
 #shGnb .sh_logo .logo-img{height:40px;margin-right:10px}
 #shGnb .sh_logo .logo-svg{height:55px;width:auto;filter:brightness(0) saturate(100%) invert(100%)}
 #shGnb .sh_logo .logo-svg.main-color{filter:brightness(0) saturate(100%) invert(73%) sepia(88%) saturate(1598%) hue-rotate(166deg) brightness(101%) contrast(101%)}
-#shGnb .sh_logo .logo-text{font-size:24px;font-weight:700;color:#fff;font-family:var(--main-font)}
+#shGnb .sh_logo .logo-text{font-size:var(--font-size-24);font-weight:700;color:#fff;font-family:var(--main-font)}
 #shGnb.on .sh_logo .logo-text{color:#222}
 #shGnb.on .sh_logo .logo-svg{filter:brightness(0) saturate(100%) invert(0%)}
 
 /* 대분류  */
 #shGnb .sh_nav{margin:0 auto}
 #shGnb .sh_nav > ul > li{float:left;position:relative;line-height:100px;transition:all .4s ease-in-out}
-#shGnb .sh_nav > ul > li > a{position:relative;z-index:20;display:block;padding:0 30px;font-size:16px;font-weight:700;color:#fff;transition:all .2s;font-family:var(--main-font)}
+#shGnb .sh_nav > ul > li > a{position:relative;z-index:20;display:block;padding:0 30px;font-size:var(--font-size-base);font-weight:700;color:#fff;transition:all .2s;font-family:var(--main-font)}
 #shGnb .sh_nav > ul > li > a.form_link{display:flex;align-items:center}
 #shGnb .sh_nav > ul > li:hover > a{color:var(--secondary)!important}
 /* #shGnb .sh_nav > ul > li:hover .sh_lnb_s:before{width:calc(100% + 40px);opacity:1} */
@@ -53,7 +53,7 @@
 .pf_cate > ul{position:absolute;top:50%;transform:translateY(-50%);width:100%;padding:0 15%}
 .pf_cate > ul > li{opacity:0;margin-left:100px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.25)}
 .pf_cate > ul > li+li{margin-top:40px}
-.pf_cate > ul > li > a{display:block;width:max-content;margin-bottom:20px;font-size:32px;color:#fff;font-family:var(--main-font)}
+.pf_cate > ul > li > a{display:block;width:max-content;margin-bottom:20px;font-size:var(--font-size-3xl);color:#fff;font-family:var(--main-font)}
 .pf_cate > ul > li:nth-child(1){animation-delay:.4s}
 .pf_cate > ul > li:nth-child(2){animation-delay:.5s}
 .pf_cate > ul > li:nth-child(3){animation-delay:.6s}
@@ -61,7 +61,7 @@
 .pf_cate > ul > li:nth-child(5){animation-delay:.8s}
 .pf_cate > ul > li ul{display:flex;flex-wrap:wrap}
 .pf_cate > ul > li ul li+li{margin-left:25px}
-.pf_cate > ul > li ul a{opacity:0.6;font-size:18px;font-weight:500;color:#fff;transition:all .2s}
+.pf_cate > ul > li ul a{opacity:0.6;font-size:var(--font-size-lg);font-weight:500;color:#fff;transition:all .2s}
 .pf_cate > ul > li ul a:hover{opacity:1}
 
 /* 모바일 햄버거 메뉴 버튼 */
@@ -189,7 +189,7 @@
         width: 100%;
         padding: 18px 25px;
         color: #333 !important;
-        font-size: 15px;
+        font-size: var(--font-size-15);
         font-weight: 600;
         line-height: 1.4;
         text-align: left;
@@ -267,7 +267,7 @@
     /* 메뉴 항목 패딩 조정 */
     #shGnb .sh_nav > ul > li > a {
         padding: 16px 20px;
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 
     #shGnb .sh_nav > ul > li > a:hover,
@@ -286,7 +286,7 @@
     /* 네비게이션 메뉴 간격 조정 */
     #shGnb .sh_nav > ul > li > a {
         padding: 0 20px;
-        font-size: 15px;
+        font-size: var(--font-size-15);
     }
 
     /* 메뉴 버튼 위치 조정 */

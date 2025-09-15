@@ -7,17 +7,17 @@
 #inc01 .list .bg05 a{background-image:url(./img/img02.jpg)}
 
 #inc01{overflow:hidden}
-#inc01 h1{display:flex;align-items:center;justify-content:center;gap:20px;height:75vh;font-size:80px;font-weight:700;text-align:center;color:#111;background:linear-gradient(90deg, #ff6a00, #ee0979, #007cf0, #00dfd8);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradientMove 5s ease infinite; /* 애니메이션 반복 */}
+#inc01 h1{display:flex;align-items:center;justify-content:center;gap:20px;height:75vh;font-size:var(--font-size-5xl);font-weight:700;text-align:center;color:#111;background:linear-gradient(90deg, #ff6a00, #ee0979, #007cf0, #00dfd8);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradientMove 5s ease infinite; /* 애니메이션 반복 */}
 #inc01 .bg{position:relative;width:90%;height:100vh;margin:0 auto;border-radius:30px;background:url(./img/bg.jpg) no-repeat center / cover}
 #inc01 .bg:after{opacity:0;position:absolute;content:'';top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);transition:all .3s}
 #inc01 .bg.on:after{opacity:1}
 #inc01 .list{overflow:hidden;position:relative;z-index:10;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
 #inc01 .list h2{margin-bottom:60px;color:#fff;text-align:center}
-#inc01 .list h3{position:relative;z-index:20;margin-bottom:30px;font-size:32px;font-weight:700;color:#fff;word-break:keep-all;line-height:1.2;text-align:center}
+#inc01 .list h3{position:relative;z-index:20;margin-bottom:30px;font-size:var(--font-size-3xl);font-weight:700;color:#fff;word-break:keep-all;line-height:1.2;text-align:center}
 #inc01 .list a{position:relative;display:block;overflow:hidden;height:540px;padding:40px;border-radius:13px;background-size:cover;transition:all .5s}
 #inc01 .list a:after{position:absolute;content:'';top:0;left:0;width:0;height:100%;background:var(--primary);transition:all .3s}
 #inc01 .list a:hover:after{width:100%}
-#inc01 .list a div{position:relative;z-index:20;opacity:0;font-size:18px;font-weight:400;color:#fff;white-space:pre-line;word-break:keep-all;line-height:1.4;text-align:left;transition:all .5s}
+#inc01 .list a div{position:relative;z-index:20;opacity:0;font-size:var(--font-size-lg);font-weight:400;color:#fff;white-space:pre-line;word-break:keep-all;line-height:1.4;text-align:left;transition:all .5s}
 #inc01 .list a:hover div{opacity:1}
 #inc01 .list a span{opacity:0;position:absolute;bottom:50px;right:50px;z-index:30;display:flex;justify-content:center;align-items:center;width:60px;height:60px;margin-left:auto;border-radius:50px;color:#fff;background:rgba(0,0,0,.2);transition:all .5s}
 #inc01 .list a:hover span{opacity:1}
@@ -31,7 +31,7 @@
     }
 
     #inc01 h1 {
-        font-size: 36px;
+        font-size: var(--font-size-36);
         height: 50vh; /* 75vh -> 50vh로 줄임 */
         height: 50svh; /* 작은 뷰포트 높이 - 모바일 브라우저 UI 고려 */
         padding: 20px;
@@ -64,7 +64,7 @@
     }
 
     #inc01 h1 {
-        font-size: 28px;
+        font-size: var(--font-size-28);
         height: 40vh; /* 더 작은 화면에서는 40vh */
         height: 40svh;
         padding: 15px;
@@ -89,7 +89,7 @@
     }
 
     #inc01 .list h3 {
-        font-size: 24px;
+        font-size: var(--font-size-24);
         margin-bottom: 20px;
     }
 }

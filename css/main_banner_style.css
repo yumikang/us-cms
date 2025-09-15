@@ -10,8 +10,8 @@
 #mainVisual .main_bnr li.on .bg{opacity:1;transform:skewX(0)}
 
 #mainVisual .txt{position:absolute;z-index:10;bottom:17%;left:0;right:0;color:#fff}
-#mainVisual .txt h2{font-size:65px;font-weight:700;line-height:1;white-space:pre-line;font-family:var(--e-font)}
-#mainVisual .txt p{margin-top:30px;font-size:20px;font-weight:700}
+#mainVisual .txt h2{font-size:var(--font-size-65);font-weight:700;line-height:1;white-space:pre-line;font-family:var(--e-font)}
+#mainVisual .txt p{margin-top:30px;font-size:var(--font-size-xl);font-weight:700}
 #mainVisual .inner{position:relative}
 #mainVisual .pager{margin-top:50px}
 #mainVisual .pager span{opacity:.3;position:relative;width:40px;height:40px;margin:0 5px;background-color:transparent;transition:all .3s}
@@ -24,7 +24,7 @@
 #mainVisual .mouse .icon{position:relative;width:22px;height:36px;border:2px solid #fff;border-radius:19px}
 #mainVisual .mouse .icon:after{content:"";position:absolute;top:10%;left:50%;transform:translateX(-50%);width:2px;height:6px;border-radius:3px;background-color:#fff;animation:mouse_scroll 1.5s infinite linear}
 @keyframes mouse_scroll{0% {top:10%}99% {top:50%}100% {top:10%}}
-#mainVisual .mouse span{font-size:13px;font-weight:700;text-transform:uppercase;font-family:var(--e-font)}
+#mainVisual .mouse span{font-size:var(--font-size-13);font-weight:700;text-transform:uppercase;font-family:var(--e-font)}
 
 /* Hero Text Slides */
 #mainVisual .slide-text{display:none;opacity:0;transition:all 0.5s ease-in-out}
@@ -49,12 +49,12 @@
     }
 
     #mainVisual .txt h2 {
-        font-size: 36px;
+        font-size: var(--font-size-36);
         line-height: 1.1;
     }
 
     #mainVisual .txt p {
-        font-size: 16px;
+        font-size: var(--font-size-base);
         margin-top: 20px;
     }
 
@@ -86,12 +86,12 @@
     }
 
     #mainVisual .txt h2 {
-        font-size: 28px;
+        font-size: var(--font-size-28);
         line-height: 1.1;
     }
 
     #mainVisual .txt p {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
         margin-top: 15px;
     }
 

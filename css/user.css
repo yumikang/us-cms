@@ -61,15 +61,30 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
   --e-font:'Pretendard';     /* 영문 강조 폰트 */
   
   /* Font Sizes - 폰트 크기 (작은 → 큰) */
+  --font-size-2xs:10px;      /* 극소 - 매우 작은 캡션 */
   --font-size-xs:11px;       /* 매우 작은 - 캡션, 라벨 */
+  --font-size-13:13px;       /* 13px - 작은 텍스트 */
   --font-size-sm:14px;       /* 작은 - 보조 텍스트 */
+  --font-size-15:15px;       /* 15px - 약간 작은 텍스트 */
   --font-size-base:16px;     /* 기본 - 본문 텍스트 */
   --font-size-lg:18px;       /* 큰 - 강조 본문 */
+  --font-size-19:19px;       /* 19px - 중간 크기 */
   --font-size-xl:20px;       /* 매우 큰 - 소제목 */
+  --font-size-22:22px;       /* 22px - 중간 제목 */
+  --font-size-24:24px;       /* 24px - 작은 제목 */
   --font-size-2xl:25px;      /* 2배 큰 - 섹션 제목 */
+  --font-size-26:26px;       /* 26px - 중간 섹션 제목 */
+  --font-size-28:28px;       /* 28px - 큰 섹션 제목 */
+  --font-size-30:30px;       /* 30px - 부제목 */
   --font-size-3xl:32px;      /* 3배 큰 - 페이지 부제목 */
+  --font-size-35:35px;       /* 35px - 큰 부제목 */
+  --font-size-36:36px;       /* 36px - 큰 제목 */
+  --font-size-42:42px;       /* 42px - 매우 큰 제목 */
   --font-size-4xl:45px;      /* 4배 큰 - 페이지 제목 */
+  --font-size-48:48px;       /* 48px - 큰 페이지 제목 */
+  --font-size-65:65px;       /* 65px - 배너 제목 */
   --font-size-5xl:80px;      /* 5배 큰 - 히어로 제목 */
+  --font-size-90:90px;       /* 90px - 초대형 제목 */
   
   /* Font Weights - 폰트 굵기 */
   --font-weight-normal:400;  /* 일반 - 본문 */
