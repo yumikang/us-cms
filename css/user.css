@@ -208,7 +208,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 }
 #sh_ft .flex{display:flex;justify-content:space-between}
 #sh_ft .info ul{margin:var(--space-5xl) 0}
-#sh_ft .info ul li{display:flex;align-items:baseline;font-family:var(--k-font);font-weight:500}
+#sh_ft .info ul li{display:flex;align-items:baseline;font-family:var(--k-font);font-weight:500;color:var(--white)}
 #sh_ft .info ul li+li{margin-top:var(--space-md)}
 #sh_ft .info ul li span{opacity:.5;width:110px;font-weight:var(--font-weight-semibold)}
 #sh_ft .info .links{display:flex}
@@ -259,7 +259,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
         align-items: flex-start;
         font-size: 13px;
         line-height: 1.6;
-        color: var(--white);
+        color: var(--white) !important;
     }
 
     #sh_ft .info ul li+li {
