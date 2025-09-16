@@ -2,13 +2,91 @@
 ## US INNOWAVE 컴포넌트 사용 가이드
 
 ### 목차
-1. [디자인 토큰 시스템](#디자인-토큰-시스템)
-2. [버튼 컴포넌트](#버튼-컴포넌트)
-3. [카드 컴포넌트](#카드-컴포넌트)
-4. [그리드 시스템](#그리드-시스템)
-5. [타이포그래피](#타이포그래피)
-6. [반응형 유틸리티](#반응형-유틸리티)
-7. [섹션 레이아웃](#섹션-레이아웃)
+1. [프로젝트 현황](#프로젝트-현황)
+2. [디자인 토큰 시스템](#디자인-토큰-시스템)
+3. [버튼 컴포넌트](#버튼-컴포넌트)
+4. [카드 컴포넌트](#카드-컴포넌트)
+5. [그리드 시스템](#그리드-시스템)
+6. [타이포그래피](#타이포그래피)
+7. [반응형 유틸리티](#반응형-유틸리티)
+8. [섹션 레이아웃](#섹션-레이아웃)
+9. [템플릿 시스템](#템플릿-시스템)
+10. [현재 페이지 구조](#현재-페이지-구조)
+
+---
+
+## 📊 프로젝트 현황
+
+### 웹사이트 구조
+- **메인 도메인**: https://www.usiw.kr/
+- **회사명**: (주)유에스이노웨이브 (US INNOWAVE)
+- **사이트맵**: sitemap.xml, robots.txt 생성 완료
+
+### 현재 페이지 목록
+```
+📁 html/
+├── index.html (메인 페이지)
+├── company-intro.html (회사소개)
+├── services.html (수출 지원)
+├── us-market.html (미국 공급망 & 조달시장)
+├── policy-fund.html (정책자금 컨설팅)
+├── certification.html (ISO & 기업인증)
+└── contact.html (문의하기)
+```
+
+### CSS 파일 구조
+```
+📁 css/
+├── default.css (기본 리셋)
+├── user.css (메인 스타일시트)
+├── subpage.css (서브페이지 전용)
+├── utility-classes.css (유틸리티)
+├── top_menu_style.css (네비게이션)
+├── hero-section.css (히어로 섹션)
+├── service-cards.css (서비스 카드)
+├── cta-section.css, cta-banner.css (CTA)
+├── image-gallery.css (이미지 갤러리)
+├── main_banner_style.css (메인 배너)
+├── aos.css (애니메이션)
+├── swiper.min.css, swiper-bundle.min.css (슬라이더)
+└── font-awesome.min.css (아이콘)
+```
+
+### JavaScript 라이브러리
+```
+📁 js/
+├── jquery-3.7.1.min.js (jQuery 최신)
+├── jquery-migrate-3.5.2.min.js (마이그레이션)
+├── jquery.menu.js (메뉴)
+├── aos.js (스크롤 애니메이션)
+├── gsap.min.js (GSAP 애니메이션)
+├── ScrollTrigger.min.js (스크롤 트리거)
+├── swiper.min.js, swiper-bundle.min.js (슬라이더)
+├── feather.min.js (아이콘)
+├── hero-slider.js (히어로 슬라이더)
+├── top_menu_script.js (메뉴 스크립트)
+├── common.js (공통 함수)
+├── designTail.js (디자인 유틸)
+└── wrest.js (기타 기능)
+```
+
+### 템플릿 시스템
+```
+📁 templates/
+├── header.html (공통 헤더)
+├── footer.html (공통 푸터)
+├── sub-hero.html (서브페이지 히어로)
+├── cta-section.html (CTA 섹션)
+├── font-optimization-helper.html (폰트 최적화)
+└── responsive-image-helper.html (이미지 최적화)
+```
+
+### 최근 정리 작업
+- ✅ 테스트 파일 7개 삭제 (jquery-ui-removal-test.html 등)
+- ✅ js_backup 폴더 삭제 (백업 파일)
+- ✅ usinnowave 폴더 삭제 (Next.js 프로젝트)
+- ✅ data 폴더 삭제 (작업 기록 데이터)
+- ✅ 모든 페이지 푸터 회사명 통일: "(주)유에스이노웨이브"
 
 ---
 
@@ -377,12 +455,146 @@ font-size: var(--font-size-4xl);  /* 45px - 페이지 제목 */
 
 ---
 
-## 📞 지원
+## 🏗️ 템플릿 시스템
 
-CSS 관련 문의사항:
-- 이 가이드 문서 참조
-- user.css 파일의 주석 확인
-- 개발자 도구로 실시간 테스트
+### 공통 템플릿 사용법
 
-**Last Updated**: 2025년 1월
-**Version**: 1.0.0
+#### 헤더 템플릿
+```html
+<!-- templates/header.html 사용 -->
+<header id="sh_hd">
+  <!-- 로고, 네비게이션, 모바일 메뉴 포함 -->
+</header>
+```
+
+#### 푸터 템플릿
+```html
+<!-- templates/footer.html 사용 -->
+<footer id="sh_ft">
+  <!-- 회사 정보, 개인정보처리방침, 이용약관 모달 포함 -->
+</footer>
+```
+
+#### 서브페이지 히어로 배너
+```html
+<!-- templates/sub-hero.html 기반 -->
+<section class="sub_hero_wrap">
+  <div class="sub_hero_container">
+    <div class="sub_hero_text">
+      <h1>페이지 제목</h1>
+    </div>
+  </div>
+</section>
+```
+
+#### CTA 섹션
+```html
+<!-- templates/cta-section.html 기반 -->
+<section class="cta-section">
+  <div class="inner">
+    <div class="cta-content">
+      <h2 class="cta-title">지금 바로 시작하세요</h2>
+      <p class="cta-subtitle">전문가와 함께하는 성공적인 글로벌 비즈니스</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">무료 상담 신청</a>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+---
+
+## 📱 현재 페이지 구조
+
+### 메인 페이지 (index.html)
+- **히어로 슬라이더**: 3개 슬라이드 배경 이미지
+- **서비스 섹션**: 4개 주요 서비스 카드
+- **회사 소개**: 이미지 갤러리 + 텍스트
+- **CTA 섹션**: 상담 신청 버튼 (깜빡거림 이슈 확인됨)
+- **푸터**: 회사 정보, 개인정보처리방침, 이용약관 모달
+
+### 서브페이지 공통 구조
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- SEO 메타태그 개선 필요 -->
+  <link rel="stylesheet" href="../css/default.css">
+  <link rel="stylesheet" href="../css/user.css">
+  <link rel="stylesheet" href="../css/subpage.css">
+</head>
+<body>
+  <!-- 헤더 (공통) -->
+  <header id="sh_hd">...</header>
+
+  <!-- 서브페이지 콘텐츠 -->
+  <div class="sub_container">
+    <!-- 각 페이지별 고유 콘텐츠 -->
+  </div>
+
+  <!-- 푸터 (공통) -->
+  <footer id="sh_ft">...</footer>
+</body>
+</html>
+```
+
+### JavaScript 애니메이션
+- **AOS**: 스크롤 시 페이드 업 애니메이션 (`data-aos="fade-up"`)
+- **GSAP + ScrollTrigger**: 복잡한 스크롤 애니메이션
+- **Swiper**: 이미지 슬라이더
+- **jQuery**: 메뉴 토글, 스크롤 이벤트
+
+### 알려진 이슈
+- **CTA 섹션 깜빡거림**: AOS와 GSAP 충돌 가능성
+- **SEO 메타태그**: description, keywords 등 누락
+- **Open Graph**: 소셜 미디어 공유용 메타태그 누락
+
+---
+
+## 🚀 개발 가이드라인
+
+### 새 페이지 추가 시
+1. **템플릿 사용**: `templates/` 폴더의 공통 요소 활용
+2. **CSS 구조**: 기본 CSS → 페이지별 CSS 순서 유지
+3. **JavaScript**: 필요한 라이브러리만 로드
+4. **SEO 최적화**: 메타태그, sitemap.xml 업데이트
+
+### 성능 최적화
+- **이미지**: WebP 형식 권장, 최적 크기 사용
+- **CSS**: 중복 제거, 미사용 스타일 정리
+- **JavaScript**: 번들링, 미사용 라이브러리 제거
+- **폰트**: Pretendard 폰트 최적화 적용
+
+### 반응형 대응
+- **브레이크포인트**: 768px (태블릿), 480px (모바일)
+- **그리드**: CSS Grid 활용, 자동 반응형
+- **이미지**: picture 태그 또는 srcset 속성 사용
+- **텍스트**: vw 단위 또는 clamp() 함수 활용
+
+---
+
+## 📞 지원 및 참고
+
+### 개발 참고 자료
+- **CSS 가이드**: 이 문서 (`CSS_COMPONENT_GUIDE.md`)
+- **템플릿**: `templates/` 폴더의 HTML 파일들
+- **메인 스타일**: `css/user.css` 파일 주석 참조
+- **유틸리티**: `css/utility-classes.css` 참조
+
+### 브라우저 테스트
+- **Chrome**: 개발자 도구 활용
+- **Safari**: 모바일 Safari 호환성 확인
+- **Firefox**: 크로스 브라우저 테스트
+- **Edge**: 기본 호환성 확인
+
+### 배포 전 체크리스트
+- [ ] 모든 링크 작동 확인
+- [ ] 반응형 디자인 테스트
+- [ ] 로딩 속도 확인
+- [ ] SEO 메타태그 확인
+- [ ] 브라우저 호환성 테스트
+
+**Last Updated**: 2025년 1월 (프로젝트 정리 완료)
+**Version**: 2.0.0
+**Domain**: https://www.usiw.kr/

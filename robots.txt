@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# 사이트맵 위치
+Sitemap: https://www.usiw.kr/sitemap.xml
+
+# 제외할 폴더/파일
+Disallow: /js_backup/
+Disallow: /*.backup$
+
+# 검색엔진 크롤링 허용
+Allow: /html/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# 크롤링 딜레이 (선택사항)
+Crawl-delay: 1
