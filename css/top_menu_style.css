@@ -202,7 +202,7 @@
         width: 100%;
         padding: 20px 30px;
         color: #333 !important;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         line-height: 1.6;
         text-align: left;
@@ -281,7 +281,7 @@
     /* 메뉴 항목 패딩 조정 */
     #shGnb .sh_nav > ul > li > a {
         padding: 18px 25px;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     #shGnb .sh_nav > ul > li > a:hover,
