@@ -246,8 +246,15 @@
                 <!-- 지도 섹션 -->
                 <div class="map-section" data-aos="fade-up" data-aos-delay="300" style="margin-top: 60px;">
                     <h3 class="content-title" style="text-align: center; margin-bottom: 30px;">오시는 길 지도</h3>
-                    <div class="map-container" style="width: 100%; height: 500px; overflow: hidden;">
-                        <div id="map" style="width:100%;height:100%;"></div>
+                    <div class="map-container" style="width: 100%; height: 500px; overflow: hidden; position: relative;">
+                        <!-- 네이버 지도 임베드 -->
+                        <iframe
+                            src="https://map.naver.com/p/entry/place/1024616515?c=15.00,0,0,0,dh"
+                            width="100%"
+                            height="500"
+                            style="border:0;"
+                            frameborder="0">
+                        </iframe>
                     </div>
                     <p style="text-align: center; margin-top: 15px; color: var(--gray-600); font-size: 14px;">
                         * 경기도 광명시 일직로 43, A동 제7층 제에이714호 (일직동, 지아이디씨)
@@ -650,14 +657,6 @@
 <!-- AOS CSS -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
-<!-- 카카오 지도 API -->
-<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0677efa86321d1e1a56de2fe0ee8b171&autoload=false"></script>
-<script type="text/javascript">
-    kakao.maps.load(function() {
-        console.log('카카오 맵 API 로드 완료');
-    });
-</script>
-
 <script src="../js/common.js"></script>
 <script src="../js/wrest.js"></script>
 <!-- Font Awesome 로컬화 -->
@@ -754,52 +753,6 @@ $(document).ready(function() {
         });
     }
 
-    // 카카오 지도 초기화 - API 로드 확인
-    function initKakaoMap() {
-        console.log('카카오 지도 초기화 시도...');
-        console.log('kakao 객체 존재:', typeof kakao !== 'undefined');
-
-        if (typeof kakao !== 'undefined' && kakao.maps) {
-            console.log('kakao.maps 사용 가능');
-            var mapElement = document.getElementById('map');
-
-            if (mapElement) {
-                console.log('지도 컨테이너 찾음:', mapElement);
-
-                try {
-                    var options = {
-                        center: new kakao.maps.LatLng(37.401934, 126.867475), // 경기도 광명시 일직로 43
-                        level: 3 // 지도 확대 레벨
-                    };
-
-                    var map = new kakao.maps.Map(mapElement, options);
-                    console.log('지도 생성 성공');
-
-                    // 지도 타입 컨트롤 추가
-                    var mapTypeControl = new kakao.maps.MapTypeControl();
-                    map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-                    // 줌 컨트롤 추가
-                    var zoomControl = new kakao.maps.ZoomControl();
-                    map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-                    console.log('컨트롤 추가 완료');
-                } catch (error) {
-                    console.error('지도 생성 중 오류:', error);
-                }
-            } else {
-                console.log('지도 컨테이너를 찾을 수 없음');
-            }
-        } else {
-            console.log('kakao API 아직 로드되지 않음, 재시도...');
-            // API가 아직 로드되지 않았다면 재시도
-            setTimeout(initKakaoMap, 100);
-        }
-    }
-
-    // 지도 초기화 시작
-    console.log('페이지 로드 완료, 500ms 후 지도 초기화 예정');
-    setTimeout(initKakaoMap, 500);
 });
 </script>
 
