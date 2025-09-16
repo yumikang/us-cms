@@ -253,17 +253,19 @@
 .fda-agent-grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 80px !important;
+    gap: 40px !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
+    padding: 0 20px !important;
 }
 
 /* Contact Info Grid */
 .contact-info-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 40px !important;
+    gap: 30px !important;
     margin-top: 40px !important;
+    padding: 0 20px !important;
 }
 
 /* Map Container */
@@ -347,6 +349,34 @@
     bottom: 0 !important;
     background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 100%) !important;
 }
+
+/* Footer Info Layout */
+.footer-info-wrapper {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 80px !important;
+    margin-top: 20px !important;
+}
+
+.footer-left-info {
+    flex: 1 !important;
+}
+
+.footer-right-info {
+    min-width: 200px !important;
+}
+
+@media (max-width: 768px) {
+    .footer-info-wrapper {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    .footer-right-info {
+        min-width: auto !important;
+    }
+}
+
 
 /* ==========================================
    RESPONSIVE UTILITIES
