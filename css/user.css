@@ -211,7 +211,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
    📊 FOOTER GRID LAYOUT SYSTEM
    ======================================== */
 .footer-container {
-    --container: min(1400px, 95vw);
+    --container: min(1450px, 95vw);
     margin: 0 auto;
     max-width: var(--container);
 }
