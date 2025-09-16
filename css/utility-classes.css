@@ -350,20 +350,22 @@
     background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 100%) !important;
 }
 
-/* Navigation Text Fix */
-#shGnb .sh_nav > ul > li > a {
-    white-space: nowrap !important;
-    padding: 0 1.25rem !important; /* 20px → 1.25rem */
+/* Navigation Text Fix - Desktop Only (768px 이상에서만 적용) */
+@media (min-width: 769px) {
+    #shGnb .sh_nav > ul > li > a {
+        white-space: nowrap !important;
+        padding: 0 1.25rem !important; /* 20px → 1.25rem */
+    }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 1200px) {
     #shGnb .sh_nav > ul > li > a {
         padding: 0 1rem !important; /* 더 작은 화면에서 패딩 감소 */
         font-size: 0.9rem !important;
     }
 }
 
-@media (max-width: 992px) {
+@media (min-width: 769px) and (max-width: 992px) {
     #shGnb .sh_nav > ul > li > a {
         padding: 0 0.75rem !important;
         font-size: 0.875rem !important;
