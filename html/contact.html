@@ -651,7 +651,12 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
 <!-- 카카오 지도 API -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0677efa86321d1e1a56de2fe0ee8b171"></script>
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0677efa86321d1e1a56de2fe0ee8b171&autoload=false"></script>
+<script type="text/javascript">
+    kakao.maps.load(function() {
+        console.log('카카오 맵 API 로드 완료');
+    });
+</script>
 
 <script src="../js/common.js"></script>
 <script src="../js/wrest.js"></script>
