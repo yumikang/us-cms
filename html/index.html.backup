@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>US INNOWAVE - 정책자금 컨설팅 & 미국 진출 전문 기업</title>
+<link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="../css/top_menu_style.css">
+<link rel="stylesheet" href="../css/aos.css">
+<!-- Swiper 11 업그레이드 (기존 6.4.15에서 변경) -->
+<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+<link rel="stylesheet" href="../css/main_banner_style.css">
+<link rel="stylesheet" href="../css/hero-section.css">
+<link rel="stylesheet" href="../css/service-cards.css">
+<link rel="stylesheet" href="../css/image-gallery.css">
+<link rel="stylesheet" href="../css/cta-banner.css">
+<link rel="stylesheet" href="../css/cta-section.css">
+<link rel="stylesheet" href="../css/user.css">
+<link rel="stylesheet" href="../css/utility-classes.css">
+<style>
+/* Pretendard 폰트 - 모던한 한글/영문 폰트 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-display: swap;
+}
+
+/* 기본 폰트 설정 - Pretendard */
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+</style><!-- IE8 지원 제거: 모던 브라우저만 지원 -->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "https://co1162.shiningcorp.com";
+var g5_bbs_url   = "https://co1162.shiningcorp.com/bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+</script>
+<!-- jQuery 3.7.1 업그레이드 (기존 1.8.3에서 변경) -->
+<script src="../js/jquery-3.7.1.min.js"></script>
+<!-- jQuery Migrate 3.5.2: 하위 호환성 및 마이그레이션 경고 제공 -->
+<script src="../js/jquery-migrate-3.5.2.min.js"></script>
+<!-- jQuery UI 제거: 미사용 확인으로 539KB 절약 -->
+<script src="../js/jquery.menu.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/wrest.js"></script>
+<!-- placeholders.js 제거: 모던 브라우저는 placeholder 네이티브 지원 -->
+<!-- Font Awesome 로컬화 -->
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<script src="../js/feather.min.js"></script>
+<script src="../js/top_menu_script.js"></script>
+<script src="../js/aos.js"></script>
+<!-- Swiper 11 (기존 6.4.15에서 업그레이드) -->
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/gsap.min.js"></script>
+<script src="../js/ScrollTrigger.min.js"></script>
+
+<!-- jQuery 버전 확인 및 마이그레이션 모니터링 -->
+<script>
+$(document).ready(function() {
+    console.log('========================================');
+    console.log('US INNOWAVE - jQuery Upgrade Status');
+    console.log('========================================');
+    console.log('jQuery Version:', $.fn.jquery);
+    console.log('jQuery Migrate Version:', typeof jQuery.migrateVersion !== 'undefined' ? jQuery.migrateVersion : 'Not loaded');
+    console.log('========================================');
+    console.log('Check console for JQMIGRATE warnings...');
+    console.log('========================================');
+});
+</script>
+</head>
+<body>
+<style>
+/* 디자인샘플 보러가기 */
+#goToDesign{position:relative;z-index:9;width:100%;padding:7px 0;border-bottom:1px solid #fff073;font-size:12px;text-align:center;background-color:#fffbd9;font-family:dotum} 
+#goToDesign a{padding-left:10px;font-weight:bold;color:#f96319}
+#goToDesign a:hover{text-decoration:underline}
+</style>
+
+
+<!-- 100% 배경이미지 때문에 사용 -->
+<div id="sh_wrapper">
+<!-- 상단 시작 { -->
+    <header id="sh_hd">	
+        <div class="sh_lnb_bg"></div>
+        <div id="skip_to_container"><a href="#sh_container">본문 바로가기</a></div>
+        
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+    <h2>팝업레이어 알림</h2>
+
+<span class="sound_only">팝업레이어 알림이 없습니다.</span></div>
+
+<script>
+$(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+</script>
+<!-- } 팝업레이어 끝 -->        <div id="sh_hd_wrapper">
+            
+<div id="shGnb">	
+    
+	<div class="sh_logo">
+		<a href="index.html">
+			<img src="../images/us-logo.svg" alt="US INNOWAVE" class="logo-svg main-color">
+		</a>
+	</div>
+
+	<!-- 상단메뉴 -->
+    <nav class="sh_nav">
+        <ul>
+            <li>
+                <a href="company-intro.html">회사소개</a>
+            </li>
+            <li>
+                <a href="policy-fund.html">정책자금 컨설팅</a>
+            </li>
+            <li>
+                <a href="services.html">해외 수출</a>
+            </li>
+            <li>
+                <a href="us-market.html">미국 공급망 & 조달시장</a>
+            </li>
+            <li>
+                <a href="certification.html">ISO & 기업인증</a>
+            </li>
+            <li>
+                <a class="form_link" href="contact.html">문의하기 <i data-feather="arrow-up-right"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 모바일 메뉴 토글 버튼 -->
+    <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- 모바일 메뉴 오버레이 -->
+    <div class="mobile-menu-overlay"></div>
+
+</div>
+        </div>
+    </header>
+    <!-- } 상단 끝 -->
+        
+    <!-- sh_container [s] -->
+	<main id="sh_container" >
+		<div id="sh_container_wrapper">
+			
+
+<div id="mainVisual">
+    <div class="swiper-container main_bnr">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                <div class="bg03 bg"></div>
+            </li>
+            <li class="swiper-slide">
+                <div class="bg02 bg"></div>
+            </li>
+            <li class="swiper-slide">
+                <div class="bg01 bg"></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="txt">
+        <div class="inner">
+            <div class="l_cont" data-aos="fade-up">
+                <div class="slide-text active" data-slide="0">
+                    <h2>미국 시장 진출의 꿈<br>
+                        <span class="text-gradient">현실이 됩니다</span><br>
+                        US INNOWAVE</h2>
+                    <p>FDA 인증부터 공급망 진입까지,<br>
+                    성공적인 해외진출을 위한 토탈 서비스를 경험하세요</p>
+                </div>
+                <div class="slide-text" data-slide="1">
+                    <h2>정책자금 확보의 성공<br>
+                        <span class="text-gradient">전문가와 함께</span><br>
+                        시작하세요</h2>
+                    <p>체계적인 컨설팅으로 정부지원사업 선정률을<br>
+                    극대화하는 검증된 노하우를 제공합니다</p>
+                </div>
+                <div class="slide-text" data-slide="2">
+                    <h2>당신의 글로벌 비즈니스,<br>
+                        <span class="text-gradient">유에스이노웨이브</span>가<br>
+                        현실로 만듭니다</h2>
+                    <p>정책자금부터 미국 진출까지, 기업의 성장을 위한<br>
+                    원스톱 솔루션을 제공합니다</p>
+                </div>
+                <div class="pager">
+                    <span></span>
+                </div>
+            </div>
+            <div class="mouse">
+                <span>scroll down</span>
+                <div class="icon"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Slider Script -->
+<script src="../js/hero-slider.js"></script>
+
+<section id="sh_section">
+	
+<article id="inc01">
+    <h1 data-aos="fade-up">글로벌 성공의 시작<br>전문가와 함께하는 미국 비즈니스</h1>
+</article>    
+<article id="inc02">
+    <div class="inner">
+        <div class="tit" data-aos="fade-up">
+            <span class="e_tit">Why US INNOWAVE?</span>
+            <h2>유에스이노웨이브를 
+            선택해야 하는 
+            이유</h2>
+        </div>
+    
+        <ul class="num">
+            <li data-aos="fade-up">
+                <div class="icon">
+                    <img src="../images/inc02/icon-01.png" alt="One-Stop Solution" class="feature-icon">
+                    <p>One-Stop</p>
+                </div>
+                <dl>
+                    <dt>One-Stop Solution</dt>
+                    <dd>설립부터 성장, 해외진출까지 기업의 전 과정을 지원합니다</dd>
+                </dl>
+            </li>
+            <li data-aos="fade-up">
+                <div class="icon">
+                    <img src="../images/inc02/icon-02.png" alt="전문가 그룹" class="feature-icon">
+                    <p>Expert</p>
+                </div>
+                <dl>
+                    <dt>전문가 그룹</dt>
+                    <dd>각 분야 최고의 전문가들이 직접 컨설팅을 진행합니다</dd>
+                </dl>
+            </li>
+            <li data-aos="fade-up">
+                <div class="icon">
+                    <img src="../images/inc02/icon-03.png" alt="검증된 성과" class="feature-icon">
+                    <p>Proven</p>
+                </div>
+                <dl>
+                    <dt>검증된 성과</dt>
+                    <dd>수많은 성공사례와 고객만족도가 실력을 증명합니다</dd>
+                </dl>
+            </li>
+            <li data-aos="fade-up">
+                <div class="icon">
+                    <img src="../images/inc02/icon-04.png" alt="맞춤형 전략" class="feature-icon">
+                    <p>Custom</p>
+                </div>
+                <dl>
+                    <dt>맞춤형 전략</dt>
+                    <dd>기업별 상황에 최적화된 맞춤 솔루션을 제공합니다</dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</article>    
+<article id="inc03">
+    <div class="cross">
+        <p class="txt l_txt">Globally Trusted</p>
+        <p class="txt r_txt">Technically Proven</p>
+    </div>
+    <div class="cont">
+        <div class="img_inner">
+            <ul class="img_box">
+                <li><img src="../images/hero-business-04.webp" alt="정책자금 컨설팅 성공사례"></li>
+                <li><img src="../images/hero-business-05.webp" alt="미국 시장 진출 지원 서비스"></li>
+                <li><img src="../images/hero-business-06.webp" alt="ISO 인증 및 품질 관리 시스템"></li>
+            </ul>
+        </div>
+        <ul class="txt_box">
+            <li>
+                <h2>정책자금 컨설팅 전문 서비스</h2>
+                <div class="pl">기업 진단부터 사업계획서 작성, 대면평가까지 정부지원사업의 모든 과정을 체계적으로 지원하여
+                정책자금 확보 가능성을 극대화하고 성공적인 사업 추진을 위한 전문적인 가이드를 제공합니다.</div>
+                <a href="policy-fund.html" class="cm_btn">자세히 보기 <i data-feather="chevron-right"></i> </a>
+            </li>
+            <li>
+                <h2>미국 시장 진출 토탈 솔루션</h2>
+                <div class="pl">FDA 인증, U.S. Agent 서비스, 미국 규제 대응 등 미국 시장 진출을 위한 통합 솔루션으로
+                    복잡한 수출 절차를 간소화하고 성공적인 해외 진출을 위한 체계적인 지원을 제공합니다.</div>
+                <a href="services.html" class="cm_btn">자세히 보기 <i data-feather="chevron-right"></i> </a>
+            </li>
+            <li>
+                <h2>ISO 인증 및 품질 관리 시스템</h2>
+                <div class="pl">ISO 9001, 14001, 45001 등 국제표준 인증 획득을 위한 체계적인 컨설팅으로
+                    글로벌 표준에 부합하는 품질 관리 시스템 구축부터 인증 취득까지 전문적인 서비스를 제공합니다.</div>
+                <a href="certification.html" class="cm_btn">자세히 보기 <i data-feather="chevron-right"></i> </a>
+            </li>
+        </ul>
+    </div>
+</article>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#inc03 .txt", {
+    x: 0,
+    scrollTrigger: {
+        trigger: "#inc03 .cross",
+        start: "top bottom",
+        end: "center center",
+        scrub: 1,
+    }
+    });
+
+    ScrollTrigger.create({
+    trigger: "#inc03 .cross",
+    start: "top top",
+        onEnter: () => document.querySelector("#inc03").classList.add("on"),
+        onLeaveBack: () => document.querySelector("#inc03").classList.remove("on")
+    });
+
+    gsap.to("#inc03 .img_box", {
+    width: "100%",
+    height: "100vh",
+    scrollTrigger: {
+        trigger: "#inc03 .cross",
+        start: "center 50%",
+        scrub: 1,
+    }
+    });
+
+    const imgs = document.querySelectorAll(".img_box li");
+    const texts = document.querySelectorAll(".txt_box li");
+    const lastIndex = texts.length - 1;
+
+    // 초기 세팅: 첫번째 이미지, 텍스트 on
+    imgs.forEach(img => img.classList.remove("on"));
+    texts.forEach(text => text.classList.remove("on"));
+    imgs[0].classList.add("on");
+    texts[0].classList.add("on");
+
+    texts.forEach((text, i) => {
+    ScrollTrigger.create({
+        trigger: text,
+        start: "top 40%",
+        end: "bottom 0%",
+        onEnterBack: () => {
+        // 스크롤 올릴 때 해당 텍스트가 화면에 들어오면
+        setActive(i);
+        },
+        onLeave: () => {
+        // 스크롤 내릴 때 해당 텍스트가 화면에서 완전히 지나가면
+        if(i < lastIndex) setActive(i + 1);
+        }
+    });
+    });
+
+    function setActive(index) {
+    imgs.forEach(img => img.classList.remove("on"));
+    texts.forEach(text => text.classList.remove("on"));
+    imgs[index].classList.add("on");
+    texts[index].classList.add("on");
+    }
+</script>
+
+<!-- CTA Section Template -->
+<article id="ctaBanner" class="cta-section">
+    <div class="inner">
+        <div class="cta-content" data-aos="fade-up">
+            <h2 class="cta-title">지금 바로 시작하세요</h2>
+            <p class="cta-subtitle">기업 현황 진단부터 실행 로드맵 수립까지, 
+            전문가와 함께 성공적인 글로벌 비즈니스를 시작하세요</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">무료 상담 신청 <i data-feather="chevron-right"></i></a>
+                <a href="company-intro.html" class="btn-secondary">회사 소개 <i data-feather="arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- REMOVED: News Section - No longer needed -->
+<!--
+<article id="inc04">
+    <div class="inner">
+        <div class="flex" data-aos="fade-up">
+            <div class="tit">
+                <div>
+                    <span class="e_tit">News rooms & Notice</span>
+                    <h2>지금, 우리의 변화와 
+                    도약을 만나보세요</h2>
+                </div>
+
+                <ul class="late_tabs">
+                    <li class="on" rel="tab1">공지사항</li>
+                    <li rel="tab2">보도자료</li>
+                </ul>
+            </div>
+
+            <div class="tabs">
+                <div class="late_box">
+                    <div id="tab1" class="late_cont">
+                        <div class="late">
+                            
+<ul class=" n_lt">
+        <li>
+        <a href="https://co1162.shiningcorp.com/bbs/board.php?bo_table=table50&amp;wr_id=27">   
+              
+            <div class="sh_date">
+                <div class="fir_date">
+                    <span class="day">28</span>
+                    <p>25.07</p>
+                </div>
+                <div class="lt_cont">
+                    <p class="subj">2025년 정부지원사업 신청 안내</p>
+                    2025년도 중소기업 정책자금 지원사업이 시작됩니다. 전문 컨설턴트와 함께 성공적인 신청을 준비하세요.                </div>
+            </div> 
+                    
+			 
+        </a>
+    </li>
+        <li>
+        <a href="https://co1162.shiningcorp.com/bbs/board.php?bo_table=table50&amp;wr_id=26">   
+                    
+			                <div class="sh_date_r">
+                    <p class="subj">FDA 인증 취득 지원 프로그램 시작</p>
+                    <span class="date">25.07.28</span>
+                </div>
+             
+        </a>
+    </li>
+        <li>
+        <a href="https://co1162.shiningcorp.com/bbs/board.php?bo_table=table50&amp;wr_id=25">   
+                    
+			                <div class="sh_date_r">
+                    <p class="subj">CES 2025, 차세대 차량용 반도체 솔루션 공개</p>
+                    <span class="date">25.07.28</span>
+                </div>
+             
+        </a>
+    </li>
+        <li>
+        <a href="https://co1162.shiningcorp.com/bbs/board.php?bo_table=table50&amp;wr_id=24">   
+                    
+			                <div class="sh_date_r">
+                    <p class="subj">‘2025 대한민국 기술대상’ 반도체 부문 수상</p>
+                    <span class="date">25.07.28</span>
+                </div>
+             
+        </a>
+    </li>
+        </ul>                        </div>
+                    </div>
+                    <div id="tab2" class="late_cont">
+                        <div class="late">
+                            
+<ul class=" n_lt">
+        <li>
+        <a href="https://co1162.shiningcorp.com/bbs/board.php?bo_table=table51&amp;wr_id=4">   
+              
+            <div class="sh_date">
+                <div class="fir_date">
+                    <span class="day">21</span>
+                    <p>24.11</p>
+                </div>
+                <div class="lt_cont">
+                    <p class="subj">홈페이지에 대한 소식을 알려드립니다.</p>
+                    샘플 기업의 이번 협력은 지역 사회의 지속 가능한 발전에 기여하기 위해 마련된 것으로, 기업과 협약을 통해 ...                </div>
+            </div> 
+                    
+			 
+        </a>
+    </li>
+        <li>
+        <a href="https://co1162.shiningcorp.com/bbs/board.php?bo_table=table51&amp;wr_id=3">   
+                    
+			                <div class="sh_date_r">
+                    <p class="subj">홈페이지에 대한 소식을 알려드립니다.</p>
+                    <span class="date">24.11.21</span>
+                </div>
+             
+        </a>
+    </li>
+        <li>
+        <a href="https://co1162.shiningcorp.com/bbs/board.php?bo_table=table51&amp;wr_id=2">   
+                    
+			                <div class="sh_date_r">
+                    <p class="subj">홈페이지에 대한 소식을 알려드립니다.</p>
+                    <span class="date">24.11.20</span>
+                </div>
+             
+        </a>
+    </li>
+        <li>
+        <a href="https://co1162.shiningcorp.com/bbs/board.php?bo_table=table51&amp;wr_id=1">   
+                    
+			                <div class="sh_date_r">
+                    <p class="subj">홈페이지에 대한 소식을 알려드립니다.</p>
+                    <span class="date">24.11.20</span>
+                </div>
+             
+        </a>
+    </li>
+        </ul>                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="bnr" data-aos="fade-up">
+            <div class="wrap">
+                <h3>전문성과 경험을 바탕으로 기업의 글로벌 성장을 지원합니다.</h3>
+                <p>빠르고 정확한 전문 상담을 원하신다면, 지금 문의해 주세요.</p>
+                <a href="/contact.html" class="cm_btn">무료 상담 신청 <i data-feather="chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</article>
+-->
+
+<!-- Script for news section removed -->
+<!--
+<script>
+    $(function() { 
+	$(".late_cont").hide(); $(".late_cont:first").show();
+	$(".late_tabs li").click(function() {$(".late_tabs li").removeClass("on");
+	$(this).addClass("on"); $(".late_cont").hide() 
+        var activeTab = $(this).attr("rel"); $("#"+activeTab).show()
+    }); });
+</script>
+--></section>
+
+       
+    	</div><!-- sh_container_wrapper --> 
+    </main><!-- sh_container -->
+    <!-- } 콘텐츠 끝 -->
+
+    <!-- sh_ft [s] -->
+    <!-- 하단 시작 { -->
+    <footer id="sh_ft">	
+        <div class="flex">
+            <div class="info">
+                <img src="../images/us-logo.svg" alt="US INNOWAVE" class="footer-logo-svg">
+                <div class="footer-info-wrapper">
+                    <ul class="footer-left-info">
+                        <li>
+                            <span>ADDRESS</span>경기도 광명시 일직로 43, A동 제7층 제에이714호(일직동, 지아이디씨)
+                        </li>
+                        <li>
+                            <span>상호</span>(주)유에스이노웨이브
+                        </li>
+                        <li>
+                            <span>사업자 번호</span>618-88-03499
+                        </li>
+                        <li>
+                            <span>대표</span>김수빈
+                        </li>
+                    </ul>
+                    <ul class="footer-right-info">
+                        <li><span>TEL</span>1666-8324</li>
+                        <li><span>FAX</span>0504-487-7856</li>
+                        <li><span>E-mail</span>wkygo@naver.com</li>
+                    </ul>
+                </div>
+                <div class="links">
+                    <a href="javascript:void(0);" onclick="openBusinessModal();">통신판매업종신고</a>
+                    <a href="javascript:void(0);" onclick="openPrivacyModal();">개인정보처리방침</a>
+                    <a href="javascript:void(0);" onclick="openTermsModal();">이용약관</a>
+                    
+                </div>
+            </div>
+            
+            <!-- 푸터 메뉴 -->
+            <ul class="ft_mn">
+                <li>
+                    <a href="company-intro.html">회사소개</a>
+                </li>
+                <li>
+                    <a href="policy-fund.html">정책자금 컨설팅</a>
+                </li>
+                <li>
+                    <a href="services.html">해외 수출</a>
+                </li>
+                <li>
+                    <a href="us-market.html">미국 공급망 & 조달시장</a>
+                </li>
+                <li>
+                    <a href="certification.html">ISO & 기업인증</a>
+                </li>
+                <li>
+                    <a href="contact.html">문의하기</a>
+                </li>
+            </ul>
+        </div>
+        <div class="copy">
+            (C) US INNOWAVE all rights reserved.
+        </div>	
+        <div id="toTop">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                <path d="M12 19V5"/>
+                <path d="M5 12l7-7 7 7"/>
+            </svg>
+        </div> 
+    </footer>	
+    <!-- sh_ft [e] -->
+
+<!-- 100% 배경이미지 때문에 사용 -->
+</div>
+
+<script>
+    feather.replace();
+    AOS.init();
+
+    $('#toTop').click(function(){
+        $("html, body").animate({scrollTop:0}, 400);
+        return false;
+    });
+
+    // 모바일 메뉴 토글
+    $('.mobile-menu-toggle').click(function() {
+        $(this).toggleClass('active');
+        $('.sh_nav').toggleClass('active');
+        $('.mobile-menu-overlay').toggleClass('active');
+        $('body').toggleClass('mobile-menu-open');
+    });
+
+    // 오버레이 클릭시 메뉴 닫기
+    $('.mobile-menu-overlay').click(function() {
+        $('.mobile-menu-toggle').removeClass('active');
+        $('.sh_nav').removeClass('active');
+        $('.mobile-menu-overlay').removeClass('active');
+        $('body').removeClass('mobile-menu-open');
+    });
+
+    // 모바일 메뉴 항목 클릭시 메뉴 닫기 (선택사항)
+    if ($(window).width() <= 768) {
+        $('.sh_nav > ul > li > a').click(function() {
+            $('.mobile-menu-toggle').removeClass('active');
+            $('.sh_nav').removeClass('active');
+            $('.mobile-menu-overlay').removeClass('active');
+            $('body').removeClass('mobile-menu-open');
+        });
+    }
+</script>
+
+<!-- } 하단 끝 -->
+
+<!-- 통신판매업종신고/개인정보처리방침/이용약관 모달 -->
+<div id="businessModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>통신판매업종신고</h2>
+            <span class="close" onclick="closeModal('businessModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h3>통신판매업종신고 정보</h3>
+            <p>US INNOWAVE는 전자상거래 등에서의 소비자보호에 관한 법률에 따라 통신판매업 신고를 완료하였습니다.</p>
+            
+            <h3>신고 정보</h3>
+            <ul>
+                <li><strong>상호명:</strong> US INNOWAVE</li>
+                <li><strong>대표자:</strong> 김수빈</li>
+                <li><strong>사업자등록번호:</strong> 618-88-03499</li>
+                <li><strong>통신판매업 신고번호:</strong> </li>
+                <li><strong>신고일자:</strong> </li>
+                <li><strong>사업장 소재지:</strong> 경기도 광명시 일직로 43, A동 제7층 제에이714호(일직동, 지아이디씨)</li>
+                <li><strong>연락처:</strong> 1666-8324</li>
+                <li><strong>이메일:</strong> wkygo@naver.com</li>
+            </ul>
+            
+            <h3>판매 품목</h3>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+            
+            <h3>소비자 보호</h3>
+            <p>US INNOWAVE는 전자상거래 등에서의 소비자보호에 관한 법률, 소비자기본법 등 관련 법령을 준수하며, 소비자 권익 보호를 위해 최선을 다하고 있습니다.</p>
+            
+            <h3>확인 방법</h3>
+            <p>통신판매업 신고 정보는 공정거래위원회 통신판매사업자 정보공개시스템(www.ftc.go.kr)에서 확인하실 수 있습니다.</p>
+        </div>
+    </div>
+</div>
+
+<div id="privacyModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>개인정보처리방침</h2>
+            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h3>제1조 (개인정보의 처리목적)</h3>
+            <p>US INNOWAVE는 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
+            <ul>
+                <li>서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산</li>
+                <li>회원 가입의사 확인, 회원제 서비스 제공에 따른 본인 식별·인증</li>
+                <li>불만처리 등 민원처리, 고지사항 전달</li>
+            </ul>
+            
+            <h3>제2조 (개인정보의 처리 및 보유기간)</h3>
+            <p>① US INNOWAVE는 정보주체로부터 개인정보를 수집할 때 동의받은 개인정보 보유·이용기간 또는 법령에 따른 개인정보 보유·이용기간 내에서 개인정보를 처리·보유합니다.</p>
+            <p>② 각각의 개인정보 처리 및 보유 기간은 다음과 같습니다.</p>
+            <ul>
+                <li>컨설팅 서비스 이용기록: 3년</li>
+                <li>문의 및 상담 기록: 3년</li>
+            </ul>
+            
+            <h3>제3조 (개인정보의 제3자 제공)</h3>
+            <p>① US INNOWAVE는 개인정보를 제1조(개인정보의 처리목적)에서 명시한 범위 내에서만 처리하며, 정보주체의 동의, 법률의 특별한 규정 등 개인정보보호법 제17조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.</p>
+            
+            <h3>제4조 (개인정보처리의 위탁)</h3>
+            <p>① US INNOWAVE는 원활한 개인정보 업무처리를 위하여 다음과 같이 개인정보 처리업무를 위탁하고 있습니다.</p>
+            <p>② 회사는 위탁계약 체결시 개인정보보호법 제26조에 따라 위탁업무 수행목적 외 개인정보 처리금지, 기술적·관리적 보호조치, 재위탁 제한, 수탁자에 대한 관리·감독, 손해배상 등 책임에 관한 사항을 계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.</p>
+        </div>
+    </div>
+</div>
+
+<div id="termsModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>이용약관</h2>
+            <span class="close" onclick="closeModal('termsModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h3>제1조 (목적)</h3>
+            <p>이 약관은 US INNOWAVE(이하 "회사")가 제공하는 모든 서비스(이하 "서비스")의 이용조건 및 절차, 회사와 회원간의 권리, 의무, 책임사항과 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+            
+            <h3>제2조 (정의)</h3>
+            <p>이 약관에서 사용하는 용어의 정의는 다음과 같습니다.</p>
+            <ul>
+                <li>① "서비스"라 함은 회사가 제공하는 정책자금 컨설팅, 미국 진출 지원, ISO 인증 등 모든 서비스를 의미합니다.</li>
+                <li>② "회원"이라 함은 회사와 서비스 이용계약을 체결한 개인 또는 법인을 의미합니다.</li>
+                <li>③ "이용자"라 함은 회사의 서비스에 접속하여 이 약관에 따라 회사가 제공하는 서비스를 받는 회원 및 비회원을 의미합니다.</li>
+            </ul>
+            
+            <h3>제3조 (약관의 게시와 개정)</h3>
+            <p>① 회사는 이 약관의 내용을 이용자가 쉽게 알 수 있도록 서비스 초기 화면에 게시합니다.</p>
+            <p>② 회사는 약관의규제에관한법률, 정보통신망이용촉진및정보보호등에관한법률(이하 "정보통신망법") 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.</p>
+            
+            <h3>제4조 (서비스의 제공 및 변경)</h3>
+            <p>① 회사는 다음과 같은 업무를 수행합니다.</p>
+            <ul>
+                <li>정책자금 컨설팅 서비스</li>
+                <li>미국 진출 지원 서비스</li>
+                <li>ISO 및 기업인증 서비스</li>
+                <li>기타 회사가 정하는 업무</li>
+            </ul>
+            
+            <h3>제5조 (서비스 이용계약의 성립)</h3>
+            <p>① 서비스 이용계약은 이용고객이 약관의 내용에 대하여 동의를 한 다음 서비스 이용신청을 하고 회사가 이러한 신청에 대하여 승낙함으로써 성립합니다.</p>
+            <p>② 회사는 이용신청고객에 대하여 서비스 이용을 승낙함을 원칙으로 합니다. 다만, 회사는 다음 각 호에 해당하는 신청에 대하여는 승낙을 하지 않거나 사후에 이용계약을 해지할 수 있습니다.</p>
+        </div>
+    </div>
+</div>
+
+<!-- 모달 스타일 -->
+<style>
+.modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover {
+    opacity: 0.7;
+}
+
+.modal-body {
+    padding: 30px;
+    overflow-y: auto;
+    max-height: calc(80vh - 80px);
+    line-height: 1.6;
+}
+
+.modal-body h3 {
+    color: #007bff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 25px 0 15px 0;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 8px;
+}
+
+.modal-body h3:first-child {
+    margin-top: 0;
+}
+
+.modal-body p {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+.modal-body ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.modal-body li {
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-header {
+        padding: 15px;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+}
+</style>
+
+<!-- 모달 스크립트 -->
+<script>
+// 모달 함수들
+function openBusinessModal() {
+    document.getElementById('businessModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function openPrivacyModal() {
+    document.getElementById('privacyModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function openTermsModal() {
+    document.getElementById('termsModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// 모달 외부 클릭시 닫기
+window.onclick = function(event) {
+    var businessModal = document.getElementById('businessModal');
+    var privacyModal = document.getElementById('privacyModal');
+    var termsModal = document.getElementById('termsModal');
+    
+    if (event.target == businessModal) {
+        closeModal('businessModal');
+    }
+    if (event.target == privacyModal) {
+        closeModal('privacyModal');
+    }
+    if (event.target == termsModal) {
+        closeModal('termsModal');
+    }
+}
+
+// ESC 키로 모달 닫기
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal('businessModal');
+        closeModal('privacyModal');
+        closeModal('termsModal');
+    }
+});
+</script>
+
+<!-- IE7 지원 코드 제거: 모던 브라우저만 지원 -->
+
+</body>
+<!-- designTail.js 로컬화 -->
+<script src="../js/designTail.js"></script>
+</html>
