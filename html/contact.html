@@ -749,46 +749,53 @@ $(document).ready(function() {
         });
     }
 
-    // 카카오 지도 초기화
-    // 카카오 지도 API 로드 후 실행
-    setTimeout(function() {
-        if (document.getElementById('map')) {
-            var container = document.getElementById('map');
-            var options = {
-                center: new kakao.maps.LatLng(37.401934, 126.867475), // 경기도 광명시 일직로 43
-                level: 3 // 지도 확대 레벨
-            };
+    // 카카오 지도 초기화 - API 로드 확인
+    function initKakaoMap() {
+        if (typeof kakao !== 'undefined' && kakao.maps) {
+            if (document.getElementById('map')) {
+                var container = document.getElementById('map');
+                var options = {
+                    center: new kakao.maps.LatLng(37.401934, 126.867475), // 경기도 광명시 일직로 43
+                    level: 3 // 지도 확대 레벨
+                };
 
-            var map = new kakao.maps.Map(container, options);
+                var map = new kakao.maps.Map(container, options);
 
-            // 마커 생성
-            var markerPosition = new kakao.maps.LatLng(37.401934, 126.867475);
-            var marker = new kakao.maps.Marker({
-                position: markerPosition
-            });
-            marker.setMap(map);
+                // 마커 생성
+                var markerPosition = new kakao.maps.LatLng(37.401934, 126.867475);
+                var marker = new kakao.maps.Marker({
+                    position: markerPosition
+                });
+                marker.setMap(map);
 
-            // 인포윈도우 생성
-            var iwContent = '<div style="padding:10px;min-width:200px;line-height:1.4;">' +
-                            '<h4 style="margin:0 0 5px 0;font-size:14px;font-weight:bold;">US INNOWAVE</h4>' +
-                            '<p style="margin:0;font-size:12px;">경기도 광명시 일직로 43<br>A동 제7층 제에이714호</p>' +
-                            '</div>',
-                iwPosition = new kakao.maps.LatLng(37.401934, 126.867475);
+                // 인포윈도우 생성
+                var iwContent = '<div style="padding:10px;min-width:200px;line-height:1.4;">' +
+                                '<h4 style="margin:0 0 5px 0;font-size:14px;font-weight:bold;">US INNOWAVE</h4>' +
+                                '<p style="margin:0;font-size:12px;">경기도 광명시 일직로 43<br>A동 제7층 제에이714호</p>' +
+                                '</div>',
+                    iwPosition = new kakao.maps.LatLng(37.401934, 126.867475);
 
-            var infowindow = new kakao.maps.InfoWindow({
-                position : iwPosition,
-                content : iwContent
-            });
+                var infowindow = new kakao.maps.InfoWindow({
+                    position : iwPosition,
+                    content : iwContent
+                });
 
-            // 인포윈도우 표시
-            infowindow.open(map, marker);
-
-            // 마커 클릭 이벤트
-            kakao.maps.event.addListener(marker, 'click', function() {
+                // 인포윈도우 표시
                 infowindow.open(map, marker);
-            });
+
+                // 마커 클릭 이벤트
+                kakao.maps.event.addListener(marker, 'click', function() {
+                    infowindow.open(map, marker);
+                });
+            }
+        } else {
+            // API가 아직 로드되지 않았다면 재시도
+            setTimeout(initKakaoMap, 100);
         }
-    }, 500);
+    }
+
+    // 지도 초기화 시작
+    setTimeout(initKakaoMap, 500);
 });
 </script>
 
