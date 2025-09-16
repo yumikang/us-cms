@@ -1,0 +1,377 @@
+@charset "utf-8";
+
+/* ========================================
+   🎨 UTILITY CLASSES SYSTEM
+   ========================================
+   인라인 스타일을 대체하는 유틸리티 클래스들
+   기존 CSS 구조를 유지하면서 중앙 관리 가능
+   ======================================== */
+
+/* ==========================================
+   LAYOUT UTILITIES
+   ========================================== */
+
+/* Position Utilities */
+.pos-relative { position: relative !important; }
+.pos-absolute { position: absolute !important; }
+.pos-fixed { position: fixed !important; }
+.pos-sticky { position: sticky !important; }
+
+/* Display Utilities */
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+
+/* Flex Utilities */
+.flex-column { flex-direction: column !important; }
+.flex-row { flex-direction: row !important; }
+.justify-center { justify-content: center !important; }
+.justify-between { justify-content: space-between !important; }
+.justify-start { justify-content: flex-start !important; }
+.justify-end { justify-content: flex-end !important; }
+.align-center { align-items: center !important; }
+.align-start { align-items: flex-start !important; }
+.align-end { align-items: flex-end !important; }
+.align-baseline { align-items: baseline !important; }
+
+/* Grid Utilities */
+.grid-1 { grid-template-columns: 1fr !important; }
+.grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
+.grid-3 { grid-template-columns: repeat(3, 1fr) !important; }
+.grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
+.grid-gap-sm { gap: 20px !important; }
+.grid-gap-md { gap: 30px !important; }
+.grid-gap-lg { gap: 40px !important; }
+.grid-gap-xl { gap: 50px !important; }
+.grid-gap-2xl { gap: 60px !important; }
+.grid-gap-3xl { gap: 80px !important; }
+
+/* ==========================================
+   SIZING UTILITIES
+   ========================================== */
+
+/* Width Utilities */
+.w-full { width: 100% !important; }
+.w-auto { width: auto !important; }
+.w-25 { width: 25% !important; }
+.w-50 { width: 50% !important; }
+.w-75 { width: 75% !important; }
+.max-w-800 { max-width: 800px !important; }
+.max-w-1200 { max-width: 1200px !important; }
+
+/* Height Utilities */
+.h-full { height: 100% !important; }
+.h-auto { height: auto !important; }
+.h-500 { height: 500px !important; }
+
+/* Icon Sizing */
+.icon-sm { width: 24px !important; height: 24px !important; }
+.icon-md { width: 30px !important; height: 30px !important; }
+.icon-lg { width: 40px !important; height: 40px !important; }
+
+/* ==========================================
+   SPACING UTILITIES
+   ========================================== */
+
+/* Margin Utilities */
+.m-0 { margin: 0 !important; }
+.m-auto { margin: 0 auto !important; }
+.mt-10 { margin-top: 10px !important; }
+.mt-15 { margin-top: 15px !important; }
+.mt-20 { margin-top: 20px !important; }
+.mt-30 { margin-top: 30px !important; }
+.mt-40 { margin-top: 40px !important; }
+.mt-50 { margin-top: 50px !important; }
+.mt-60 { margin-top: 60px !important; }
+.mb-10 { margin-bottom: 10px !important; }
+.mb-15 { margin-bottom: 15px !important; }
+.mb-20 { margin-bottom: 20px !important; }
+.mb-30 { margin-bottom: 30px !important; }
+.mb-40 { margin-bottom: 40px !important; }
+.mr-auto { margin-right: auto !important; }
+.ml-auto { margin-left: auto !important; }
+
+/* Padding Utilities */
+.p-0 { padding: 0 !important; }
+.p-12 { padding: 12px !important; }
+.p-20 { padding: 20px !important; }
+.p-25 { padding: 25px !important; }
+.p-30 { padding: 30px !important; }
+.py-20 { padding-top: 20px !important; padding-bottom: 20px !important; }
+.py-60 { padding-top: 60px !important; padding-bottom: 60px !important; }
+.px-20 { padding-left: 20px !important; padding-right: 20px !important; }
+.pl-40 { padding-left: 40px !important; }
+
+/* ==========================================
+   TYPOGRAPHY UTILITIES
+   ========================================== */
+
+/* Font Size Utilities */
+.fs-12 { font-size: 12px !important; }
+.fs-14 { font-size: 14px !important; }
+.fs-15 { font-size: 15px !important; }
+.fs-17 { font-size: 17px !important; }
+.fs-18 { font-size: 18px !important; }
+.fs-1rem { font-size: 1rem !important; }
+.fs-105rem { font-size: 1.05rem !important; }
+.fs-13rem { font-size: 1.3rem !important; }
+
+/* Font Weight Utilities */
+.fw-normal { font-weight: 400 !important; }
+.fw-medium { font-weight: 500 !important; }
+.fw-semibold { font-weight: 600 !important; }
+.fw-bold { font-weight: 700 !important; }
+
+/* Line Height Utilities */
+.lh-15 { line-height: 1.5 !important; }
+.lh-16 { line-height: 1.6 !important; }
+.lh-18 { line-height: 1.8 !important; }
+.lh-2 { line-height: 2 !important; }
+
+/* Text Alignment */
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+
+/* ==========================================
+   COLOR UTILITIES
+   ========================================== */
+
+/* Text Colors */
+.text-primary { color: var(--primary) !important; }
+.text-white { color: #fff !important; }
+.text-black { color: #333 !important; }
+.text-gray-600 { color: var(--gray-600) !important; }
+.text-gray-500 { color: #666 !important; }
+.text-gray-400 { color: #555 !important; }
+.text-red { color: #ff0000 !important; }
+
+/* Background Colors */
+.bg-light { background: #f8f9fa !important; }
+.bg-white { background: #fff !important; }
+.bg-primary { background: var(--primary) !important; }
+.bg-subtle { background: var(--background-subtle) !important; }
+
+/* ==========================================
+   BORDER UTILITIES
+   ========================================== */
+
+/* Border Styles */
+.border-none { border: none !important; }
+.border-bottom { border-bottom: 1px solid #eee !important; }
+.border-bottom-2 { border-bottom: 2px solid var(--primary) !important; }
+.border-left-primary { border-left: 4px solid #3AD2FF !important; }
+
+/* Border Radius */
+.rounded-sm { border-radius: 4px !important; }
+.rounded { border-radius: 8px !important; }
+.rounded-full { border-radius: 50% !important; }
+
+/* ==========================================
+   SPECIAL COMPONENTS
+   ========================================== */
+
+/* 인라인 스타일을 대체하는 특별한 컴포넌트 클래스들 */
+.inline-style-container {
+    /* 기존 인라인 스타일들을 위한 컨테이너 */
+}
+
+/* 특정 인라인 스타일 패턴들을 클래스로 변환 */
+.padding-60-20 { padding: 60px 20px !important; }
+.padding-30 { padding: 30px !important; }
+.margin-50-auto { margin: 50px auto 0 !important; }
+.margin-60-auto { margin: 60px auto 0 !important; }
+
+/* 폰트 크기 특별 케이스 */
+.font-size-17 { font-size: 17px !important; }
+.font-size-18 { font-size: 18px !important; }
+
+/* 색상 특별 케이스 */
+.color-333 { color: #333 !important; }
+.color-555 { color: #555 !important; }
+.color-666 { color: #666 !important; }
+
+/* 특별한 배경색과 테두리 조합 */
+.bg-f8f9fa-border-left-primary {
+    background: #f8f9fa !important;
+    border-left: 4px solid #3AD2FF !important;
+}
+
+/* 특별한 체크박스 아이템 스타일 */
+.service-item-with-badge {
+    position: relative !important;
+    padding-left: 40px !important;
+}
+
+/* 맵 관련 스타일 */
+.map-section {
+    margin-top: 60px !important;
+}
+
+.iframe-no-border {
+    border: 0 !important;
+}
+
+/* 테이블 특별 너비 */
+.table-width-25 { width: 25% !important; }
+.table-width-50 { width: 50% !important; }
+
+/* 아이콘 필터 */
+.icon-invert-white {
+    filter: brightness(0) saturate(100%) invert(100%) !important;
+}
+
+/* 모달 기본 숨김 */
+.modal-hidden {
+    display: none !important;
+}
+
+/* 특별한 그리드 레이아웃들 */
+.benefits-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+}
+
+/* 인증 혜택 아이템 */
+.certification-benefit-item {
+    background: var(--white) !important;
+    border: 1px solid var(--gray-200) !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* 강조 텍스트 색상 */
+.text-red-emphasis {
+    color: #ff0000 !important;
+}
+
+/* FDA Agent Grid */
+.fda-agent-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 80px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Contact Info Grid */
+.contact-info-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 40px !important;
+    margin-top: 40px !important;
+}
+
+/* Map Container */
+.map-container {
+    width: 100% !important;
+    height: 500px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Info List */
+.info-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.info-list-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+.info-list-item-last {
+    border-bottom: none !important;
+}
+
+/* Service Check List */
+.service-check-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.service-check-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 25px 0 !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+.service-check-item-last {
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+/* Check Mark Badge */
+.check-badge {
+    position: absolute !important;
+    left: 0 !important;
+    top: -1px !important;
+    width: 24px !important;
+    height: 24px !important;
+    background: #3AD2FF !important;
+    color: white !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+}
+
+/* Icon Filter */
+.icon-filter-white {
+    filter: brightness(0) saturate(100%) invert(100%) !important;
+}
+
+/* Table Width */
+.table-w-25 { width: 25% !important; }
+.table-w-50 { width: 50% !important; }
+
+/* Gradient Overlay */
+.gradient-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 100%) !important;
+}
+
+/* ==========================================
+   RESPONSIVE UTILITIES
+   ========================================== */
+
+@media (max-width: 768px) {
+    .fda-agent-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
