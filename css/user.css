@@ -275,6 +275,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     flex-direction: column;
     gap: 6px;
     align-self: start;
+    margin-left: auto;  /* 오른쪽 정렬을 위해 왼쪽 마진을 auto로 설정 */
 }
 
 /* 푸터 버튼 스타일 */
