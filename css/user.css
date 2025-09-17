@@ -214,7 +214,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     width: 100%;
     max-width: 1450px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
 #sh_ft .footer-top {
@@ -222,13 +222,13 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     flex-direction: column;
     gap: var(--space-5xl);
     margin-bottom: var(--space-6xl);
-    align-items: flex-start;
+    align-items: stretch;  /* flex-start를 stretch로 변경하여 전체 너비 사용 */
 }
 
-/* 큰 화면에서 더 넓은 패딩 */
+/* 큰 화면에서 더 넓은 패딩 - 본문과 동일하게 유지 */
 @media (min-width: 1450px) {
     #sh_ft .footer-container {
-        padding: 0 60px;
+        padding: 0 20px;
     }
 }
 
@@ -237,6 +237,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     display: grid;
     grid-template-columns: repeat(3, minmax(300px, 1fr));
     gap: clamp(24px, 4vw, 80px);
+    width: 100%;  /* 전체 너비 사용 명시 */
 }
 
 /* ② 각 세트 내부는 '라벨/값' 2열 그리드 */
@@ -308,7 +309,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
         grid-template-columns: repeat(2, minmax(260px, 1fr));
     }
     #sh_ft .footer-container {
-        padding: 0 30px;
+        padding: 0 20px;
     }
 }
 
@@ -385,7 +386,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 #sh_ft .ft_mn li ul a{opacity:.5;transition:var(--transition-normal);font-size:var(--font-size-sm);font-family:var(--k-font)}
 #sh_ft .ft_mn li ul a:hover{opacity:1}
 #sh_ft .copy{margin-top:65px;padding-top:var(--space-4xl);border-top:1px solid rgba(255, 255, 255, .1);font-weight:var(--font-weight-medium);color:rgba(255, 255, 255, .3)}
-#sh_ft .footer-logo-svg{height:40px;width:auto;filter:brightness(0) saturate(100%) invert(100%);opacity:0.6;margin-bottom:10px}
+#sh_ft .footer-logo-svg{height:40px;width:auto;filter:brightness(0) saturate(100%) invert(100%);opacity:0.6;margin-bottom:10px;align-self:flex-start}
 #toTop{display:flex;justify-content:center;align-items:center;position:absolute;bottom:105px;right:var(--container-padding);width:var(--space-6xl);height:var(--space-6xl);border-radius:var(--radius-sm);color:rgb(255, 255, 255, 0.6);transition:var(--transition-normal);background-color:var(--gray-800);cursor:pointer}
 #toTop:hover{color:var(--white);background-color:#3AD2FF}
 
