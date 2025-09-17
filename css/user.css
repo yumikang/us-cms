@@ -210,13 +210,14 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 /* ========================================
    📊 FOOTER GRID LAYOUT SYSTEM
    ======================================== */
-.footer-container {
-    --container: min(1450px, 95vw);
+#sh_ft .footer-container {
+    width: 100%;
+    max-width: 1450px;
     margin: 0 auto;
-    max-width: var(--container);
+    padding: 0 40px;
 }
 
-.footer-top {
+#sh_ft .footer-top {
     display: flex;
     flex-direction: column;
     gap: var(--space-5xl);
@@ -224,15 +225,22 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     align-items: flex-start;
 }
 
+/* 큰 화면에서 더 넓은 패딩 */
+@media (min-width: 1450px) {
+    #sh_ft .footer-container {
+        padding: 0 60px;
+    }
+}
+
 /* ① '라벨/값' 세트(=dl)들을 가로로 2~3개 배치 */
-.footer-grid {
+#sh_ft .footer-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(300px, 1fr));
     gap: clamp(24px, 4vw, 80px);
 }
 
 /* ② 각 세트 내부는 '라벨/값' 2열 그리드 */
-.kv {
+#sh_ft .kv {
     display: grid;
     grid-template-columns: clamp(110px, 15cqw, 140px) minmax(25ch, 1fr);
     row-gap: 12px;
@@ -241,7 +249,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 }
 
 /* 라벨은 왼쪽 정렬로 자연스럽게 */
-.kv dt {
+#sh_ft .kv dt {
     margin: 0;
     text-align: left;
     font-weight: 600;
@@ -250,7 +258,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 }
 
 /* 값은 자연 줄바꿈 + 긴 영문 보호 */
-.kv dd {
+#sh_ft .kv dd {
     margin: 0;
     word-break: keep-all;
     overflow-wrap: anywhere;
@@ -261,7 +269,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 }
 
 /* 푸터 버튼 컨테이너 */
-.footer-buttons {
+#sh_ft .footer-buttons {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -269,7 +277,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 }
 
 /* 푸터 버튼 스타일 */
-.footer-btn {
+#sh_ft .footer-btn {
     display: inline-block;
     color: rgba(255, 255, 255, 0.8);
     background: rgba(255, 255, 255, 0.1);
@@ -283,34 +291,37 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     font-weight: var(--font-weight-medium);
 }
 
-.footer-btn:hover {
+#sh_ft .footer-btn:hover {
     color: var(--white);
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-1px);
 }
 
-.footer-btn:active {
+#sh_ft .footer-btn:active {
     transform: translateY(0);
 }
 
 /* ③ 반응형: 화면이 줄면 컬럼 수만 줄이고 간격은 유지 */
 @media (max-width: 1100px) {
-    .footer-grid {
+    #sh_ft .footer-grid {
         grid-template-columns: repeat(2, minmax(260px, 1fr));
+    }
+    #sh_ft .footer-container {
+        padding: 0 30px;
     }
 }
 
 /* 기본 큰 폰트 크기 적용 */
-.kv dt {
+#sh_ft .kv dt {
     font-size: var(--font-size-sm);
 }
 
-.kv dd {
+#sh_ft .kv dd {
     font-size: var(--font-size-base);
 }
 
-.footer-btn {
+#sh_ft .footer-btn {
     padding: 8px 16px;
     font-size: var(--font-size-xs);
     max-width: 140px;
@@ -325,16 +336,20 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 }
 
 @media (max-width: 720px) {
-    .footer-grid {
+    #sh_ft .footer-grid {
         grid-template-columns: 1fr;
     }
 
-    .kv {
+    #sh_ft .kv {
         grid-template-columns: clamp(84px, 26vw, 110px) 1fr;
     }
 
-    .footer-top {
+    #sh_ft .footer-top {
         gap: var(--space-4xl);
+    }
+
+    #sh_ft .footer-container {
+        padding: 0 20px;
     }
 }
 
