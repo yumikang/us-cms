@@ -391,6 +391,11 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
         gap: 40px;
     }
 
+    /* 모바일에서 푸터 메뉴 숨기기 */
+    #sh_ft .ft_mn {
+        display: none;
+    }
+
     /* 로고 크기 조정 */
     #sh_ft .footer-logo-svg {
         height: 32px;
@@ -450,41 +455,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
         margin-left: 0;
     }
 
-    /* 푸터 메뉴 */
-    #sh_ft .ft_mn {
-        flex-direction: column;
-        gap: 25px;
-        padding-top: 30px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    #sh_ft .ft_mn > li+li {
-        margin-left: 0;
-    }
-
-    #sh_ft .ft_mn > li > a {
-        font-size: 15px;
-        font-weight: 600;
-        display: block;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    #sh_ft .ft_mn li ul {
-        margin-top: 12px;
-        padding-left: 15px;
-    }
-
-    #sh_ft .ft_mn li ul li+li {
-        margin-top: 8px;
-    }
-
-    #sh_ft .ft_mn li ul a {
-        font-size: 13px;
-        opacity: 0.6;
-        display: block;
-        padding: 2px 0;
-    }
+    /* 푸터 메뉴 - 모바일에서는 숨김 (이미 위에서 display: none 처리) */
 
     /* 카피라이트 */
     #sh_ft .copy {
@@ -534,21 +505,20 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     }
 
     #sh_ft .flex {
-        flex-direction: column;
         gap: 50px;
     }
 
     #sh_ft .ft_mn {
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 20px;
     }
 
     #sh_ft .ft_mn > li {
-        flex: 0 0 calc(50% - 15px);
+        flex: 0 0 auto;
     }
 
     #sh_ft .ft_mn > li+li {
-        margin-left: 0;
+        margin-left: var(--space-4xl);
     }
 
     #toTop {
