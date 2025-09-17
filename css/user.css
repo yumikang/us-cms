@@ -351,6 +351,20 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     #sh_ft .footer-container {
         padding: 0 20px;
     }
+
+    /* 모바일에서 푸터 버튼 크기 축소 */
+    #sh_ft .footer-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+        max-width: 120px;
+    }
+
+    /* 모바일에서 푸터 버튼 컨테이너 조정 */
+    #sh_ft .footer-buttons {
+        flex-direction: row;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
 }
 
 /* 기존 flex 스타일 - 푸터 메뉴용으로 유지 */
@@ -394,6 +408,20 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     /* 모바일에서 푸터 메뉴 숨기기 */
     #sh_ft .ft_mn {
         display: none;
+    }
+
+    /* 모바일에서 푸터 버튼 크기 축소 */
+    #sh_ft .footer-btn {
+        padding: 6px 10px;
+        font-size: 10px;
+        max-width: 110px;
+    }
+
+    /* 모바일에서 푸터 버튼 컨테이너 가로 배치 */
+    #sh_ft .footer-buttons {
+        flex-direction: row;
+        gap: 6px;
+        flex-wrap: wrap;
     }
 
     /* 로고 크기 조정 */
