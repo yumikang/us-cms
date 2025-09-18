@@ -1,4 +1,4 @@
-# US INNOWAVE Admin CMS 개발 문서
+# US INNOWAVE Admin CMS 개발 가이드
 
 ## 📋 프로젝트 개요
 
@@ -7,184 +7,91 @@
 - **개발 기간**: 2025년 9월 18일
 - **기술 스택**: Next.js 14, TypeScript, Supabase, Tailwind CSS, shadcn/ui
 - **데이터베이스**: Supabase PostgreSQL
+- **배포**: Vercel
+- **저장소**: https://github.com/yumikang/us-cms
 
-### 주요 기능
-1. 상담 신청 관리 시스템
-2. 관리자 인증 시스템 (JWT)
-3. 실시간 데이터 조회 및 상태 관리
-4. 이메일 알림 시스템 (Nodemailer)
+### 목적
+US INNOWAVE 홈페이지의 상담 신청을 관리하는 Admin CMS 시스템
 
----
-
-## 🏗️ 시스템 아키텍처
-
-### 디렉토리 구조
+## 🏗 프로젝트 구조
 ```
 admin-cms/
-├── app/                      # Next.js App Router
-│   ├── admin/               # 관리자 페이지
-│   │   ├── dashboard/      # 대시보드
-│   │   └── login/          # 로그인
-│   └── api/                # API Routes
-│       ├── auth/           # 인증 API
-│       └── consultations/  # 상담 API
+├── app/
+│   ├── admin/
+│   │   ├── dashboard/     # 대시보드 페이지
+│   │   └── login/         # 로그인 페이지
+│   └── api/
+│       ├── auth/          # 인증 API
+│       └── consultations/ # 상담 신청 API
 ├── src/
-│   ├── components/         # React 컴포넌트
-│   │   └── ui/            # shadcn/ui 컴포넌트
-│   └── lib/               # 유틸리티 및 라이브러리
-│       ├── auth.ts        # 인증 로직
-│       ├── db-supabase.ts # Supabase 연동
-│       ├── email.ts       # 이메일 서비스
-│       └── supabase.ts    # Supabase 클라이언트
-├── supabase-*.sql         # SQL 스키마 파일들
-└── middleware.ts          # Next.js 미들웨어
+│   ├── components/        # React 컴포넌트
+│   │   └── consultation-detail-modal.tsx
+│   └── lib/
+│       ├── auth.ts       # 인증 관련 함수
+│       ├── db-supabase.ts # Supabase 데이터베이스 함수
+│       ├── email.ts      # 이메일 발송 함수
+│       └── supabase.ts   # Supabase 클라이언트 설정
+└── public/               # 정적 파일
 ```
 
-### 기술 스택 상세
-
-#### Frontend
-- **Next.js 14.2.32**: App Router 사용
-- **TypeScript**: 엄격한 타입 체크 (no any)
-- **Tailwind CSS**: 커스텀 디자인 시스템
-- **shadcn/ui**: UI 컴포넌트 라이브러리
-
-#### Backend
-- **Supabase**: PostgreSQL 데이터베이스
-- **JWT**: 인증 토큰 관리
-- **Nodemailer**: 이메일 서비스
-
-#### 디자인 원칙
-- **Container Width**: 1450px 고정
-- **No Shadows**: 플랫 디자인
-- **No Border Radius**: 직각 디자인
-- **Responsive Grid**: 반응형 그리드 시스템
-- **REM Units**: 폰트 크기 시스템
-
----
-
-## 💾 데이터베이스 설계
+## 💾 데이터베이스 구조
 
 ### consultations 테이블
 ```sql
 CREATE TABLE consultations (
   id BIGSERIAL PRIMARY KEY,
-  name TEXT NOT NULL,          -- 신청자 이름
-  company TEXT NOT NULL,        -- 회사명
-  position TEXT NOT NULL,       -- 직책
-  phone TEXT NOT NULL,          -- 연락처
-  email TEXT NOT NULL,          -- 이메일
-  service TEXT NOT NULL,        -- 서비스 유형
-  message TEXT NOT NULL,        -- 상담 내용
-  confirmed BOOLEAN DEFAULT FALSE, -- 확인 여부
+
+  -- 기업 정보
+  company_name TEXT NOT NULL,           -- 기업명
+  company_type TEXT NOT NULL,           -- 기업형태 (개인사업자/법인사업자)
+  business_number TEXT,                 -- 사업자번호
+  business_address TEXT,                -- 사업장 주소
+
+  -- 신청자 정보
+  applicant_name TEXT NOT NULL,         -- 신청자 성명
+  phone_number TEXT NOT NULL,           -- 휴대폰
+  email TEXT NOT NULL,                  -- 이메일
+
+  -- 상담 정보
+  region TEXT NOT NULL,                 -- 지역
+  annual_sales TEXT,                    -- 연간 매출액
+  loan_amount TEXT,                     -- 대출 요청 금액
+  consultation_date TEXT,               -- 상담 희망 일시
+  consultation_fields TEXT[],           -- 상담 요청 분야 (복수선택)
+  consultation_content TEXT,            -- 상담 내용
+
+  -- 시스템 필드
+  privacy_agree BOOLEAN DEFAULT FALSE,  -- 개인정보 동의
+  confirmed BOOLEAN DEFAULT FALSE,      -- 확인 여부
   created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW())
 );
 ```
 
-### Row Level Security (RLS) 정책
-```sql
--- 모든 작업 허용 (테스트용)
-CREATE POLICY "allow_all" ON consultations
-  FOR ALL
-  USING (true)
-  WITH CHECK (true);
-```
+### RLS (Row Level Security) 정책
+- **INSERT**: 누구나 가능 (상담 신청 접수)
+- **SELECT/UPDATE**: 모든 사용자 가능 (임시, 추후 인증 필요)
 
-> ⚠️ **주의**: 프로덕션 환경에서는 적절한 보안 정책으로 변경 필요
+## 🔧 주요 기능
 
----
+### 1. 상담 신청 접수
+- 홈페이지 폼에서 데이터 수신
+- Supabase에 데이터 저장
+- 이메일 알림 발송 (관리자/고객)
 
-## 🔌 API 엔드포인트
+### 2. 관리자 대시보드
+- 상담 신청 목록 조회
+- 상세 정보 확인 (기업/신청자/상담 정보 구분 표시)
+- 상태 관리 (확인/미확인)
+- 필터링 기능
 
-### 인증 API
+### 3. 인증 시스템
+- JWT 기반 인증
+- 로그인/로그아웃
+- 세션 관리 (localStorage)
 
-#### POST `/api/auth/login`
-로그인 및 JWT 토큰 발급
+## ⚙️ 환경 변수 설정
 
-**Request:**
-```json
-{
-  "username": "admin",
-  "password": "admin123"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "message": "로그인에 성공했습니다.",
-  "data": {
-    "token": "eyJhbGciOiJIUzI1NiI...",
-    "username": "admin"
-  }
-}
-```
-
-### 상담 API
-
-#### POST `/api/consultations`
-새 상담 신청 생성 (Public)
-
-**Request:**
-```json
-{
-  "name": "홍길동",
-  "company": "테스트회사",
-  "position": "개발자",
-  "phone": "010-1234-5678",
-  "email": "test@example.com",
-  "service": "웹개발",
-  "message": "상담 내용입니다."
-}
-```
-
-#### GET `/api/consultations`
-상담 목록 조회 (인증 필요)
-
-**Headers:**
-```
-Authorization: Bearer [JWT_TOKEN]
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "data": [...],
-  "total": 10
-}
-```
-
-#### GET `/api/consultations/[id]`
-특정 상담 조회 (인증 필요)
-
-#### PATCH `/api/consultations/[id]`
-상담 상태 업데이트 (인증 필요)
-
-**Request:**
-```json
-{
-  "confirmed": true
-}
-```
-
----
-
-## 🚀 설치 및 실행
-
-### 1. 프로젝트 클론
-```bash
-git clone git@github.com:yumikang/us.git
-cd us/admin-cms
-```
-
-### 2. 의존성 설치
-```bash
-npm install
-```
-
-### 3. 환경 변수 설정
-`.env.local` 파일 생성:
+### `.env.local` 파일
 ```env
 # Supabase Configuration
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
@@ -195,7 +102,7 @@ JWT_SECRET=your-jwt-secret-key
 
 # Admin Credentials
 ADMIN_USERNAME=admin
-ADMIN_PASSWORD=admin123
+ADMIN_PASSWORD=admin123!@#
 
 # Email Configuration (Optional)
 EMAIL_HOST=smtp.gmail.com
@@ -204,221 +111,160 @@ EMAIL_SECURE=false
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-app-password
 ADMIN_EMAIL=admin@usinnowave.com
+
+# App Configuration
+NEXT_PUBLIC_APP_URL=https://us-cms.vercel.app
 ```
 
-### 4. Supabase 설정
-1. [Supabase](https://supabase.com) 계정 생성
-2. 새 프로젝트 생성
-3. SQL Editor에서 `supabase-schema.sql` 실행
-4. RLS 정책 설정 (`supabase-simple-policy.sql` 실행)
-5. API 키 복사하여 환경 변수에 설정
+## 🚀 Supabase 설정
 
-### 5. 개발 서버 실행
+### 1. 테이블 생성
+1. Supabase 대시보드 접속
+2. SQL Editor 이동
+3. `supabase-new-schema.sql` 파일의 내용 실행
+
+### 2. 환경 변수 확인
+- Settings → API에서 URL과 anon key 복사
+- `.env.local` 및 Vercel 환경 변수에 설정
+
+## 📦 배포 (Vercel)
+
+### 초기 설정
+1. GitHub 저장소 연결 (yumikang/us-cms)
+2. Framework Preset: Next.js
+3. Root Directory: `admin-cms`
+4. 환경 변수 설정
+
+### 환경 변수 (Vercel)
+```
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+JWT_SECRET
+ADMIN_USERNAME
+ADMIN_PASSWORD
+NEXT_PUBLIC_APP_URL
+```
+
+### 배포 URL
+- **CMS**: https://us-cms.vercel.app
+- **홈페이지**: https://us.vercel.app
+
+## 📡 API 엔드포인트
+
+### 인증 API
+```
+POST /api/auth/login
+Body: { username, password }
+Response: { token, username }
+```
+
+### 상담 API
+```
+POST /api/consultations (Public)
+- 상담 신청 생성
+- 이메일 알림 발송
+
+GET /api/consultations (Protected)
+- 상담 목록 조회
+- Query: ?confirmed=true/false
+
+PATCH /api/consultations/[id] (Protected)
+- 상담 상태 업데이트
+- Body: { confirmed }
+```
+
+## 🛠 개발 명령어
+
 ```bash
+# 개발 서버 실행 (포트 3001)
 npm run dev
+
+# 빌드
+npm run build
+
+# 프로덕션 실행
+npm run start
+
+# 린트 검사
+npm run lint
+
+# 타입 체크
+npm run type-check
 ```
 
-http://localhost:3001 에서 확인
+## 📝 주요 변경 이력
 
----
+### 2025.09.18
+- 프로젝트 초기 설정
+- Supabase 데이터베이스 연동
+- 상담 신청 폼과 DB 구조 통합
+- 기업/신청자/상담 정보 구분
+- 이메일 템플릿 개선
+- 타입 안정성 강화 (any 타입 제거)
+- Vercel 배포 완료
 
-## 🔐 인증 시스템
+## 🔍 문제 해결 가이드
 
-### JWT 토큰 구조
-```typescript
-interface JWTPayload {
-  username: string;
-  role: 'admin';
-  iat: number;  // 발급 시간
-  exp: number;  // 만료 시간 (24시간)
+### CORS 에러
+```javascript
+// API Route에 CORS 헤더 추가
+headers: {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
 }
 ```
 
-### 미들웨어 보호
-```typescript
-// middleware.ts
-const protectedPaths = ['/admin/dashboard'];
-```
+### 빌드 에러
+- TypeScript 타입 체크: `npm run type-check`
+- 의존성 버전 확인: `npm list`
+- 환경 변수 설정 확인
 
-관리자 페이지는 자동으로 로그인 페이지로 리다이렉트
+### 데이터베이스 연결 실패
+1. Supabase URL/Key 확인
+2. RLS 정책 확인
+3. 테이블 구조 확인
+4. 네트워크 설정 확인
 
----
+### 로그인 문제
+- 기본 계정: `admin` / `admin123!@#`
+- Vercel 환경 변수 확인
+- JWT_SECRET 설정 확인
 
-## 📱 UI/UX 가이드
+## 🔒 보안 고려사항
 
-### 컴포넌트 스타일링
-- **Container**: 1450px 고정 너비
-- **Cards**: 그림자 없음, 테두리만 사용
-- **Buttons**: border-radius 제거
-- **Typography**: REM 단위 사용
-- **Colors**:
-  - Primary: Blue (#3B82F6)
-  - Secondary: Gray (#6B7280)
-  - Success: Green (#10B981)
-  - Error: Red (#EF4444)
+### 1. 환경 변수 관리
+- 민감한 정보는 환경 변수로 관리
+- 프로덕션과 개발 환경 분리
+- `.env.local`은 절대 git에 커밋하지 않음
 
-### 반응형 브레이크포인트
-```css
-- Mobile: < 640px
-- Tablet: 640px - 1024px
-- Desktop: > 1024px
-```
+### 2. 인증/인가
+- JWT 토큰 검증
+- API 라우트 보호
+- 세션 만료 처리
 
----
+### 3. 데이터 검증
+- 입력 데이터 유효성 검사
+- SQL Injection 방지 (Supabase 자동 처리)
+- XSS 방지
 
-## 🧪 테스트
-
-### API 테스트 예제
-
-#### 1. 로그인 테스트
-```bash
-curl -X POST http://localhost:3001/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"username":"admin","password":"admin123"}'
-```
-
-#### 2. 상담 신청 테스트
-```bash
-curl -X POST http://localhost:3001/api/consultations \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name":"테스트",
-    "company":"회사",
-    "position":"직책",
-    "phone":"010-0000-0000",
-    "email":"test@test.com",
-    "service":"서비스",
-    "message":"메시지"
-  }'
-```
-
-#### 3. 상담 목록 조회
-```bash
-curl http://localhost:3001/api/consultations \
-  -H "Authorization: Bearer [YOUR_JWT_TOKEN]"
-```
-
----
-
-## 📝 개발 히스토리
-
-### 2025년 9월 18일
-
-#### Phase 1: 초기 설정
-- Next.js 14 프로젝트 생성
-- TypeScript 엄격 모드 설정
-- Tailwind CSS 및 shadcn/ui 설정
-- 플랫 디자인 시스템 구현
-
-#### Phase 2: 백엔드 구현
-- SQLite 데이터베이스 초기 구현
-- JWT 인증 시스템 구축
-- API 라우트 구현 (consultations CRUD)
-- 이메일 서비스 연동
-
-#### Phase 3: 프론트엔드 구현
-- 관리자 로그인 페이지
-- 대시보드 페이지
-- 상담 목록 테이블
-- 상담 상세 모달
-- 상태 관리 시스템
-
-#### Phase 4: Supabase 마이그레이션
-- PostgreSQL 스키마 생성
-- RLS 정책 설정
-- 비동기 데이터베이스 함수 구현
-- API 연동 및 테스트
-
-#### Phase 5: 디버깅 및 최적화
-- 인증 오류 해결 (bcrypt → plain text)
-- RLS 정책 문제 해결
-- 한글 정책명 이슈 해결
-- 환경 변수 최적화
-
----
-
-## 🐛 트러블슈팅
-
-### 1. 로그인 실패 문제
-**증상**: "잘못된 사용자명 또는 비밀번호입니다" 오류
-
-**원인**: bcrypt 해싱 문제 및 특수문자 처리 오류
-
-**해결**:
-```typescript
-// 개발 환경에서 평문 비교로 변경
-if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-  // 로그인 성공
-}
-```
-
-### 2. Supabase RLS 정책 오류
-**증상**: "new row violates row-level security policy"
-
-**원인**: 한글 정책명 및 역할 설정 충돌
-
-**해결**:
-```sql
--- 모든 정책 삭제 후 재생성
-DROP POLICY IF EXISTS "기존정책명" ON consultations;
-CREATE POLICY "allow_all" ON consultations
-  FOR ALL USING (true) WITH CHECK (true);
-```
-
-### 3. TypeScript any 타입 오류
-**증상**: 빌드 시 any 타입 사용 오류
-
-**원인**: 엄격한 TypeScript 설정
-
-**해결**: 모든 any 타입을 구체적인 타입으로 변경
-
----
-
-## 🔄 향후 개선 사항
-
-### 보안 강화
-- [ ] RLS 정책 세분화
-- [ ] bcrypt 암호화 재적용
-- [ ] Rate limiting 구현
-- [ ] CORS 설정 강화
-
-### 기능 추가
-- [ ] 상담 검색 기능
-- [ ] 페이지네이션
-- [ ] 엑셀 다운로드
-- [ ] 상담 통계 대시보드
-- [ ] 실시간 알림
-
-### 성능 최적화
-- [ ] 데이터베이스 인덱싱
-- [ ] 이미지 최적화
-- [ ] 코드 스플리팅
-- [ ] 캐싱 전략
-
-### UI/UX 개선
-- [ ] 다크 모드
-- [ ] 모바일 최적화
-- [ ] 접근성 향상
-- [ ] 다국어 지원
-
----
+### 4. HTTPS
+- Vercel 자동 SSL 인증서
+- 보안 헤더 설정 (vercel.json)
 
 ## 📚 참고 자료
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Supabase Documentation](https://supabase.com/docs)
-- [Tailwind CSS](https://tailwindcss.com/docs)
-- [shadcn/ui](https://ui.shadcn.com)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs)
+- [Vercel Documentation](https://vercel.com/docs)
+- [shadcn/ui Components](https://ui.shadcn.com)
 
----
+## 📧 연락처
 
-## 📞 문의
-
-US INNOWAVE 개발팀
+문의사항이 있으시면 아래로 연락주세요:
 - Email: admin@usinnowave.com
-- GitHub: https://github.com/yumikang/us
+- GitHub: https://github.com/yumikang/us-cms
 
 ---
 
-*Last Updated: 2025년 9월 18일*
+© 2025 US INNOWAVE. All rights reserved.
