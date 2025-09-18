@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createConsultation, getConsultations } from '@/lib/db-supabase';
-import { CreateConsultationInput } from '@/lib/supabase';
-import { sendAdminNotification, sendClientConfirmation } from '@/lib/email';
+import { sendAdminNotification, sendClientConfirmation, EmailData } from '@/lib/email';
 import { isAuthenticated } from '@/lib/auth';
 
 // POST /api/consultations - Create new consultation (public)
@@ -47,22 +46,24 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create consultation input
-    const consultationInput = {
-      company_name: body.companyName?.trim() || '',
-      company_type: body.companyType?.trim() || '',
-      business_number: body.businessNumber?.trim() || '',
-      business_address: body.businessAddress?.trim() || '',
-      applicant_name: body.applicantName?.trim() || '',
-      phone_number: body.phoneNumber?.trim() || '',
-      email: body.email?.trim().toLowerCase() || '',
-      region: body.region?.trim() || '',
-      annual_sales: body.annualSales?.trim() || '',
-      loan_amount: body.loanAmount?.trim() || '',
-      consultation_date: body.consultationDate?.trim() || '',
-      consultation_fields: body.consultationFields || [],
-      consultation_content: body.consultationContent?.trim() || '',
-      privacy_agree: body.privacyAgree || false,
+    // Create consultation input with proper type
+    const consultationInput: EmailData & { confirmed: boolean } = {
+      company_name: String(body.companyName?.trim() || ''),
+      company_type: String(body.companyType?.trim() || ''),
+      business_number: body.businessNumber ? String(body.businessNumber.trim()) : undefined,
+      business_address: body.businessAddress ? String(body.businessAddress.trim()) : undefined,
+      applicant_name: String(body.applicantName?.trim() || ''),
+      phone_number: String(body.phoneNumber?.trim() || ''),
+      email: String(body.email?.trim().toLowerCase() || ''),
+      region: String(body.region?.trim() || ''),
+      annual_sales: body.annualSales ? String(body.annualSales.trim()) : undefined,
+      loan_amount: body.loanAmount ? String(body.loanAmount.trim()) : undefined,
+      consultation_date: body.consultationDate ? String(body.consultationDate.trim()) : undefined,
+      consultation_fields: Array.isArray(body.consultationFields)
+        ? body.consultationFields.map((field: unknown) => String(field))
+        : undefined,
+      consultation_content: body.consultationContent ? String(body.consultationContent.trim()) : undefined,
+      privacy_agree: Boolean(body.privacyAgree),
       confirmed: false
     };
 
