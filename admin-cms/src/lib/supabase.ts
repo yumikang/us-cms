@@ -14,37 +14,62 @@ export interface Database {
       consultations: {
         Row: {
           id: number;
-          name: string;
-          company: string;
-          position: string;
-          phone: string;
+          // 기업 정보
+          company_name: string;
+          company_type: string;
+          business_number: string | null;
+          business_address: string | null;
+          // 신청자 정보
+          applicant_name: string;
+          phone_number: string;
           email: string;
-          service: string;
-          message: string;
+          // 상담 정보
+          region: string;
+          annual_sales: string | null;
+          loan_amount: string | null;
+          consultation_date: string | null;
+          consultation_fields: string[] | null;
+          consultation_content: string | null;
+          // 시스템 필드
+          privacy_agree: boolean;
           confirmed: boolean;
           created_at: string;
         };
         Insert: {
           id?: number;
-          name: string;
-          company: string;
-          position: string;
-          phone: string;
+          company_name: string;
+          company_type: string;
+          business_number?: string;
+          business_address?: string;
+          applicant_name: string;
+          phone_number: string;
           email: string;
-          service: string;
-          message: string;
+          region: string;
+          annual_sales?: string;
+          loan_amount?: string;
+          consultation_date?: string;
+          consultation_fields?: string[];
+          consultation_content?: string;
+          privacy_agree?: boolean;
           confirmed?: boolean;
           created_at?: string;
         };
         Update: {
           id?: number;
-          name?: string;
-          company?: string;
-          position?: string;
-          phone?: string;
+          company_name?: string;
+          company_type?: string;
+          business_number?: string;
+          business_address?: string;
+          applicant_name?: string;
+          phone_number?: string;
           email?: string;
-          service?: string;
-          message?: string;
+          region?: string;
+          annual_sales?: string;
+          loan_amount?: string;
+          consultation_date?: string;
+          consultation_fields?: string[];
+          consultation_content?: string;
+          privacy_agree?: boolean;
           confirmed?: boolean;
           created_at?: string;
         };

@@ -11,14 +11,13 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
 
     // Validate required fields
-    const requiredFields: (keyof CreateConsultationInput)[] = [
-      'name',
-      'company',
-      'position',
-      'phone',
+    const requiredFields = [
+      'companyName',
+      'companyType',
+      'applicantName',
+      'phoneNumber',
       'email',
-      'service',
-      'message'
+      'region'
     ];
 
     for (const field of requiredFields) {
@@ -41,7 +40,7 @@ export async function POST(request: NextRequest) {
 
     // Phone validation (Korean phone number format)
     const phoneRegex = /^[0-9-]+$/;
-    if (!phoneRegex.test(body.phone)) {
+    if (body.phoneNumber && !phoneRegex.test(body.phoneNumber)) {
       return NextResponse.json(
         { error: 'Invalid phone format' },
         { status: 400 }
@@ -49,14 +48,22 @@ export async function POST(request: NextRequest) {
     }
 
     // Create consultation input
-    const consultationInput: CreateConsultationInput = {
-      name: body.name.trim(),
-      company: body.company.trim(),
-      position: body.position.trim(),
-      phone: body.phone.trim(),
-      email: body.email.trim().toLowerCase(),
-      service: body.service.trim(),
-      message: body.message.trim()
+    const consultationInput = {
+      company_name: body.companyName?.trim() || '',
+      company_type: body.companyType?.trim() || '',
+      business_number: body.businessNumber?.trim() || '',
+      business_address: body.businessAddress?.trim() || '',
+      applicant_name: body.applicantName?.trim() || '',
+      phone_number: body.phoneNumber?.trim() || '',
+      email: body.email?.trim().toLowerCase() || '',
+      region: body.region?.trim() || '',
+      annual_sales: body.annualSales?.trim() || '',
+      loan_amount: body.loanAmount?.trim() || '',
+      consultation_date: body.consultationDate?.trim() || '',
+      consultation_fields: body.consultationFields || [],
+      consultation_content: body.consultationContent?.trim() || '',
+      privacy_agree: body.privacyAgree || false,
+      confirmed: false
     };
 
     // Save to database

@@ -19,13 +19,24 @@ import { ConsultationDetailModal } from "@/components/consultation-detail-modal"
 
 interface Consultation {
   id: number
-  name: string
-  company: string
-  position: string
-  phone: string
+  // 기업 정보
+  company_name: string
+  company_type: string
+  business_number?: string
+  business_address?: string
+  // 신청자 정보
+  applicant_name: string
+  phone_number: string
   email: string
-  service: string
-  message: string
+  // 상담 정보
+  region: string
+  annual_sales?: string
+  loan_amount?: string
+  consultation_date?: string
+  consultation_fields?: string[]
+  consultation_content?: string
+  // 시스템 필드
+  privacy_agree?: boolean
   confirmed: boolean
   created_at: string
 }
@@ -218,9 +229,10 @@ export default function AdminDashboardPage() {
                   <TableRow>
                     <TableHead className="w-[80px]">ID</TableHead>
                     <TableHead>신청일시</TableHead>
-                    <TableHead>이름</TableHead>
-                    <TableHead>회사명</TableHead>
-                    <TableHead>서비스</TableHead>
+                    <TableHead>신청자</TableHead>
+                    <TableHead>기업명</TableHead>
+                    <TableHead>기업형태</TableHead>
+                    <TableHead>지역</TableHead>
                     <TableHead>연락처</TableHead>
                     <TableHead className="w-[100px]">상태</TableHead>
                     <TableHead className="w-[150px]">작업</TableHead>
@@ -233,10 +245,11 @@ export default function AdminDashboardPage() {
                       <TableCell>
                         {format(new Date(consultation.created_at), "MM/dd HH:mm", { locale: ko })}
                       </TableCell>
-                      <TableCell>{consultation.name}</TableCell>
-                      <TableCell>{consultation.company}</TableCell>
-                      <TableCell>{consultation.service}</TableCell>
-                      <TableCell>{consultation.phone}</TableCell>
+                      <TableCell>{consultation.applicant_name}</TableCell>
+                      <TableCell>{consultation.company_name}</TableCell>
+                      <TableCell>{consultation.company_type}</TableCell>
+                      <TableCell>{consultation.region}</TableCell>
+                      <TableCell>{consultation.phone_number}</TableCell>
                       <TableCell>
                         <Badge variant={consultation.confirmed ? "default" : "secondary"}>
                           {consultation.confirmed ? "확인됨" : "미확인"}
