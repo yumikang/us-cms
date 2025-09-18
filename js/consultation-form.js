@@ -137,7 +137,7 @@ function validateForm(data) {
 }
 
 // 폼 제출 처리
-function submitConsultationForm(data) {
+async function submitConsultationForm(data) {
     // 버튼 비활성화 (중복 제출 방지)
     const submitButton = document.querySelector('.consultation-form button[type="submit"]');
     if (submitButton) {
@@ -145,28 +145,50 @@ function submitConsultationForm(data) {
         submitButton.innerHTML = '<i data-feather="loader"></i> 제출 중...';
     }
 
-    // 실제 서버로 전송하는 경우 여기에 AJAX 요청 추가
-    // 현재는 로컬 스토리지에 저장하고 성공 메시지 표시
+    try {
+        // API로 전송 (Next.js CMS)
+        const response = await fetch('http://localhost:3001/api/consultations', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: data.applicantName,
+                company: data.companyName,
+                position: data.position,
+                phone: data.phoneNumber,
+                email: data.email,
+                service: data.serviceType,
+                message: data.consultationContent
+            })
+        });
 
-    // 로컬 스토리지에 상담 신청 데이터 저장 (임시)
-    const consultations = JSON.parse(localStorage.getItem('consultations') || '[]');
-    consultations.push(data);
-    localStorage.setItem('consultations', JSON.stringify(consultations));
+        const result = await response.json();
 
-    // 성공 메시지 표시
-    showSuccessModal(data);
+        if (response.ok && result.success) {
+            // 성공 메시지 표시
+            showSuccessModal(data);
 
-    // 폼 초기화
-    document.getElementById('consultationApplicationForm').reset();
+            // 폼 초기화
+            document.getElementById('consultationApplicationForm').reset();
+        } else {
+            // 에러 메시지 표시
+            showAlert(result.error || '상담 신청 중 오류가 발생했습니다. 다시 시도해주세요.');
+        }
+    } catch (error) {
+        console.error('Consultation submission error:', error);
+        // 네트워크 오류 등의 경우
+        showAlert('네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    } finally {
+        // 버튼 원상복구
+        if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = '상담 신청하기 <i data-feather="send"></i>';
 
-    // 버튼 원상복구
-    if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.innerHTML = '상담 신청하기 <i data-feather="send"></i>';
-
-        // Feather 아이콘 다시 렌더링
-        if (typeof feather !== 'undefined') {
-            feather.replace();
+            // Feather 아이콘 다시 렌더링
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
         }
     }
 }
