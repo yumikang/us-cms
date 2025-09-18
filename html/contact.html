@@ -227,6 +227,190 @@
 
     <!-- 메인 콘텐츠 영역 -->
     <main id="sh_container" class="sub-container">
+        <!-- 상담 신청 폼 섹션 -->
+        <article id="consultationForm" class="consultation-form-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="label" data-aos="fade-up">CONSULTATION APPLICATION</span>
+                    <h2 data-aos="fade-up">무료 상담 신청</h2>
+                    <p class="desc" data-aos="fade-up" data-aos-delay="100">
+                        US INNOWAVE는 귀사에 최적화된 정책자금을 지원하는 종합컨설팅 기업입니다.<br>
+                        귀하의 정보를 작성해 주시면 편한 시간에 맞춰 상담해 드리겠습니다.
+                    </p>
+                </div>
+
+                <form id="consultationApplicationForm" class="consultation-form" data-aos="fade-up" data-aos-delay="200">
+                    <div class="form-grid">
+                        <!-- 기업 정보 섹션 -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">기업 정보</h3>
+
+                            <div class="form-group">
+                                <label for="companyName" class="required">기업명</label>
+                                <input type="text" id="companyName" name="companyName" required placeholder="기업명을 입력해주세요">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="required">기업형태</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="companyType" value="individual" required>
+                                        <span>개인사업자</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="companyType" value="corporation" required>
+                                        <span>법인사업자</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="businessNumber">사업자번호</label>
+                                <input type="text" id="businessNumber" name="businessNumber" placeholder="000-00-00000">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="businessAddress">사업장 주소</label>
+                                <input type="text" id="businessAddress" name="businessAddress" placeholder="사업장 주소를 입력해주세요">
+                            </div>
+                        </div>
+
+                        <!-- 신청자 정보 섹션 -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">신청자 정보</h3>
+
+                            <div class="form-group">
+                                <label for="applicantName" class="required">신청자 성명</label>
+                                <input type="text" id="applicantName" name="applicantName" required placeholder="성함을 입력해주세요">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phoneNumber" class="required">휴대폰</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="010-0000-0000">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="required">이메일</label>
+                                <input type="email" id="email" name="email" required placeholder="example@email.com">
+                            </div>
+                        </div>
+
+                        <!-- 상담 정보 섹션 -->
+                        <div class="form-section full-width">
+                            <h3 class="form-section-title">상담 정보</h3>
+
+                            <div class="form-group">
+                                <label for="region" class="required">지역</label>
+                                <select id="region" name="region" required>
+                                    <option value="">선택</option>
+                                    <option value="서울">서울</option>
+                                    <option value="경기">경기</option>
+                                    <option value="인천">인천</option>
+                                    <option value="부산">부산</option>
+                                    <option value="대구">대구</option>
+                                    <option value="광주">광주</option>
+                                    <option value="대전">대전</option>
+                                    <option value="울산">울산</option>
+                                    <option value="세종">세종</option>
+                                    <option value="강원">강원</option>
+                                    <option value="충북">충북</option>
+                                    <option value="충남">충남</option>
+                                    <option value="전북">전북</option>
+                                    <option value="전남">전남</option>
+                                    <option value="경북">경북</option>
+                                    <option value="경남">경남</option>
+                                    <option value="제주">제주</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="annualSales">전년도 매출액</label>
+                                <input type="text" id="annualSales" name="annualSales" placeholder="예: 10억원">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="employeeCount">대출 요청 금액</label>
+                                <input type="text" id="loanAmount" name="loanAmount" placeholder="예: 5억원">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="required">상담 요청 분야 (복수선택 가능)</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="consultationField" value="policy-fund">
+                                        <span>정책자금</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="consultationField" value="r&d">
+                                        <span>연구개발(R&D)</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="consultationField" value="export">
+                                        <span>해외수출</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="consultationField" value="us-market">
+                                        <span>미국 시장 진출</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="consultationField" value="certification">
+                                        <span>인증(ISO/기업인증)</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="consultationField" value="venture">
+                                        <span>벤처/이노비즈/메인비즈</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="consultationField" value="other">
+                                        <span>기타</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="consultationDate">상담 희망 일시</label>
+                                <input type="text" id="consultationDate" name="consultationDate" placeholder="예: 2025년 1월 20일 오후 2시">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="consultationContent">상담 내용</label>
+                                <textarea id="consultationContent" name="consultationContent" rows="5" placeholder="상담 받고 싶은 내용을 자유롭게 작성해주세요"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 개인정보 수집 동의 -->
+                    <div class="privacy-agreement">
+                        <h3 class="form-section-title">개인정보 수집 및 이용 동의</h3>
+                        <div class="privacy-content">
+                            <p>US INNOWAVE는 아래와 같이 개인정보를 수집 및 이용합니다.</p>
+                            <ul>
+                                <li><strong>수집 목적:</strong> 상담 신청 처리 및 답변</li>
+                                <li><strong>수집 항목:</strong> 기업명, 성명, 연락처, 이메일, 상담내용</li>
+                                <li><strong>보유 기간:</strong> 상담 완료 후 3년</li>
+                            </ul>
+                            <p>개인정보 수집 및 이용에 동의하지 않으실 수 있으며, 이 경우 상담 서비스 이용이 제한될 수 있습니다.</p>
+                        </div>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacyAgree" name="privacyAgree" required>
+                            <span>개인정보 수집 및 이용에 동의합니다.</span>
+                        </label>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-primary">
+                            상담 신청하기
+                            <i data-feather="send"></i>
+                        </button>
+                        <button type="reset" class="btn-secondary">
+                            초기화
+                            <i data-feather="refresh-cw"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </article>
+
         <!-- 인트로 섹션 -->
         <section class="content-section">
             <div class="container">
@@ -404,190 +588,6 @@
             </div>
         </section>
     </main>
-
-    <!-- 상담 신청 폼 섹션 -->
-    <article id="consultationForm" class="consultation-form-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="label" data-aos="fade-up">CONSULTATION APPLICATION</span>
-                <h2 data-aos="fade-up">무료 상담 신청</h2>
-                <p class="desc" data-aos="fade-up" data-aos-delay="100">
-                    US INNOWAVE는 귀사에 최적화된 정책자금을 지원하는 종합컨설팅 기업입니다.<br>
-                    귀하의 정보를 작성해 주시면 편한 시간에 맞춰 상담해 드리겠습니다.
-                </p>
-            </div>
-
-            <form id="consultationApplicationForm" class="consultation-form" data-aos="fade-up" data-aos-delay="200">
-                <div class="form-grid">
-                    <!-- 기업 정보 섹션 -->
-                    <div class="form-section">
-                        <h3 class="form-section-title">기업 정보</h3>
-
-                        <div class="form-group">
-                            <label for="companyName" class="required">기업명</label>
-                            <input type="text" id="companyName" name="companyName" required placeholder="기업명을 입력해주세요">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="required">기업형태</label>
-                            <div class="radio-group">
-                                <label class="radio-label">
-                                    <input type="radio" name="companyType" value="individual" required>
-                                    <span>개인사업자</span>
-                                </label>
-                                <label class="radio-label">
-                                    <input type="radio" name="companyType" value="corporation" required>
-                                    <span>법인사업자</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="businessNumber">사업자번호</label>
-                            <input type="text" id="businessNumber" name="businessNumber" placeholder="000-00-00000">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="businessAddress">사업장 주소</label>
-                            <input type="text" id="businessAddress" name="businessAddress" placeholder="사업장 주소를 입력해주세요">
-                        </div>
-                    </div>
-
-                    <!-- 신청자 정보 섹션 -->
-                    <div class="form-section">
-                        <h3 class="form-section-title">신청자 정보</h3>
-
-                        <div class="form-group">
-                            <label for="applicantName" class="required">신청자 성명</label>
-                            <input type="text" id="applicantName" name="applicantName" required placeholder="성함을 입력해주세요">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phoneNumber" class="required">휴대폰</label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="010-0000-0000">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email" class="required">이메일</label>
-                            <input type="email" id="email" name="email" required placeholder="example@email.com">
-                        </div>
-                    </div>
-
-                    <!-- 상담 정보 섹션 -->
-                    <div class="form-section full-width">
-                        <h3 class="form-section-title">상담 정보</h3>
-
-                        <div class="form-group">
-                            <label for="region" class="required">지역</label>
-                            <select id="region" name="region" required>
-                                <option value="">선택</option>
-                                <option value="서울">서울</option>
-                                <option value="경기">경기</option>
-                                <option value="인천">인천</option>
-                                <option value="부산">부산</option>
-                                <option value="대구">대구</option>
-                                <option value="광주">광주</option>
-                                <option value="대전">대전</option>
-                                <option value="울산">울산</option>
-                                <option value="세종">세종</option>
-                                <option value="강원">강원</option>
-                                <option value="충북">충북</option>
-                                <option value="충남">충남</option>
-                                <option value="전북">전북</option>
-                                <option value="전남">전남</option>
-                                <option value="경북">경북</option>
-                                <option value="경남">경남</option>
-                                <option value="제주">제주</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="annualSales">전년도 매출액</label>
-                            <input type="text" id="annualSales" name="annualSales" placeholder="예: 10억원">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="employeeCount">대출 요청 금액</label>
-                            <input type="text" id="loanAmount" name="loanAmount" placeholder="예: 5억원">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="required">상담 요청 분야 (복수선택 가능)</label>
-                            <div class="checkbox-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="consultationField" value="policy-fund">
-                                    <span>정책자금</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="consultationField" value="r&d">
-                                    <span>연구개발(R&D)</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="consultationField" value="export">
-                                    <span>해외수출</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="consultationField" value="us-market">
-                                    <span>미국 시장 진출</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="consultationField" value="certification">
-                                    <span>인증(ISO/기업인증)</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="consultationField" value="venture">
-                                    <span>벤처/이노비즈/메인비즈</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="consultationField" value="other">
-                                    <span>기타</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="consultationDate">상담 희망 일시</label>
-                            <input type="text" id="consultationDate" name="consultationDate" placeholder="예: 2025년 1월 20일 오후 2시">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="consultationContent">상담 내용</label>
-                            <textarea id="consultationContent" name="consultationContent" rows="5" placeholder="상담 받고 싶은 내용을 자유롭게 작성해주세요"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 개인정보 수집 동의 -->
-                <div class="privacy-agreement">
-                    <h3 class="form-section-title">개인정보 수집 및 이용 동의</h3>
-                    <div class="privacy-content">
-                        <p>US INNOWAVE는 아래와 같이 개인정보를 수집 및 이용합니다.</p>
-                        <ul>
-                            <li><strong>수집 목적:</strong> 상담 신청 처리 및 답변</li>
-                            <li><strong>수집 항목:</strong> 기업명, 성명, 연락처, 이메일, 상담내용</li>
-                            <li><strong>보유 기간:</strong> 상담 완료 후 3년</li>
-                        </ul>
-                        <p>개인정보 수집 및 이용에 동의하지 않으실 수 있으며, 이 경우 상담 서비스 이용이 제한될 수 있습니다.</p>
-                    </div>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="privacyAgree" name="privacyAgree" required>
-                        <span>개인정보 수집 및 이용에 동의합니다.</span>
-                    </label>
-                </div>
-
-                <div class="form-buttons">
-                    <button type="submit" class="btn-primary">
-                        상담 신청하기
-                        <i data-feather="send"></i>
-                    </button>
-                    <button type="reset" class="btn-secondary">
-                        초기화
-                        <i data-feather="refresh-cw"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </article>
 
      <!-- 하단 시작 { -->
     <footer id="sh_ft">
