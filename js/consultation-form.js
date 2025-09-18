@@ -147,7 +147,7 @@ async function submitConsultationForm(data) {
 
     try {
         // API로 전송 (Next.js CMS)
-        const response = await fetch('http://localhost:3001/api/consultations', {
+        const response = await fetch('https://us-cms.vercel.app/api/consultations', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
