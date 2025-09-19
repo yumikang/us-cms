@@ -3,6 +3,18 @@ import { createConsultation, getConsultations } from '@/lib/db-supabase';
 import { sendAdminNotification, sendClientConfirmation, EmailData } from '@/lib/email';
 import { isAuthenticated } from '@/lib/auth';
 
+// CORS headers
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+};
+
+// Handle OPTIONS request for CORS
+export async function OPTIONS(request: NextRequest) {
+  return NextResponse.json({}, { headers: corsHeaders });
+}
+
 // POST /api/consultations - Create new consultation (public)
 export async function POST(request: NextRequest) {
   try {
@@ -23,7 +35,10 @@ export async function POST(request: NextRequest) {
       if (!body[field] || body[field].trim() === '') {
         return NextResponse.json(
           { error: `Field '${field}' is required` },
-          { status: 400 }
+          {
+            status: 400,
+            headers: corsHeaders
+          }
         );
       }
     }
@@ -33,7 +48,10 @@ export async function POST(request: NextRequest) {
     if (!emailRegex.test(body.email)) {
       return NextResponse.json(
         { error: 'Invalid email format' },
-        { status: 400 }
+        {
+          status: 400,
+          headers: corsHeaders
+        }
       );
     }
 
@@ -42,7 +60,10 @@ export async function POST(request: NextRequest) {
     if (body.phoneNumber && !phoneRegex.test(body.phoneNumber)) {
       return NextResponse.json(
         { error: 'Invalid phone format' },
-        { status: 400 }
+        {
+          status: 400,
+          headers: corsHeaders
+        }
       );
     }
 
@@ -79,7 +100,7 @@ export async function POST(request: NextRequest) {
       // Don't fail the request if email fails
     });
 
-    // Return success response
+    // Return success response with CORS headers
     return NextResponse.json(
       {
         success: true,
@@ -88,13 +109,19 @@ export async function POST(request: NextRequest) {
           id: consultationId
         }
       },
-      { status: 201 }
+      {
+        status: 201,
+        headers: corsHeaders
+      }
     );
   } catch (error) {
     console.error('Consultation creation error:', error);
     return NextResponse.json(
       { error: '상담 신청 처리 중 오류가 발생했습니다.' },
-      { status: 500 }
+      {
+        status: 500,
+        headers: corsHeaders
+      }
     );
   }
 }
