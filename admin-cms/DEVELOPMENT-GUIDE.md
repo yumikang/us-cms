@@ -4,11 +4,13 @@
 
 ### 프로젝트 정보
 - **프로젝트명**: US INNOWAVE Admin CMS
-- **개발 기간**: 2025년 9월 18일
+- **개발 기간**: 2025년 9월 18일 ~ 9월 19일
 - **기술 스택**: Next.js 14, TypeScript, Supabase, Tailwind CSS, shadcn/ui
 - **데이터베이스**: Supabase PostgreSQL
-- **배포**: Vercel
+- **배포**: Vercel (CMS), 수동 배포 (홈페이지)
 - **저장소**: https://github.com/yumikang/us-cms
+- **홈페이지**: https://www.usiw.kr
+- **CMS URL**: https://us-cms.vercel.app
 
 ### 목적
 US INNOWAVE 홈페이지의 상담 신청을 관리하는 Admin CMS 시스템
@@ -203,17 +205,48 @@ npm run type-check
 - 타입 안정성 강화 (any 타입 제거)
 - Vercel 배포 완료
 
+### 2025.09.19
+- **데이터베이스 스키마 재구성**: 홈페이지 폼 구조에 맞게 전면 수정
+  - 기존: name, position, company → 변경: company_name, applicant_name 등
+  - consultation_fields 배열 타입으로 복수 선택 지원
+- **홈페이지 연동 문제 해결**:
+  - consultation-form.js API URL 수정 (localhost → production)
+  - 필드 매핑 문제 수정 (individual/corporation → 개인사업자/법인사업자)
+  - 상담 분야 영문 값을 한글로 변환 매핑 추가
+- **CORS 문제 해결**:
+  - API 엔드포인트에 CORS 헤더 추가
+  - OPTIONS 메서드 핸들러 구현
+  - Cross-origin 요청 허용
+- **RLS 정책 조정**: 테스트를 위해 Row Level Security 비활성화
+- **디버깅 도구 추가**:
+  - 브라우저 콘솔 로깅 추가
+  - 폼 데이터 검증 및 API 응답 추적
+- **배포 구조 파악**:
+  - CMS: Vercel 자동 배포
+  - 홈페이지: 수동 배포 필요 (FTP/SFTP)
+
 ## 🔍 문제 해결 가이드
 
-### CORS 에러
+### CORS 에러 (해결 완료)
 ```javascript
-// API Route에 CORS 헤더 추가
-headers: {
+// API Route에 CORS 헤더 추가 - /app/api/consultations/route.ts
+const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-}
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+};
 ```
+
+### 홈페이지-CMS 연동 문제
+1. **필드 매핑 불일치**:
+   - 문제: 폼의 영문 값 vs DB의 한글 값
+   - 해결: consultation-form.js에서 값 변환 로직 추가
+2. **API URL 문제**:
+   - 문제: localhost URL 사용
+   - 해결: production URL로 변경
+3. **배포 방식 차이**:
+   - CMS: Vercel 자동 배포
+   - 홈페이지: 수동 FTP 업로드 필요
 
 ### 빌드 에러
 - TypeScript 타입 체크: `npm run type-check`
@@ -230,6 +263,42 @@ headers: {
 - 기본 계정: `admin` / `admin123!@#`
 - Vercel 환경 변수 확인
 - JWT_SECRET 설정 확인
+
+## 🚀 배포 및 업데이트 프로세스
+
+### CMS 배포 (자동)
+1. 코드 변경 후 GitHub에 푸시
+2. Vercel이 자동으로 빌드 및 배포
+3. https://us-cms.vercel.app 에서 확인
+
+### 홈페이지 업데이트 (수동)
+1. `/js/consultation-form.js` 파일 수정
+2. FTP/SFTP로 서버에 업로드
+3. https://www.usiw.kr 에서 확인
+
+### 환경 변수 관리
+- Vercel: Dashboard에서 Environment Variables 설정
+- 로컬: `.env.local` 파일 사용 (git 제외)
+
+## 🔧 현재 상태 및 남은 작업
+
+### ✅ 완료된 작업
+- CMS 기본 기능 구현 및 배포
+- 데이터베이스 스키마 설계 및 구축
+- 홈페이지 폼과 API 연동 구조 완성
+- CORS 문제 해결
+- 필드 매핑 문제 해결
+- 디버깅 도구 추가
+
+### ⏳ 진행 중 작업
+- 홈페이지 서버에 수정된 JS 파일 업로드
+- 상담 신청 폼 최종 테스트
+
+### 📋 향후 개선사항
+- RLS 정책 재활성화 및 보안 강화
+- 이메일 발송 기능 활성화
+- 관리자 계정 관리 시스템
+- 상담 신청 통계 대시보드
 
 ## 🔒 보안 고려사항
 
