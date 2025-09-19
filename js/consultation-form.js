@@ -152,15 +152,7 @@ async function submitConsultationForm(data) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                name: data.applicantName,
-                company: data.companyName,
-                position: data.position,
-                phone: data.phoneNumber,
-                email: data.email,
-                service: data.serviceType,
-                message: data.consultationContent
-            })
+            body: JSON.stringify(data)
         });
 
         const result = await response.json();
