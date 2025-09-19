@@ -9,24 +9,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // 폼 데이터 수집
             const formData = new FormData(consultationForm);
+
+            // 디버깅용 로그
+            console.log('Form submission started');
+            console.log('Company Name:', formData.get('companyName'));
+
             const data = {
                 // 기업 정보
-                companyName: formData.get('companyName'),
+                companyName: formData.get('companyName') || '',
                 companyType: formData.get('companyType') === 'individual' ? '개인사업자' : '법인사업자',
-                businessNumber: formData.get('businessNumber'),
-                businessAddress: formData.get('businessAddress'),
+                businessNumber: formData.get('businessNumber') || '',
+                businessAddress: formData.get('businessAddress') || '',
 
                 // 신청자 정보
-                applicantName: formData.get('applicantName'),
-                phoneNumber: formData.get('phoneNumber'),
-                email: formData.get('email'),
+                applicantName: formData.get('applicantName') || '',
+                phoneNumber: formData.get('phoneNumber') || '',
+                email: formData.get('email') || '',
 
                 // 상담 정보
-                region: formData.get('region'),
-                annualSales: formData.get('annualSales'),
-                loanAmount: formData.get('loanAmount'),
-                consultationDate: formData.get('consultationDate'),
-                consultationContent: formData.get('consultationContent'),
+                region: formData.get('region') || '',
+                annualSales: formData.get('annualSales') || '',
+                loanAmount: formData.get('loanAmount') || '',
+                consultationDate: formData.get('consultationDate') || '',
+                consultationContent: formData.get('consultationContent') || '',
 
                 // 상담 분야 (체크박스 - 복수선택)
                 consultationFields: [],
@@ -157,6 +162,8 @@ async function submitConsultationForm(data) {
     }
 
     try {
+        console.log('Sending data to API:', data);
+
         // API로 전송 (Next.js CMS)
         const response = await fetch('https://us-cms.vercel.app/api/consultations', {
             method: 'POST',
@@ -167,6 +174,7 @@ async function submitConsultationForm(data) {
         });
 
         const result = await response.json();
+        console.log('API Response:', response.status, result);
 
         if (response.ok && result.success) {
             // 성공 메시지 표시
@@ -175,6 +183,7 @@ async function submitConsultationForm(data) {
             // 폼 초기화
             document.getElementById('consultationApplicationForm').reset();
         } else {
+            console.error('API Error:', result.error);
             // 에러 메시지 표시
             showAlert(result.error || '상담 신청 중 오류가 발생했습니다. 다시 시도해주세요.');
         }
