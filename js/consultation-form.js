@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = {
                 // 기업 정보
                 companyName: formData.get('companyName'),
-                companyType: formData.get('companyType'),
+                companyType: formData.get('companyType') === 'individual' ? '개인사업자' : '법인사업자',
                 businessNumber: formData.get('businessNumber'),
                 businessAddress: formData.get('businessAddress'),
 
@@ -38,10 +38,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 submittedAt: new Date().toISOString()
             };
 
-            // 상담 분야 체크박스 값 수집
+            // 상담 분야 체크박스 값 수집 (영문 -> 한글 변환)
+            const fieldMapping = {
+                'policy-fund': '정책자금',
+                'r&d': '연구개발(R&D)',
+                'export': '해외수출',
+                'us-market': '미국 시장 진출',
+                'certification': '인증(ISO/기업인증)',
+                'venture': '벤처/이노비즈/메인비즈',
+                'other': '기타'
+            };
+
             const checkboxes = consultationForm.querySelectorAll('input[name="consultationField"]:checked');
             checkboxes.forEach(checkbox => {
-                data.consultationFields.push(checkbox.value);
+                const koreanValue = fieldMapping[checkbox.value] || checkbox.value;
+                data.consultationFields.push(koreanValue);
             });
 
             // 유효성 검사
